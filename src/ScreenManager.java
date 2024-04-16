@@ -10,6 +10,9 @@ import edu.macalester.graphics.ui.Button;
  /*
   * 4/16/2024: Problem Encounter: The Pages glitches when going to new screen, could
   * it have something to do with 'canvas.remove()'
+
+  04/16/2024 4:58PM: I know it works because I saw the video's destiny sent, 
+  but for me it shows none of the Images when I run it here or in motherboard - Samira
   */
 
 public class ScreenManager {
