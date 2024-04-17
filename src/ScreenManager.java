@@ -2,6 +2,7 @@ import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.ui.Button;
 
+
 /*
  * Manages all the screens the game goes through, Homescreen, Instructions, Closet,
  * Runway, and Podium
@@ -70,13 +71,35 @@ public void theInstructionsScreen(){
 
 public void theCloset(){
     Image closetBackground;
+    Image characterBase;
+    Image dressBase;
     closetBackground = new Image(0,0);
+    characterBase = new Image(0,0);
+    dressBase = new Image(250,0);
     closetBackground.setScale(0.48,0.62);
     closetBackground.setImagePath("Backgrounds/dungeonCloset.jpeg");
+    characterBase.setScale(0.3125,0.135);
+    characterBase.setImagePath("whiteSkinBase.png");
+    dressBase.setImagePath("testDress.png");
+    dressBase.setScale(0.25,0.25);
+
     canvas.add(closetBackground);
+    canvas.add(characterBase);
+    canvas.add(dressBase);
+
+    
 
     runwayButton.setPosition(600,50);
     canvas.add(runwayButton);
+
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == dressBase){
+                dressBase.setPosition(characterBase.getPosition());
+            }
+        }
+    );
+
 
     runwayButton.onClick(
         () -> theRunway());
