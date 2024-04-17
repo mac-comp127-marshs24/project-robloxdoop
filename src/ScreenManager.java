@@ -34,7 +34,7 @@ public void theHomeScreen(){
     Image homeScreen;
     homeScreen = new Image(0,0);
     homeScreen.setScale(0.5,0.5);
-    homeScreen.setImagePath("PilotBackground.jpeg");
+    homeScreen.setImagePath("Backgrounds/PilotBackground.jpeg");
     canvas.add(homeScreen);
 
     instructionsButton.setPosition(600,50);
@@ -53,7 +53,7 @@ public void theInstructionsScreen(){
     Image instructionsScreen;
     instructionsScreen = new Image(0,0);
     instructionsScreen.setScale(1.5,1.67);
-    instructionsScreen.setImagePath("InstructionsScreen.jpeg");
+    instructionsScreen.setImagePath("Backgrounds/InstructionsScreen.jpeg");
     canvas.add(instructionsScreen);
 
     closetButton.setPosition(600,50);
@@ -72,7 +72,7 @@ public void theCloset(){
     Image closetBackground;
     closetBackground = new Image(0,0);
     closetBackground.setScale(0.48,0.62);
-    closetBackground.setImagePath("dungeonCloset.jpeg");
+    closetBackground.setImagePath("Backgrounds/dungeonCloset.jpeg");
     canvas.add(closetBackground);
 
     runwayButton.setPosition(600,50);
@@ -90,7 +90,7 @@ public void theRunway(){
     Image runwayBackground;
     runwayBackground = new Image(0,0);
     runwayBackground.setScale(1.31,1.58);
-    runwayBackground.setImagePath("RunwayBackground.jpeg");
+    runwayBackground.setImagePath("Backgrounds/RunwayBackground.jpeg");
     canvas.add(runwayBackground);
 
     podiumButton.setPosition(600,50);
@@ -108,7 +108,7 @@ public void thePodium(){
     Image podiumBackground;
     podiumBackground = new Image(0,0);
     podiumBackground.setScale(0.67,0.96);
-    podiumBackground.setImagePath("PodiumMetal.png");
+    podiumBackground.setImagePath("Backgrounds/PodiumMetal.png");
     canvas.add(podiumBackground);
 
     homeScreeButton.setPosition(600,50);
