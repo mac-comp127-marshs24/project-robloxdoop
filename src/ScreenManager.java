@@ -1,3 +1,4 @@
+import ThemesOutfit.School;
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
@@ -75,23 +76,21 @@ public void theInstructionsScreen(){
 public void theCloset(){
     Image closetBackground;
     Image characterBase;
-    Image dressBase;
     closetBackground = new Image(0,0);
     closetBackground.setScale(0.48,0.62);
     closetBackground.setImagePath("Backgrounds/dungeonCloset.jpeg");
 
     characterBase = new Image(0,0);
     characterBase.setScale(0.3125,0.135);
+    characterBase.setCenter(400, 300);
     characterBase.setImagePath("whiteSkinBase.png");
     System.err.println(characterBase.getPosition());
 
-    dressBase = new Image(250,0);
-    dressBase.setImagePath("testDress.png");
-    dressBase.setScale(0.25,0.25);
-
     canvas.add(closetBackground);
     canvas.add(characterBase);
-    canvas.add(dressBase);
+    School dressBase = new School();
+    GraphicsObject testDress = dressBase.top();
+    canvas.add(testDress);
 
     runwayButton.setPosition(600,50);
     canvas.add(runwayButton);
@@ -101,7 +100,7 @@ public void theCloset(){
     canvas.add(undo);
 
     undo.onClick(
-        () -> dressBase.setPosition(250, 0)
+        () -> testDress.setPosition(250, 0)
     );
 
 
@@ -109,11 +108,13 @@ public void theCloset(){
 
     canvas.onClick(
         event -> {event.getPosition();
+            System.out.println("charcter pos" + characterBase.getPosition());
+            System.out.println("Dress pos" + dressBase.getPosition());
+            System.out.println(canvas.getElementAt(event.getPosition()));
 
-            if(canvas.getElementAt(event.getPosition()) == dressBase){
-                dressBase.setCenter(characterBase.getPosition()); //Ok so it moves that all the matter for now
-                System.out.println("charcter pos" + characterBase.getPosition());
-                System.out.println("Dress pos" + dressBase.getPosition());
+            if(canvas.getElementAt(event.getPosition()) == testDress){
+                testDress.setCenter(characterBase.getPosition()); //Ok so it moves that all the matter for now
+                
             }
 
             
