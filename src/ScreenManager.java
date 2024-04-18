@@ -1,5 +1,10 @@
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.Image;
+import edu.macalester.graphics.Line;
+import edu.macalester.graphics.Point;
+import edu.macalester.graphics.Rectangle;
 import edu.macalester.graphics.ui.Button;
 
 
@@ -26,9 +31,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-
 theHomeScreen();
-  
 }
 
 public void theHomeScreen(){
@@ -74,12 +77,15 @@ public void theCloset(){
     Image characterBase;
     Image dressBase;
     closetBackground = new Image(0,0);
-    characterBase = new Image(0,0);
-    dressBase = new Image(250,0);
     closetBackground.setScale(0.48,0.62);
     closetBackground.setImagePath("Backgrounds/dungeonCloset.jpeg");
+
+    characterBase = new Image(0,0);
     characterBase.setScale(0.3125,0.135);
     characterBase.setImagePath("whiteSkinBase.png");
+    System.err.println(characterBase.getPosition());
+
+    dressBase = new Image(250,0);
     dressBase.setImagePath("testDress.png");
     dressBase.setScale(0.25,0.25);
 
@@ -87,20 +93,33 @@ public void theCloset(){
     canvas.add(characterBase);
     canvas.add(dressBase);
 
-    
-
     runwayButton.setPosition(600,50);
     canvas.add(runwayButton);
 
-    canvas.onClick(
-        event -> {event.getPosition();
-            if(canvas.getElementAt(event.getPosition()) == dressBase){
-                dressBase.setPosition(characterBase.getPosition());
-            }
-        }
+    Button undo = new Button("Undo");
+    undo.setPosition(0, 0);
+    canvas.add(undo);
+
+    undo.onClick(
+        () -> dressBase.setPosition(250, 0)
     );
 
 
+
+
+    canvas.onClick(
+        event -> {event.getPosition();
+
+            if(canvas.getElementAt(event.getPosition()) == dressBase){
+                dressBase.setCenter(characterBase.getPosition()); //Ok so it moves that all the matter for now
+                System.out.println("charcter pos" + characterBase.getPosition());
+                System.out.println("Dress pos" + dressBase.getPosition());
+            }
+
+            
+        
+        }
+    );
     runwayButton.onClick(
         () -> theRunway());
 
