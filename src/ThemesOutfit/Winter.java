@@ -5,7 +5,7 @@ import java.util.List;
 import edu.macalester.graphics.Image;
 
 
-public class Winter {
+public class Winter{
     List<Image>  winterGloves;
     
 

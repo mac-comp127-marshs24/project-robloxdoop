@@ -130,9 +130,9 @@ public void theCloset(){
     
     canvas.add(closetBackground);
     canvas.add(characterBase);
-    School dressBase = new School();
-    GraphicsObject testDress = dressBase.top();
-    canvas.add(testDress);
+    // School dressBase = new School();
+    // GraphicsObject testDress = dressBase.top();
+    // canvas.add(testDress);
     canvas.add(shirtManager);
     canvas.add(bottomManager);
     canvas.add(shoeManager);
@@ -159,34 +159,50 @@ public void theCloset(){
     runwayButton.setPosition(600,50);
     canvas.add(runwayButton);
 
-    Button undo = new Button("Undo");
-    undo.setPosition(0, 0);
-    canvas.add(undo);
+    // Button undo = new Button("Undo");
+    // undo.setPosition(0, 0);
+    // canvas.add(undo);
 
-    undo.onClick(
-        () -> testDress.setPosition(250, 0)
-    );
+    // undo.onClick(
+    //     () -> testDress.setPosition(250, 0)
+    // );
 
 
-    canvas.onClick(
-        event -> {event.getPosition();
-            System.out.println("charcter pos" + characterBase.getPosition());
-            System.out.println("Dress pos" + dressBase.getPosition());
-            System.out.println(canvas.getElementAt(event.getPosition()));
-
-            if(canvas.getElementAt(event.getPosition()) == testDress){
-                testDress.setCenter(characterBase.getPosition()); 
+    // canvas.onClick(
+    //     event -> {event.getPosition();
+    //         if(canvas.getElementAt(event.getPosition()) == ){
+    //             testDress.setCenter(characterBase.getPosition()); 
                 
-            }
+    //         }
 
-        }
-    );
+    //     }
+    // );
+    placeScarf();
+
     runwayButton.onClick(
         () -> theRunway());
 
     runwayButton.onClick(
         () -> canvas.removeAll()
     );
+}
+
+
+
+public void placeScarf(){
+    canvas.onClick(
+        event -> {
+            Image scarf = (Image)canvas.getElementAt(event.getPosition());
+            if(scarf != null){
+                if(scarf.toString().equals("Image at position (-840.0,-400.0) with file assets_Clothes/BlueScarf.png")) //if the scarf is there but if we move it then we have to change the coordinates
+                scarf.setPosition(250,50);
+
+            }
+
+        }
+    );
+   
+
 }
 
 public void changeGloves(boolean RL){
