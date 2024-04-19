@@ -20,6 +20,7 @@ public class ScreenManager {
     private Button podiumButton = new Button("Winner or Loser?");
     private Button homeScreeButton = new Button("Play Again");
     private Button instructionsButton = new Button("Ready to play?");
+    Image rightPinkButton = new Image("assets/RightButton.png");
     Image closetBackground;
     Image characterBase;
     Rectangle shirtManager = new Rectangle(20, 40, 200, 200);
@@ -44,16 +45,30 @@ public void mainMenu(){
     homeScreen.setScale(0.75,0.75);
     homeScreen.setImagePath("assets/mainMenu.png");
     canvas.add(homeScreen);
+    rightPinkButton.setCenter(700, 700);
+    rightPinkButton.setScale(0.09);
+    canvas.add(rightPinkButton);
 
-    instructionsButton.setPosition(600,50);
-    canvas.add(instructionsButton);
 
-    instructionsButton.onClick(
-        () -> theInstructionsScreen());
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == rightPinkButton){
+                canvas.removeAll();
+                theInstructionsScreen();
+            }
 
-    instructionsButton.onClick(
-        () -> canvas.removeAll()
+        }
     );
+
+    // instructionsButton.setPosition(600,50);
+    // canvas.add(instructionsButton);
+
+    // instructionsButton.onClick(
+    //     () -> theInstructionsScreen());
+
+    // instructionsButton.onClick(
+    //     () -> canvas.removeAll()
+    // );
 
 }
 
