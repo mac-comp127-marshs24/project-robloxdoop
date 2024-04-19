@@ -1,10 +1,7 @@
 import ThemesOutfit.School;
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.Image;
-import edu.macalester.graphics.Line;
-import edu.macalester.graphics.Point;
 import edu.macalester.graphics.Rectangle;
 import edu.macalester.graphics.ui.Button;
 
@@ -76,14 +73,20 @@ public void theInstructionsScreen(){
 public void theCloset(){
     Image closetBackground;
     Image characterBase;
+    Rectangle shirtManager = new Rectangle(20, 40, 200, 200);
+    Rectangle bottomManager = new Rectangle(20, 290, 200, 200);
+    Rectangle shoeManager = new Rectangle(20, 540, 200, 200);
+    shirtManager.setStrokeWidth(10);
+    bottomManager.setStrokeWidth(10);
+    shoeManager.setStrokeWidth(10);
     closetBackground = new Image(0,0);
     closetBackground.setScale(0.75,0.75);
-    closetBackground.setImagePath("Backgrounds/dungeonCloset.jpeg");
+    closetBackground.setImagePath("assets/closet.png");
 
     characterBase = new Image(0,0);
-    characterBase.setScale(0.3125,0.135);
-    characterBase.setCenter(400, 300);
-    characterBase.setImagePath("whiteSkinBase.png");
+    characterBase.setScale(0.9,0.9);
+    characterBase.setPosition(540,25);
+    characterBase.setImagePath("assets/model.png");
     System.err.println(characterBase.getPosition());
 
     canvas.add(closetBackground);
@@ -91,6 +94,9 @@ public void theCloset(){
     School dressBase = new School();
     GraphicsObject testDress = dressBase.top();
     canvas.add(testDress);
+    canvas.add(shirtManager);
+    canvas.add(bottomManager);
+    canvas.add(shoeManager);
 
     runwayButton.setPosition(600,50);
     canvas.add(runwayButton);

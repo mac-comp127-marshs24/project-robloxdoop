@@ -1,11 +1,8 @@
-import java.util.ArrayList;
 import java.util.List;
 
 import ThemesOutfit.School;
 import edu.macalester.graphics.GraphicsObject;
-import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
-import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsGroup;
 
 public class PlayerManager {
