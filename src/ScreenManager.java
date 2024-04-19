@@ -13,13 +13,6 @@ import edu.macalester.graphics.ui.Button;
  * Runway, and Podium
  */
 
- /*
-  * 4/16/2024: Problem Encounter: The Pages glitches when going to new screen, could
-  * it have something to do with 'canvas.remove()'
-
-  04/16/2024 4:58PM: I know it works because I saw the video's destiny sent, 
-  but for me it shows none of the Images when I run it here or in motherboard - Samira
-  */
 
 public class ScreenManager {
     private Button runwayButton = new Button("Enter the Runway!");
@@ -27,6 +20,16 @@ public class ScreenManager {
     private Button podiumButton = new Button("Winner or Loser?");
     private Button homeScreeButton = new Button("Play Again");
     private Button instructionsButton = new Button("Ready to play?");
+    Image closetBackground;
+    Image characterBase;
+    Rectangle shirtManager = new Rectangle(20, 40, 200, 200);
+    Rectangle bottomManager = new Rectangle(20, 290, 200, 200);
+    Rectangle shoeManager = new Rectangle(20, 540, 200, 200);
+    Button shirtLeftButton = new Button ("Left");
+    Button shirtRightButton = new Button ("Right");
+    Winter winterGloves = new Winter();
+    GraphicsText Instructions = new GraphicsText("Hello");
+    int igloves = 0;
     CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
 
 
@@ -53,8 +56,19 @@ public void mainMenu(){
 
 }
 
+public void moveableText(GraphicsText Instructions){
+    canvas.animate( 
+        () -> {
+            if(instructionsButton.getX() < canvas.getWidth()){
+            Instructions.moveBy(5,0);
+            }else{
+            canvas.pause(3000);
+            }
+        }
+    );
+}
+
 public void theInstructionsScreen(){
-    GraphicsText Instructions = new GraphicsText("Hello");
     Image instructionsScreen;
     Instructions.setPosition(250, 250);
     Instructions.setFontSize(60);
@@ -65,6 +79,7 @@ public void theInstructionsScreen(){
 
     canvas.add(instructionsScreen);
     canvas.add(Instructions);
+    moveableText(Instructions);
 
     closetButton.setPosition(600,50);
     canvas.add(closetButton);
@@ -80,11 +95,9 @@ public void theInstructionsScreen(){
 }
 
 public void theCloset(){
-    Image closetBackground;
-    Image characterBase;
-    Rectangle shirtManager = new Rectangle(20, 40, 200, 200);
-    Rectangle bottomManager = new Rectangle(20, 290, 200, 200);
-    Rectangle shoeManager = new Rectangle(20, 540, 200, 200);
+    shirtLeftButton.setPosition(10, 40);
+    shirtRightButton.setPosition(160, 40);
+
     shirtManager.setStrokeWidth(10);
     bottomManager.setStrokeWidth(10);
     shoeManager.setStrokeWidth(10);
@@ -97,13 +110,8 @@ public void theCloset(){
     characterBase.setPosition(540,25);
     characterBase.setImagePath("assets/model.png");
     System.err.println(characterBase.getPosition());
-
-    Winter winterGloves = new Winter();
     System.out.println(winterGloves.getwinterGloves());
     
-
-    
-
     canvas.add(closetBackground);
     canvas.add(characterBase);
     School dressBase = new School();
@@ -112,9 +120,24 @@ public void theCloset(){
     canvas.add(shirtManager);
     canvas.add(bottomManager);
     canvas.add(shoeManager);
-    for ( Image gloves : winterGloves.getwinterGloves()){
+    canvas.add(shirtLeftButton);
+    canvas.add(shirtRightButton);
+
+    for (Image gloves : winterGloves.getwinterGloves()){
         canvas.add(gloves);
+        gloves.setCenter(shirtManager.getCenter());
+        gloves.setScale(0.4);
     }
+
+    shirtLeftButton.onClick(
+        () -> {
+        changeGloves(true);
+        });
+
+    shirtRightButton.onClick(
+            () -> {
+            changeGloves(false);   
+            });
 
 
     runwayButton.setPosition(600,50);
@@ -129,8 +152,6 @@ public void theCloset(){
     );
 
 
-
-
     canvas.onClick(
         event -> {event.getPosition();
             System.out.println("charcter pos" + characterBase.getPosition());
@@ -138,12 +159,10 @@ public void theCloset(){
             System.out.println(canvas.getElementAt(event.getPosition()));
 
             if(canvas.getElementAt(event.getPosition()) == testDress){
-                testDress.setCenter(characterBase.getPosition()); //Ok so it moves that all the matter for now
+                testDress.setCenter(characterBase.getPosition()); 
                 
             }
 
-            
-        
         }
     );
     runwayButton.onClick(
@@ -153,6 +172,25 @@ public void theCloset(){
         () -> canvas.removeAll()
     );
 }
+
+public void changeGloves(boolean RL){
+    canvas.remove(winterGloves.getwinterGloves().get(igloves));
+
+    if(RL){
+    igloves ++;}
+    else{
+    igloves --;
+    }
+
+    if(igloves > winterGloves.getwinterGloves().size() - 1){
+        igloves = 0;
+    }
+    if(igloves < 0){
+        igloves = winterGloves.getwinterGloves().size() - 1;
+    }
+    canvas.add(winterGloves.getwinterGloves().get(igloves));
+}
+
 
 public void theRunway(){
     Image runwayBackground;
@@ -183,7 +221,7 @@ public void thePodium(){
     canvas.add(homeScreeButton);
 
     Button quitButton = new Button("Quit?");
-   quitButton.setPosition(400, 50);
+    quitButton.setPosition(400, 50);
     canvas.add(quitButton);
 
 

@@ -11,8 +11,9 @@ public class Winter {
 
 
     public Winter(){
-     winterGloves = List.of( new Image ("assets_Clothes/BlackGloves.png"),
-                                         new Image ("assets_Clothes/BrownGloves.png"));
+     winterGloves = List.of(new Image ("assets_Clothes/BlackGloves.png"),
+                                         new Image ("assets_Clothes/BrownGloves.png"),
+                                         new Image ("assets_Clothes/BlueScarf.png"));
     }
       public List<Image> getwinterGloves(){
         return winterGloves;
