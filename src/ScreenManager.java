@@ -1,4 +1,5 @@
 import ThemesOutfit.School;
+import ThemesOutfit.Winter;
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.GraphicsText;
@@ -97,6 +98,12 @@ public void theCloset(){
     characterBase.setImagePath("assets/model.png");
     System.err.println(characterBase.getPosition());
 
+    Winter winterGloves = new Winter();
+    System.out.println(winterGloves.getwinterGloves());
+    
+
+    
+
     canvas.add(closetBackground);
     canvas.add(characterBase);
     School dressBase = new School();
@@ -105,6 +112,10 @@ public void theCloset(){
     canvas.add(shirtManager);
     canvas.add(bottomManager);
     canvas.add(shoeManager);
+    for ( Image gloves : winterGloves.getwinterGloves()){
+        canvas.add(gloves);
+    }
+
 
     runwayButton.setPosition(600,50);
     canvas.add(runwayButton);
@@ -171,11 +182,20 @@ public void thePodium(){
     homeScreeButton.setPosition(600,50);
     canvas.add(homeScreeButton);
 
+    Button quitButton = new Button("Quit?");
+   quitButton.setPosition(400, 50);
+    canvas.add(quitButton);
+
+
     homeScreeButton.onClick(
         () -> mainMenu());
 
     homeScreeButton.onClick(
         () -> canvas.removeAll()
+    );
+
+    quitButton.onClick(
+        () ->  canvas.closeWindow()
     );
 
 }
