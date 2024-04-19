@@ -1,6 +1,7 @@
 import ThemesOutfit.School;
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsObject;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
 import edu.macalester.graphics.ui.Button;
@@ -52,11 +53,17 @@ public void mainMenu(){
 }
 
 public void theInstructionsScreen(){
+    GraphicsText Instructions = new GraphicsText("Hello");
     Image instructionsScreen;
+    Instructions.setPosition(250, 250);
+    Instructions.setFontSize(60);
+
     instructionsScreen = new Image(0,0);
     instructionsScreen.setScale(0.75,0.75);
     instructionsScreen.setImagePath("assets/mainMenu2.png");
+
     canvas.add(instructionsScreen);
+    canvas.add(Instructions);
 
     closetButton.setPosition(600,50);
     canvas.add(closetButton);
@@ -67,6 +74,7 @@ public void theInstructionsScreen(){
     closetButton.onClick(
         () -> canvas.removeAll()
     );
+
 
 }
 
