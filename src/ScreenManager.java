@@ -28,18 +28,18 @@ public class ScreenManager {
     private Button podiumButton = new Button("Winner or Loser?");
     private Button homeScreeButton = new Button("Play Again");
     private Button instructionsButton = new Button("Ready to play?");
-    CanvasWindow canvas = new CanvasWindow("Project Runway",800, 600);
+    CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
 
 
 public ScreenManager(){
-theHomeScreen();
+mainMenu();
 }
 
-public void theHomeScreen(){
+public void mainMenu(){
     Image homeScreen;
     homeScreen = new Image(0,0);
-    homeScreen.setScale(0.5,0.5);
-    homeScreen.setImagePath("Backgrounds/PilotBackground.jpeg");
+    homeScreen.setScale(0.75,0.75);
+    homeScreen.setImagePath("assets/mainMenu.png");
     canvas.add(homeScreen);
 
     instructionsButton.setPosition(600,50);
@@ -57,8 +57,8 @@ public void theHomeScreen(){
 public void theInstructionsScreen(){
     Image instructionsScreen;
     instructionsScreen = new Image(0,0);
-    instructionsScreen.setScale(1.5,1.67);
-    instructionsScreen.setImagePath("Backgrounds/InstructionsScreen.jpeg");
+    instructionsScreen.setScale(0.75,0.75);
+    instructionsScreen.setImagePath("assets/mainMenu2.png");
     canvas.add(instructionsScreen);
 
     closetButton.setPosition(600,50);
@@ -77,7 +77,7 @@ public void theCloset(){
     Image closetBackground;
     Image characterBase;
     closetBackground = new Image(0,0);
-    closetBackground.setScale(0.48,0.62);
+    closetBackground.setScale(0.75,0.75);
     closetBackground.setImagePath("Backgrounds/dungeonCloset.jpeg");
 
     characterBase = new Image(0,0);
@@ -132,8 +132,8 @@ public void theCloset(){
 public void theRunway(){
     Image runwayBackground;
     runwayBackground = new Image(0,0);
-    runwayBackground.setScale(1.31,1.58);
-    runwayBackground.setImagePath("Backgrounds/RunwayBackground.jpeg");
+    runwayBackground.setScale(0.75,0.75);
+    runwayBackground.setImagePath("assets/stage.png");
     canvas.add(runwayBackground);
 
     podiumButton.setPosition(600,50);
@@ -150,15 +150,15 @@ public void theRunway(){
 public void thePodium(){
     Image podiumBackground;
     podiumBackground = new Image(0,0);
-    podiumBackground.setScale(0.67,0.96);
-    podiumBackground.setImagePath("Backgrounds/PodiumMetal.png");
+    podiumBackground.setScale(0.75,0.75);
+    podiumBackground.setImagePath("assets/podium.png");
     canvas.add(podiumBackground);
 
     homeScreeButton.setPosition(600,50);
     canvas.add(homeScreeButton);
 
     homeScreeButton.onClick(
-        () -> theHomeScreen());
+        () -> mainMenu());
 
     homeScreeButton.onClick(
         () -> canvas.removeAll()
