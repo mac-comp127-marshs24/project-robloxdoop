@@ -32,6 +32,7 @@ public class ScreenManager {
     GraphicsText Instructions = new GraphicsText("Hello");
     int igloves = 0;
     CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
+    TheMotherBoard motherBoard = new TheMotherBoard();
 
 
 
@@ -72,11 +73,11 @@ public void mainMenu(){
 
 }
 
-public void moveableText(GraphicsText Instructions){
+public void moveableText(GraphicsText Instructions, double dx, double dy){
     canvas.animate( 
         () -> {
             if(instructionsButton.getX() < canvas.getWidth()){
-            Instructions.moveBy(5,0);
+            Instructions.moveBy(dx,dy);
             }else{
             canvas.pause(3000);
             }
@@ -87,6 +88,7 @@ public void moveableText(GraphicsText Instructions){
 public void theInstructionsScreen(){
     Image instructionsScreen;
     Instructions.setPosition(250, 250);
+    moveableText(Instructions, 0, 0);
     Instructions.setFontSize(60);
 
     instructionsScreen = new Image(0,0);
@@ -95,18 +97,28 @@ public void theInstructionsScreen(){
 
     canvas.add(instructionsScreen);
     canvas.add(Instructions);
-    moveableText(Instructions);
+    
+    
+    moveableText(Instructions, 5, 0);
 
     closetButton.setPosition(600,50);
     canvas.add(closetButton);
 
-    closetButton.onClick(
-        () -> theCloset());
+    // closetButton.onClick(
+    //     () -> theCloset()),
+    //     moveableText(Instructions, 0, 0);
 
-    closetButton.onClick(
-        () -> canvas.removeAll()
-    );
+    closetButton.onClick(() -> {
+        canvas.removeAll();
+        theCloset();
+        
+    });
 
+    // closetButton.onClick(
+    //     () -> canvas.removeAll()
+    // );
+
+    moveableText(Instructions, 0, 0);
 
 }
 
@@ -277,11 +289,17 @@ public void thePodium(){
 
 
     homeScreeButton.onClick(
-        () -> mainMenu());
+        () -> mainMenu()
+        
+        );
 
-    homeScreeButton.onClick(
-        () -> canvas.removeAll()
-    );
+
+    homeScreeButton.onClick(() -> {
+        canvas.removeAll();
+        motherBoard.setTheme();
+        thePodium();
+    });
+        
 
     quitButton.onClick(
         () ->  canvas.closeWindow()

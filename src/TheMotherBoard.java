@@ -25,6 +25,10 @@ public class TheMotherBoard {
     
     }
 
+    public void setTheme() {
+        ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
+    }
+
     public static List<Image> getTheme(){
         return ChosenTheme;
     }
