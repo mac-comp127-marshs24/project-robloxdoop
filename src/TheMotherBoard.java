@@ -25,27 +25,32 @@ public class TheMotherBoard {
     
     
     public static List<Image> ChosenTheme(){
-        return Themes.get(randNum.nextInt(Themes.size()));
+        List<Image> ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
+        return ChosenTheme;
     }
 
-    public static String ChosenThemeName(){
-        if (ChosenTheme() == winter.getWinningOutfit()){
+    public static String ChosenThemeName(List<Image> ChosenTheme){
+        System.out.println("The chosen theme "+ ChosenTheme);
+        System.out.println("Winter " + winter.getWinningOutfit());
+        System.out.println("School " + school.getWinningOutfit());
+        System.out.println("Beach " + beach.getWinningOutfit());
+
+        if (ChosenTheme.equals(winter.getWinningOutfit())){
             return "The Theme is Winter!";
         }
-        else if(ChosenTheme() == beach.getWinningOutfit()){
+        else if(ChosenTheme.equals(beach.getWinningOutfit())){
             return "The Theme is Beach!";
         }
         else{
             return "The Theme is School!";
         }
         
-    }
+    } 
 
     public static void main(String[] args) {
         new TheMotherBoard();
-        //new ScreenManager();
-        System.out.println(ChosenTheme());
-        System.out.println(ChosenThemeName());
+        // new ScreenManager();
+        System.out.println(ChosenThemeName(ChosenTheme()));
         
     }
     

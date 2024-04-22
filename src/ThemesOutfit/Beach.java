@@ -21,8 +21,6 @@ public class Beach {
     }
     
     public List<Image> getWinningOutfit() {
-        return beachBottoms;
+        return beachTops;
     }
-
-    
 }

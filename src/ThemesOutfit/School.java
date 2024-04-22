@@ -37,11 +37,7 @@ public class School{
         return schoolBottoms;
       }
       public List<Image> getWinningOutfit(){
-        return schoolShirts;
-      }
-
-      public String getName(){
-        return "School";
+        return schoolBags;
       }
 }
  
