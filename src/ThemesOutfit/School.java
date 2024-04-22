@@ -1,5 +1,7 @@
 package ThemesOutfit;
 
+import java.util.List;
+
 import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.Image;
@@ -48,6 +50,11 @@ public class School extends GraphicsGroup {
         dress.setImagePath("testDress.png");
 
         return dress;
+    }
+
+    public List<Image> getWinningOutfit() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getWinningOutfit'");
     }
     
     

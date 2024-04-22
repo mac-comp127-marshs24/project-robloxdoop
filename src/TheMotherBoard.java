@@ -1,54 +1,55 @@
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-
-import ThemesOutfit.School;
-import ThemesOutfit.Theme;
-import ThemesOutfit.Winter;
 import ThemesOutfit.Beach;
+import ThemesOutfit.School;
+import ThemesOutfit.Winter;
+import edu.macalester.graphics.Image;
+
 
 
 public class TheMotherBoard {
-    Random randNum = new Random();
-    List<Theme> themes = new ArrayList<>()
-    randNum.nextInt(themes.size())
+    static Random randNum = new Random();
+    static List<List<Image>> Themes = new ArrayList<>();
+    static Winter winter = new Winter();
+    static School school = new School();
+    static Beach beach = new Beach();
+
+    public TheMotherBoard(){
+    Themes.add(winter.getWinningOutfit());
+    // Themes.add(school.getWinningOutfit());
+    Themes.add(beach.getWinningOutfit());
+    
+    }
+    
+    
+    public static List<Image> ChosenTheme(){
+        return Themes.get(randNum.nextInt(Themes.size()));
+    }
+
+    public static String ChosenThemeName(){
+        if (ChosenTheme() == winter.getWinningOutfit()){
+            return "The Theme is Winter!";
+        }
+        else if(ChosenTheme() == beach.getWinningOutfit()){
+            return "The Theme is Beach!";
+        }
+        else{
+            return "The Theme is School!";
+        }
+        
+    }
 
     public static void main(String[] args) {
-        new TheMotherBoard().generateRandomThemes();  
-    }
-//Method Works only with Theme Interface or superclass
-    //having problems with creating this, Ask Rama Destiny and Hadly
-    themes.add(new School());
-    themes.add(new Winter());
-    themes.add(new Beach());
-
-
-    public void generateRandomThemes() {
-      
-     
-
-    
-        List<Theme> selectedThemes = new ArrayList<>();
-        for (int i = 0; i < 3; i++){
-            int index = themeGenerator.nextInt(themes.size());
-            selectedThemes.add(themes.remove(index)); 
+        new TheMotherBoard();
+        // new ScreenManager();
+        System.out.println(ChosenTheme());
+        System.out.println(ChosenThemeName());
         
-
     }
-}
-}
-
     
-
-
-//     public static void main(String[] args) {
-//         new ScreenManager();  
-        
-//     }
-// }
+}
 
 
 
