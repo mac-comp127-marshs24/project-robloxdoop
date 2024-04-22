@@ -15,21 +15,22 @@ public class TheMotherBoard {
     static Winter winter = new Winter();
     static School school = new School();
     static Beach beach = new Beach();
+    static List<Image> ChosenTheme;
 
     public TheMotherBoard(){
     Themes.add(winter.getWinningOutfit());
     Themes.add(school.getWinningOutfit());
     Themes.add(beach.getWinningOutfit());
+    ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
     
     }
-    
-    
-    public static List<Image> ChosenTheme(){
-        List<Image> ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
+
+    public static List<Image> getTheme(){
         return ChosenTheme;
     }
 
     public static String ChosenThemeName(List<Image> ChosenTheme){
+
         System.out.println("The chosen theme "+ ChosenTheme);
         System.out.println("Winter " + winter.getWinningOutfit());
         System.out.println("School " + school.getWinningOutfit());
@@ -49,8 +50,8 @@ public class TheMotherBoard {
 
     public static void main(String[] args) {
         new TheMotherBoard();
-        // new ScreenManager();
-        System.out.println(ChosenThemeName(ChosenTheme()));
+        new ScreenManager();
+        System.out.println(ChosenThemeName(getTheme()));
         
     }
     

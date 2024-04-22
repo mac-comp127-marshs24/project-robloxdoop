@@ -1,4 +1,5 @@
 
+import ThemesOutfit.School;
 import ThemesOutfit.Winter;
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsText;
@@ -242,11 +243,30 @@ public void theRunway(){
 }
 
 public void thePodium(){
-    Image podiumBackground;
-    podiumBackground = new Image(0,0);
-    podiumBackground.setScale(0.75,0.75);
-    podiumBackground.setImagePath("assets/podium.png");
-    canvas.add(podiumBackground);
+    Winter winter = new Winter();
+    School school = new School();
+    Image podiumBackground = new Image(0,0);
+    
+
+    System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
+    
+    if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
+        podiumBackground.setImagePath("assets/winter2.png");
+        podiumBackground.setScale(0.75,0.75);
+        canvas.add(podiumBackground);
+    }else if(TheMotherBoard.getTheme().equals(school.getWinningOutfit())){
+        podiumBackground.setImagePath("assets/school2.png");
+        podiumBackground.setScale(0.75,0.75);
+        canvas.add(podiumBackground);
+    }
+    else{
+        podiumBackground.setImagePath("assets/beach2.png");
+        podiumBackground.setScale(0.75,0.75);
+        canvas.add(podiumBackground);
+
+}
+
+
 
     homeScreeButton.setPosition(600,50);
     canvas.add(homeScreeButton);
