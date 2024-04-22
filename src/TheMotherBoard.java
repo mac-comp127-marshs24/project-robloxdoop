@@ -18,7 +18,7 @@ public class TheMotherBoard {
 
     public TheMotherBoard(){
     Themes.add(winter.getWinningOutfit());
-    // Themes.add(school.getWinningOutfit());
+    Themes.add(school.getWinningOutfit());
     Themes.add(beach.getWinningOutfit());
     
     }
@@ -43,7 +43,7 @@ public class TheMotherBoard {
 
     public static void main(String[] args) {
         new TheMotherBoard();
-        // new ScreenManager();
+        //new ScreenManager();
         System.out.println(ChosenTheme());
         System.out.println(ChosenThemeName());
         

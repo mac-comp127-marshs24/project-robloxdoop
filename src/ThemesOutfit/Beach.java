@@ -16,6 +16,10 @@ public class Beach {
            beachBottoms = List.of(new Image ("assets_Clothes/Coral.png"));
     }
 
+    public List<Image> getBeachTops(){
+        return beachTops;
+    }
+    
     public List<Image> getWinningOutfit() {
         return beachBottoms;
     }
