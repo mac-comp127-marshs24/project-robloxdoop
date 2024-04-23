@@ -31,6 +31,7 @@ public class ScreenManager {
     Winter winterGloves = new Winter();
     GraphicsText Instructions = new GraphicsText("Hello");
     int igloves = 0;
+    int dx = 5;
     CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
     TheMotherBoard motherBoard = new TheMotherBoard();
 
@@ -88,7 +89,7 @@ public void moveableText(GraphicsText Instructions, double dx, double dy){
 public void theInstructionsScreen(){
     Image instructionsScreen;
     Instructions.setPosition(250, 250);
-    moveableText(Instructions, 0, 0);
+    moveableText(Instructions, dx, 0);
     Instructions.setFontSize(60);
 
     instructionsScreen = new Image(0,0);
@@ -97,9 +98,6 @@ public void theInstructionsScreen(){
 
     canvas.add(instructionsScreen);
     canvas.add(Instructions);
-    
-    
-    moveableText(Instructions, 5, 0);
 
     closetButton.setPosition(600,50);
     canvas.add(closetButton);
@@ -117,8 +115,6 @@ public void theInstructionsScreen(){
     // closetButton.onClick(
     //     () -> canvas.removeAll()
     // );
-
-    moveableText(Instructions, 0, 0);
 
 }
 
@@ -289,17 +285,12 @@ public void thePodium(){
 
 
     homeScreeButton.onClick(
-        () -> mainMenu()
+        () -> {
+            canvas.removeAll();
+            motherBoard.setTheme();
+            mainMenu();
         
-        );
-
-
-    homeScreeButton.onClick(() -> {
-        canvas.removeAll();
-        motherBoard.setTheme();
-        thePodium();
-    });
-        
+});
 
     quitButton.onClick(
         () ->  canvas.closeWindow()
