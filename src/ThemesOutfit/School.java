@@ -20,7 +20,6 @@ public class School{
      schoolBags = List.of(new Image ("assets_Clothes/PurpleHeartBackpack.png"),
                           new Image ("assets_Clothes/BlueShoulderBackpack.png"),
                           new Image ("assets_Clothes/PurpleShoulderBag.png"));
-
     schoolShirts = List.of(new Image ("assets_Clothes/BlackShirt.png"),
                            new Image("assets_Clothes/GreenTop.png"),
                            new Image ("assets_Clothes/WhiteShirt.png"));

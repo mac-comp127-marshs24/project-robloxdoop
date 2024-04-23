@@ -5,7 +5,7 @@ import java.util.List;
 import edu.macalester.graphics.Image;
 
 
-public class Winter{ //implements Theme {
+public class Winter{ 
     List<Image>  winterGloves;
     List<Image> winterShirts;
     List<Image> winterBottoms;
