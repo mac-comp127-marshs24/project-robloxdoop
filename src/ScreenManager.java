@@ -2,6 +2,7 @@
 import ThemesOutfit.School;
 import ThemesOutfit.Winter;
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
@@ -19,7 +20,7 @@ public class ScreenManager {
     private Button closetButton = new Button("Let's get dressed!");
     private Button podiumButton = new Button("Winner or Loser?");
     private Button homeScreeButton = new Button("Play Again");
-    private Button instructionsButton = new Button("Ready to play?");
+    GraphicsGroup runwayReady = new GraphicsGroup();
     Image rightPinkButton = new Image("assets/RightButton.png");
     Image closetBackground;
     Image characterBase;
@@ -29,7 +30,7 @@ public class ScreenManager {
     Button shirtLeftButton = new Button ("Left");
     Button shirtRightButton = new Button ("Right");
     Winter winterGloves = new Winter();
-    GraphicsText Instructions = new GraphicsText("Hello");
+    GraphicsText Instructions = new GraphicsText("Hello Welcome to Fashion Famous!");
     int igloves = 0;
     int dx = 5;
     CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
@@ -38,7 +39,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-mainMenu();
+theCloset();
 }
 
 public void mainMenu(){
@@ -62,28 +63,19 @@ public void mainMenu(){
         }
     );
 
-    // instructionsButton.setPosition(600,50);
-    // canvas.add(instructionsButton);
-
-    // instructionsButton.onClick(
-    //     () -> theInstructionsScreen());
-
-    // instructionsButton.onClick(
-    //     () -> canvas.removeAll()
-    // );
-
 }
 
 public void moveableText(GraphicsText Instructions, double dx, double dy){
     canvas.animate( 
         () -> {
-            if(instructionsButton.getX() < canvas.getWidth()){
+            if(Instructions.getX() + Instructions.getWidth() + 50 < canvas.getWidth()){
             Instructions.moveBy(dx,dy);
-            }else{
-            canvas.pause(3000);
             }
         }
     );
+
+    closetButton.setPosition(600,50);
+    canvas.add(closetButton);
 }
 
 public void theInstructionsScreen(){
@@ -99,22 +91,11 @@ public void theInstructionsScreen(){
     canvas.add(instructionsScreen);
     canvas.add(Instructions);
 
-    closetButton.setPosition(600,50);
-    canvas.add(closetButton);
-
-    // closetButton.onClick(
-    //     () -> theCloset()),
-    //     moveableText(Instructions, 0, 0);
-
     closetButton.onClick(() -> {
         canvas.removeAll();
         theCloset();
         
     });
-
-    // closetButton.onClick(
-    //     () -> canvas.removeAll()
-    // );
 
 }
 
@@ -133,14 +114,11 @@ public void theCloset(){
     characterBase.setScale(0.9,0.9);
     characterBase.setPosition(540,25);
     characterBase.setImagePath("assets/model.png");
-    System.err.println(characterBase.getPosition());
-    System.out.println(winterGloves.getwinterGloves());
+    runwayReady.add(characterBase);
     
     canvas.add(closetBackground);
     canvas.add(characterBase);
-    // School dressBase = new School();
-    // GraphicsObject testDress = dressBase.top();
-    // canvas.add(testDress);
+
     canvas.add(shirtManager);
     canvas.add(bottomManager);
     canvas.add(shoeManager);
@@ -202,8 +180,11 @@ public void placeScarf(){
         event -> {
             Image scarf = (Image)canvas.getElementAt(event.getPosition());
             if(scarf != null){
-                if(scarf.toString().equals("Image at position (-840.0,-400.0) with file assets_Clothes/BlueScarf.png")) //if the scarf is there but if we move it then we have to change the coordinates
-                scarf.setPosition(250,50);
+                if(scarf.toString().equals("Image at position (-840.0,-400.0) with file assets_Clothes/BlueScarf.png"))
+                System.out.println("THIS IS THE POSITON OF SCARF BEFORE" + scarf.getPosition()); //if the scarf is there but if we move it then we have to change the coordinates
+                scarf.setPosition(-300,-400);
+                System.out.println("THIS IS THE POSITON OF SCARF AF?TER" + scarf.getPosition());
+                runwayReady.add(scarf);
 
             }
 
@@ -248,31 +229,43 @@ public void theRunway(){
     podiumButton.onClick(
         () -> canvas.removeAll()
     );
+    canvas.add(runwayReady);
 }
+
+
 
 public void thePodium(){
     Winter winter = new Winter();
     School school = new School();
-    Image podiumBackground = new Image(0,0);
-    
+
 
     System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
     
     if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
-        podiumBackground.setImagePath("assets/winter2.png");
-        podiumBackground.setScale(0.75,0.75);
-        canvas.add(podiumBackground);
+        Image winterBackground = new Image(0,0);
+        winterBackground.setScale(.75);
+        winterBackground.setImagePath("assets/winter2.png");
+        winterBackground.setPosition(-240, -150);
+        canvas.add(winterBackground);
     }else if(TheMotherBoard.getTheme().equals(school.getWinningOutfit())){
-        podiumBackground.setImagePath("assets/school2.png");
-        podiumBackground.setScale(0.75,0.75);
-        canvas.add(podiumBackground);
+        Image schoolBackground = new Image(0,0);
+        schoolBackground.setScale(.75);
+        schoolBackground .setImagePath("assets/school2.png");
+        schoolBackground.setPosition(-240, -150);
+        canvas.add(schoolBackground);
     }
     else{
-        podiumBackground.setImagePath("assets/beach2.png");
-        podiumBackground.setScale(0.75,0.75);
-        canvas.add(podiumBackground);
+        Image beachBackground = new Image(0,0);
+        beachBackground.setImagePath("assets/beach2.png");
+        beachBackground.setScale(.75);
+        beachBackground.setPosition(-240, -150);
+        canvas.add(beachBackground);
 
 }
+
+    canvas.add(runwayReady);
+    runwayReady.setScale(0.75);
+    runwayReady.setPosition(75 ,0);
 
 
 
