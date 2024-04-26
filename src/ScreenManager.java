@@ -19,7 +19,6 @@ public class ScreenManager {
     private Button runwayButton = new Button("Enter the Runway!");
     private Button closetButton = new Button("Let's get dressed!");
     private Button podiumButton = new Button("Winner or Loser?");
-    private Button homeScreeButton = new Button("Play Again");
     GraphicsGroup runwayReady = new GraphicsGroup();
     Image rightPinkButton = new Image("assets/RightButton.png");
     Image closetBackground;
@@ -39,7 +38,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-theCloset();
+mainMenu();
 }
 
 public void mainMenu(){
@@ -183,6 +182,7 @@ public void placeScarf(){
                 if(scarf.toString().equals("Image at position (-840.0,-400.0) with file assets_Clothes/BlueScarf.png"))
                 System.out.println("THIS IS THE POSITON OF SCARF BEFORE" + scarf.getPosition()); //if the scarf is there but if we move it then we have to change the coordinates
                 scarf.setPosition(-300,-400);
+                winterGloves.getwinterGloves().remove(scarf);
                 System.out.println("THIS IS THE POSITON OF SCARF AF?TER" + scarf.getPosition());
                 runwayReady.add(scarf);
 
@@ -195,13 +195,21 @@ public void placeScarf(){
 }
 
 public void changeGloves(boolean RL){
+
+    System.out.println("Index Before " + igloves);
+    
     canvas.remove(winterGloves.getwinterGloves().get(igloves));
 
+    System.out.println("Index After " + igloves);
+
+
     if(RL){
-    igloves ++;}
-    else{
-    igloves --;
+    igloves++;
     }
+    else{
+    igloves--;
+    }
+
 
     if(igloves > winterGloves.getwinterGloves().size() - 1){
         igloves = 0;
@@ -267,23 +275,10 @@ public void thePodium(){
     runwayReady.setScale(0.75);
     runwayReady.setPosition(75 ,0);
 
-
-
-    homeScreeButton.setPosition(600,50);
-    canvas.add(homeScreeButton);
-
     Button quitButton = new Button("Quit?");
     quitButton.setPosition(400, 50);
     canvas.add(quitButton);
 
-
-    homeScreeButton.onClick(
-        () -> {
-            canvas.removeAll();
-            motherBoard.setTheme();
-            mainMenu();
-        
-});
 
     quitButton.onClick(
         () ->  canvas.closeWindow()
