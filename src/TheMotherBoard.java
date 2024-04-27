@@ -53,10 +53,7 @@ public class TheMotherBoard {
     } 
 
     public static void main(String[] args) {
-        new TheMotherBoard();
-        new ScreenManager();
-        System.out.println(ChosenThemeName(getTheme()));
-        
+        new ScreenManager();  
     }
     
 }

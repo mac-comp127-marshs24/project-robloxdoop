@@ -1,8 +1,12 @@
 
+import java.util.ArrayList;
+import java.util.List;
+
 import ThemesOutfit.School;
 import ThemesOutfit.Winter;
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
@@ -23,14 +27,14 @@ public class ScreenManager {
     Image rightPinkButton = new Image("assets/RightButton.png");
     Image closetBackground;
     Image characterBase;
-    Rectangle shirtManager = new Rectangle(20, 40, 200, 200);
+    Rectangle accessoriesBox = new Rectangle(20, 40, 200, 200);
     Rectangle bottomManager = new Rectangle(20, 290, 200, 200);
     Rectangle shoeManager = new Rectangle(20, 540, 200, 200);
-    Button shirtLeftButton = new Button ("Left");
-    Button shirtRightButton = new Button ("Right");
-    Winter winterGloves = new Winter();
+    Button accessoriesLeftButton = new Button ("Left");
+    Button accessoriesRightButton = new Button ("Right");
+    Winter winter = new Winter();
+    School school = new School();
     GraphicsText Instructions = new GraphicsText("Hello Welcome to Fashion Famous!");
-    int igloves = 0;
     int dx = 5;
     CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
     TheMotherBoard motherBoard = new TheMotherBoard();
@@ -99,10 +103,10 @@ public void theInstructionsScreen(){
 }
 
 public void theCloset(){
-    shirtLeftButton.setPosition(10, 40);
-    shirtRightButton.setPosition(160, 40);
+    accessoriesLeftButton.setPosition(10, 40);
+    accessoriesRightButton.setPosition(160, 40);
 
-    shirtManager.setStrokeWidth(10);
+    accessoriesBox.setStrokeWidth(10);
     bottomManager.setStrokeWidth(10);
     shoeManager.setStrokeWidth(10);
     closetBackground = new Image(0,0);
@@ -118,51 +122,35 @@ public void theCloset(){
     canvas.add(closetBackground);
     canvas.add(characterBase);
 
-    canvas.add(shirtManager);
+    canvas.add(accessoriesBox);
     canvas.add(bottomManager);
     canvas.add(shoeManager);
-    canvas.add(shirtLeftButton);
-    canvas.add(shirtRightButton);
+    canvas.add(accessoriesLeftButton);
+    canvas.add(accessoriesRightButton);
 
-    for (Image gloves : winterGloves.getwinterGloves()){
-        canvas.add(gloves);
-        gloves.setCenter(shirtManager.getCenter());
-        gloves.setScale(0.4);
+    for (Image accessory : winter.getwinterAccessories()){
+        canvas.add(accessory);
+        accessory.setCenter(accessoriesBox.getCenter());
+        accessory.setScale(0.4);
     }
 
-    shirtLeftButton.onClick(
+    
+
+    accessoriesLeftButton.onClick(
         () -> {
-        changeGloves(true);
+        changeAccessories(false);
         });
 
-    shirtRightButton.onClick(
+    accessoriesRightButton.onClick(
             () -> {
-            changeGloves(false);   
+            changeAccessories(true);   
             });
 
 
     runwayButton.setPosition(600,50);
     canvas.add(runwayButton);
 
-    // Button undo = new Button("Undo");
-    // undo.setPosition(0, 0);
-    // canvas.add(undo);
-
-    // undo.onClick(
-    //     () -> testDress.setPosition(250, 0)
-    // );
-
-
-    // canvas.onClick(
-    //     event -> {event.getPosition();
-    //         if(canvas.getElementAt(event.getPosition()) == ){
-    //             testDress.setCenter(characterBase.getPosition()); 
-                
-    //         }
-
-    //     }
-    // );
-    placeScarf();
+    placeAccessory();
 
     runwayButton.onClick(
         () -> theRunway());
@@ -174,50 +162,53 @@ public void theCloset(){
 
 
 
-public void placeScarf(){
+int accessoriesClickCounter = 0;
+List<GraphicsObject> playerChoices = new ArrayList<GraphicsObject>();
+
+public void placeAccessory(){
     canvas.onClick(
         event -> {
-            Image scarf = (Image)canvas.getElementAt(event.getPosition());
-            if(scarf != null){
-                if(scarf.toString().equals("Image at position (-840.0,-400.0) with file assets_Clothes/BlueScarf.png"))
-                System.out.println("THIS IS THE POSITON OF SCARF BEFORE" + scarf.getPosition()); //if the scarf is there but if we move it then we have to change the coordinates
-                scarf.setPosition(-300,-400);
-                winterGloves.getwinterGloves().remove(scarf);
-                System.out.println("THIS IS THE POSITON OF SCARF AF?TER" + scarf.getPosition());
-                runwayReady.add(scarf);
-
+            GraphicsObject accessory = canvas.getElementAt(event.getPosition());
+            if(accessory != null){
+                accessory.setPosition(-300,-400);
+                winter.getwinterAccessories().remove(accessory);
+                runwayReady.add(accessory);
+                playerChoices.add(accessory);
+                indexOfAccessory = indexOfAccessory - 1;
             }
-
         }
     );
-   
-
 }
 
-public void changeGloves(boolean RL){
 
-    System.out.println("Index Before " + igloves);
+int indexOfAccessory = 0;
+public void changeAccessories(boolean moveForward){
+
+    if(playerChoices.contains(winter.getwinterAccessories().get(indexOfAccessory))){
+
+    }
     
-    canvas.remove(winterGloves.getwinterGloves().get(igloves));
 
-    System.out.println("Index After " + igloves);
+    canvas.remove(winter.getwinterAccessories().get(indexOfAccessory));
 
 
-    if(RL){
-    igloves++;
+    for(int i = 0; i < winter.getwinterAccessories().size() -1 )
+    if(moveForward){
+        indexOfAccessory ++;
     }
     else{
-    igloves--;
+    indexOfAccessory --;
     }
 
 
-    if(igloves > winterGloves.getwinterGloves().size() - 1){
-        igloves = 0;
+    if(indexOfAccessory  > winter.getwinterAccessories().size() - 1){
+        indexOfAccessory  = 0;
     }
-    if(igloves < 0){
-        igloves = winterGloves.getwinterGloves().size() - 1;
+    if(indexOfAccessory  < 0){
+        indexOfAccessory  = winter.getwinterAccessories().size() - 1;
     }
-    canvas.add(winterGloves.getwinterGloves().get(igloves));
+
+    canvas.add(winter.getwinterAccessories().get(indexOfAccessory ));
 }
 
 
@@ -243,8 +234,6 @@ public void theRunway(){
 
 
 public void thePodium(){
-    Winter winter = new Winter();
-    School school = new School();
 
 
     System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
