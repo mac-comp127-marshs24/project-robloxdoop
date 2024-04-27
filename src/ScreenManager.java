@@ -103,12 +103,17 @@ public void theInstructionsScreen(){
 }
 
 public void theCloset(){
-    accessoriesLeftButton.setPosition(10, 40);
-    accessoriesRightButton.setPosition(160, 40);
+
 
     accessoriesBox.setStrokeWidth(10);
+    accessoriesBox.setCenter(685, 135);
+    accessoriesLeftButton.setPosition(accessoriesBox.getX() - 100,accessoriesBox.getY());
+    accessoriesRightButton.setPosition(accessoriesBox.getX() + accessoriesBox.getWidth(),accessoriesBox.getY());
+
     bottomManager.setStrokeWidth(10);
+    bottomManager.setCenter(685, 375);
     shoeManager.setStrokeWidth(10);
+    shoeManager.setCenter(685, 690);
     closetBackground = new Image(0,0);
     closetBackground.setScale(0.75,0.75);
     closetBackground.setImagePath("assets/closet.png");
@@ -134,6 +139,10 @@ public void theCloset(){
     runwayReady.add(winter.getwinterAccessories().get(0));
     playerChoices.add(winter.getwinterAccessories().get(0));
 
+    canvas.onClick(e -> {
+        System.out.println(e.getPosition());
+    });
+
 
     accessoriesLeftButton.onClick(
         () -> {
@@ -146,7 +155,7 @@ public void theCloset(){
             });
 
 
-    runwayButton.setPosition(600,50);
+    runwayButton.setPosition(65,65);
     canvas.add(runwayButton);
 
     runwayButton.onClick(
