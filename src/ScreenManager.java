@@ -128,13 +128,12 @@ public void theCloset(){
     canvas.add(accessoriesLeftButton);
     canvas.add(accessoriesRightButton);
 
-    for (Image accessory : winter.getwinterAccessories()){
-        canvas.add(accessory);
-        accessory.setCenter(accessoriesBox.getCenter());
-        accessory.setScale(0.4);
-    }
+    winter.getwinterAccessories().get(0).setCenter(accessoriesBox.getCenter());
+    winter.getwinterAccessories().get(0).setScale(0.4);
+    canvas.add(winter.getwinterAccessories().get(0));
+    runwayReady.add(winter.getwinterAccessories().get(0));
+    playerChoices.add(winter.getwinterAccessories().get(0));
 
-    
 
     accessoriesLeftButton.onClick(
         () -> {
@@ -150,8 +149,6 @@ public void theCloset(){
     runwayButton.setPosition(600,50);
     canvas.add(runwayButton);
 
-    placeAccessory();
-
     runwayButton.onClick(
         () -> theRunway());
 
@@ -164,35 +161,13 @@ public void theCloset(){
 
 int accessoriesClickCounter = 0;
 List<GraphicsObject> playerChoices = new ArrayList<GraphicsObject>();
-
-public void placeAccessory(){
-    canvas.onClick(
-        event -> {
-            GraphicsObject accessory = canvas.getElementAt(event.getPosition());
-            if(accessory != null){
-                accessory.setPosition(-300,-400);
-                winter.getwinterAccessories().remove(accessory);
-                runwayReady.add(accessory);
-                playerChoices.add(accessory);
-                indexOfAccessory = indexOfAccessory - 1;
-            }
-        }
-    );
-}
-
-
 int indexOfAccessory = 0;
+
 public void changeAccessories(boolean moveForward){
-
-    if(playerChoices.contains(winter.getwinterAccessories().get(indexOfAccessory))){
-
-    }
-    
-
     canvas.remove(winter.getwinterAccessories().get(indexOfAccessory));
+    runwayReady.remove(winter.getwinterAccessories().get(indexOfAccessory));
+    playerChoices.remove(winter.getwinterAccessories().get(indexOfAccessory));
 
-
-    for(int i = 0; i < winter.getwinterAccessories().size() -1 )
     if(moveForward){
         indexOfAccessory ++;
     }
@@ -208,7 +183,12 @@ public void changeAccessories(boolean moveForward){
         indexOfAccessory  = winter.getwinterAccessories().size() - 1;
     }
 
-    canvas.add(winter.getwinterAccessories().get(indexOfAccessory ));
+    winter.getwinterAccessories().get(indexOfAccessory).setCenter(accessoriesBox.getCenter());
+    winter.getwinterAccessories().get(indexOfAccessory).setScale(0.4);
+    canvas.add(winter.getwinterAccessories().get(indexOfAccessory));
+    runwayReady.add(winter.getwinterAccessories().get(indexOfAccessory));
+    playerChoices.add(winter.getwinterAccessories().get(indexOfAccessory));
+    System.out.println(playerChoices);
 }
 
 
