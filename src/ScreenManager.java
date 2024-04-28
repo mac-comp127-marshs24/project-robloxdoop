@@ -262,7 +262,6 @@ public void theCloset(){
 int accessoriesClickCounter = 0;
 List<GraphicsObject> playerChoices = new ArrayList<GraphicsObject>();
 int indexOfAccessory = 0;
-GraphicsText scoreTally = new GraphicsText(decision());
 int score = 0;
 
 public String decision(){
@@ -270,11 +269,10 @@ public String decision(){
         if(winter.getWinningOutfit().contains(item)){
             System.out.println("THE PLAYER OUTFIT" + playerChoices);
             System.out.println("THE WINTER WINNER" + winter.getWinningOutfit());
-            score += 200;
+            score += 20;
         }
     }
-    System.out.println("HJJJ" + score);
-    return "The Score!!! " + score;
+    return "Your Score: " + score + "\n out of 100";
    
 }
 
@@ -370,14 +368,10 @@ public void theRunway(){
     runwayBackground = new Image(0,0);
     runwayBackground.setScale(0.75,0.75);
     runwayBackground.setImagePath("assets/stage.png");
-    // canvas.add(runwayBackground);
+    canvas.add(runwayBackground);
 
     podiumButton.setPosition(600,50);
     canvas.add(podiumButton);
-    scoreTally.setPosition(250, 350);
-    scoreTally.setFontSize(60);
-    canvas.add(scoreTally);
-    decision();
 
     podiumButton.onClick(
         () -> thePodium());
@@ -394,6 +388,7 @@ public void thePodium(){
 
 
     System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
+    GraphicsText scoreTally = new GraphicsText(decision());
     
     if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
         Image winterBackground = new Image(0,0);
@@ -423,9 +418,10 @@ public void thePodium(){
     runwayReady.setScale(0.75);
     runwayReady.setPosition(75 ,0);
 
-    // scoreTally.setPosition(250, 350);
-    // scoreTally.setFontSize(60);
-    // canvas.add(scoreTally);
+    decision();
+    scoreTally.setPosition(250, 350);
+    scoreTally.setFontSize(60);
+    canvas.add(scoreTally);
 
     Button quitButton = new Button("Quit?");
     quitButton.setPosition(400, 50);
