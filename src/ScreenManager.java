@@ -5,6 +5,7 @@ import java.util.List;
 
 import ThemesOutfit.School;
 import ThemesOutfit.Winter;
+import ThemesOutfit.Beach;
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
@@ -34,8 +35,13 @@ public class ScreenManager {
     Rectangle shoeManager = new Rectangle(20, 540, 200, 200);
     Button accessoriesLeftButton = new Button ("Left");
     Button accessoriesRightButton = new Button ("Right");
+    Button topsLeftButton = new Button("Left");
+    Button topsRightButton = new Button("Right");
+    Button bottomsLeftButton = new Button("Left");
+    Button bottomsRightButton = new Button("Right");
     Winter winter = new Winter();
     School school = new School();
+    Beach beach = new Beach();
     GraphicsText Instructions = new GraphicsText("Hello Welcome to Fashion Famous!");
     GraphicsText Instructions1 = new GraphicsText("In this Game you will be given, ");
     int dx = 5;
@@ -163,8 +169,17 @@ public void theCloset(){
 
     bottomManager.setStrokeWidth(10);
     bottomManager.setCenter(685, 375);
+    bottomsLeftButton.setPosition(bottomManager.getX()- 100, bottomManager.getY());
+    bottomsRightButton.setPosition(bottomManager.getX() + bottomManager.getWidth(),bottomManager.getY());
+
+   
+   //NAME MAKES NO SENSE WE MAY NEED MULTIPLE BOXES!
     shoeManager.setStrokeWidth(10);
     shoeManager.setCenter(685, 690);
+    topsLeftButton.setPosition(shoeManager.getX()- 100, shoeManager.getY());
+    topsRightButton.setPosition(shoeManager.getX() + shoeManager.getWidth(),shoeManager.getY());
+
+
     closetBackground = new Image(0,0);
     closetBackground.setScale(0.75,0.75);
     closetBackground.setImagePath("assets/closet.png");
@@ -183,6 +198,10 @@ public void theCloset(){
     canvas.add(shoeManager);
     canvas.add(accessoriesLeftButton);
     canvas.add(accessoriesRightButton);
+    canvas.add(topsLeftButton);
+    canvas.add(topsRightButton);
+    canvas.add(bottomsLeftButton);
+    canvas.add(bottomsRightButton);
 
     // winter.getwinterAccessories().get(0).setCenter(accessoriesBox.getCenter());
     winter.getwinterAccessories().get(0).setPosition(0,0);
@@ -190,6 +209,8 @@ public void theCloset(){
     canvas.add(winter.getwinterAccessories().get(0));
     runwayReady.add(winter.getwinterAccessories().get(0));
     playerChoices.add(winter.getwinterAccessories().get(0));
+
+
 
     canvas.onClick(e -> {
         System.out.println(e.getPosition());
@@ -206,7 +227,25 @@ public void theCloset(){
             changeAccessories(true);   
             });
 
-
+    topsLeftButton.onClick(
+            () -> {
+            changeTops(false);   //THIS NEEDS TO BE CHANGED TO EACH OF THE OTHER ONES!!!
+            });
+        
+    topsRightButton.onClick(
+            () -> {
+            changeTops(true);   
+            });
+    bottomsLeftButton.onClick(
+            () -> {
+            changeBottoms(false);
+            });
+        
+    bottomsRightButton.onClick(
+            () -> {
+            changeBottoms(true);   
+            });
+        
     runwayButton.setPosition(65,65);
     canvas.add(runwayButton);
 
@@ -265,6 +304,64 @@ public void changeAccessories(boolean moveForward){
     canvas.add(winter.getwinterAccessories().get(indexOfAccessory));
     runwayReady.add(winter.getwinterAccessories().get(indexOfAccessory));
     playerChoices.add(winter.getwinterAccessories().get(indexOfAccessory));
+
+}
+
+public void changeBottoms(boolean moveForward){
+    canvas.remove(beach.getBeachBottoms().get(indexOfAccessory));
+    runwayReady.remove(beach.getBeachBottoms().get(indexOfAccessory));
+    playerChoices.remove(beach.getBeachBottoms().get(indexOfAccessory));
+
+    if(moveForward){
+        indexOfAccessory ++;
+    }
+    else{
+    indexOfAccessory --;
+    }
+
+
+    if(indexOfAccessory  > beach.getBeachBottoms().size() - 1){
+        indexOfAccessory  = 0;
+    }
+    if(indexOfAccessory  < 0){
+        indexOfAccessory  = beach.getBeachBottoms().size() - 1;
+    }
+
+    // winter.getwinterAccessories().get(indexOfAccessory).setCenter(accessoriesBox.getCenter());
+    beach.getBeachBottoms().get(0).setPosition(0,0);
+    // winter.getwinterAccessories().get(indexOfAccessory).setScale(0.4);
+    canvas.add(beach.getBeachBottoms().get(indexOfAccessory));
+    runwayReady.add(beach.getBeachBottoms().get(indexOfAccessory));
+    playerChoices.add(beach.getBeachBottoms().get(indexOfAccessory));
+
+}
+
+public void changeTops(boolean moveForward){
+    canvas.remove(beach.getBeachTops().get(indexOfAccessory));
+    runwayReady.remove(beach.getBeachTops().get(indexOfAccessory));
+    playerChoices.remove(beach.getBeachTops().get(indexOfAccessory));
+
+    if(moveForward){
+        indexOfAccessory ++;
+    }
+    else{
+    indexOfAccessory --;
+    }
+
+
+    if(indexOfAccessory  > beach.getBeachTops().size() - 1){
+        indexOfAccessory  = 0;
+    }
+    if(indexOfAccessory  < 0){
+        indexOfAccessory  = beach.getBeachTops().size() - 1;
+    }
+
+    // winter.getwinterAccessories().get(indexOfAccessory).setCenter(accessoriesBox.getCenter());
+    beach.getBeachTops().get(0).setPosition(0,0);
+    // winter.getwinterAccessories().get(indexOfAccessory).setScale(0.4);
+    canvas.add(beach.getBeachTops().get(indexOfAccessory));
+    runwayReady.add(beach.getBeachTops().get(indexOfAccessory));
+    playerChoices.add(beach.getBeachTops().get(indexOfAccessory));
 
 }
 

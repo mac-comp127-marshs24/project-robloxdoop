@@ -14,11 +14,17 @@ public class Beach {
                                    new Image ("assets_Clothes/OmbrePurpleDress.png"));
        
            beachBottoms = List.of(new Image ("assets_Clothes/Coral.png"));
+           beachBottoms = List.of(new Image ("assets_Clothes/WhiteSneakers.png"));
     }
 
     public List<Image> getBeachTops(){
         return beachTops;
     }
+
+    public List<Image> getBeachBottoms(){
+        return beachBottoms;
+    }
+
     
     public List<Image> getWinningOutfit() {
         return beachTops;
