@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,8 +22,9 @@ import edu.macalester.graphics.ui.Button;
 
 public class ScreenManager {
     private Button runwayButton = new Button("Enter the Runway!");
-    private Button closetButton = new Button("Let's get dressed!");
+    private Button closetButton = new Button("Ready?");
     private Button podiumButton = new Button("Winner or Loser?");
+    private Button closetButton2 = new Button("Let's get Dressed!");
     GraphicsGroup runwayReady = new GraphicsGroup();
     Image rightPinkButton = new Image("assets/RightButton.png");
     Image closetBackground;
@@ -35,6 +37,7 @@ public class ScreenManager {
     Winter winter = new Winter();
     School school = new School();
     GraphicsText Instructions = new GraphicsText("Hello Welcome to Fashion Famous!");
+    GraphicsText Instructions1 = new GraphicsText("In this Game you will be given, ");
     int dx = 5;
     CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
     TheMotherBoard motherBoard = new TheMotherBoard();
@@ -42,7 +45,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-mainMenu();
+    theCloset();
 }
 
 public void mainMenu(){
@@ -72,18 +75,23 @@ public void moveableText(GraphicsText Instructions, double dx, double dy){
     canvas.animate( 
         () -> {
             if(Instructions.getX() + Instructions.getWidth() + 50 < canvas.getWidth()){
-            Instructions.moveBy(dx,dy);
-            }
+            Instructions.moveBy(dx,dy);}
+            else if((Instructions1.getX() + Instructions1.getWidth() + 50 < canvas.getWidth())) {
+                Instructions1.moveBy(dx,dy);} 
+            
+            
+            
         }
     );
-
     closetButton.setPosition(600,50);
     canvas.add(closetButton);
 }
 
 public void theInstructionsScreen(){
     Image instructionsScreen;
-    Instructions.setPosition(250, 250);
+    Instructions.setPosition(0, 250);
+    Instructions1.setPosition(-100, 350);
+    Instructions1.setFontSize(60);
     moveableText(Instructions, dx, 0);
     Instructions.setFontSize(60);
 
@@ -93,14 +101,57 @@ public void theInstructionsScreen(){
 
     canvas.add(instructionsScreen);
     canvas.add(Instructions);
+    canvas.add(Instructions1);
 
     closetButton.onClick(() -> {
         canvas.removeAll();
-        theCloset();
+        if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
+            winterTheme();
+        }else if(TheMotherBoard.getTheme().equals(school.getWinningOutfit())){
+            schoolTheme();
+        }
+        else{
+           beachTheme();
+        }
         
     });
 
 }
+
+public void winterTheme(){
+    Image winterTheme = new Image(0,0);
+    winterTheme.setImagePath("assets/winter2.png");
+    canvas.add(winterTheme);
+    closetButton2.setPosition(600,50);
+    canvas.add(closetButton2);
+    closetButton2.onClick(() -> {
+        canvas.removeAll();
+        theCloset();});
+}
+
+public void schoolTheme(){
+    Image schoolTheme = new Image(0,0);
+    schoolTheme.setImagePath("assets/school2.png");
+    canvas.add(schoolTheme);
+    closetButton2.setPosition(600,50);
+    canvas.add(closetButton2);
+    closetButton2.onClick(() -> {
+        canvas.removeAll();
+        theCloset();});
+}
+
+
+public void beachTheme(){
+    Image beachTheme = new Image(0,0);
+    beachTheme.setImagePath("assets/beach2.png");
+    canvas.add(beachTheme);
+    closetButton2.setPosition(600,50);
+    canvas.add(closetButton2);
+    closetButton2.onClick(() -> {
+        canvas.removeAll();
+        theCloset();});
+}
+
 
 public void theCloset(){
 
@@ -133,8 +184,9 @@ public void theCloset(){
     canvas.add(accessoriesLeftButton);
     canvas.add(accessoriesRightButton);
 
-    winter.getwinterAccessories().get(0).setCenter(accessoriesBox.getCenter());
-    winter.getwinterAccessories().get(0).setScale(0.4);
+    // winter.getwinterAccessories().get(0).setCenter(accessoriesBox.getCenter());
+    winter.getwinterAccessories().get(0).setPosition(0,0);
+    // winter.getwinterAccessories().get(0).setScale(0.4);
     canvas.add(winter.getwinterAccessories().get(0));
     runwayReady.add(winter.getwinterAccessories().get(0));
     playerChoices.add(winter.getwinterAccessories().get(0));
@@ -171,6 +223,21 @@ public void theCloset(){
 int accessoriesClickCounter = 0;
 List<GraphicsObject> playerChoices = new ArrayList<GraphicsObject>();
 int indexOfAccessory = 0;
+GraphicsText scoreTally = new GraphicsText(decision());
+int score = 0;
+
+public String decision(){
+    for (GraphicsObject item: playerChoices){
+        if(winter.getWinningOutfit().contains(item)){
+            System.out.println("THE PLAYER OUTFIT" + playerChoices);
+            System.out.println("THE WINTER WINNER" + winter.getWinningOutfit());
+            score += 200;
+        }
+    }
+    System.out.println("HJJJ" + score);
+    return "The Score!!! " + score;
+   
+}
 
 public void changeAccessories(boolean moveForward){
     canvas.remove(winter.getwinterAccessories().get(indexOfAccessory));
@@ -192,24 +259,28 @@ public void changeAccessories(boolean moveForward){
         indexOfAccessory  = winter.getwinterAccessories().size() - 1;
     }
 
-    winter.getwinterAccessories().get(indexOfAccessory).setCenter(accessoriesBox.getCenter());
-    winter.getwinterAccessories().get(indexOfAccessory).setScale(0.4);
+    // winter.getwinterAccessories().get(indexOfAccessory).setCenter(accessoriesBox.getCenter());
+    winter.getwinterAccessories().get(0).setPosition(0,0);
+    // winter.getwinterAccessories().get(indexOfAccessory).setScale(0.4);
     canvas.add(winter.getwinterAccessories().get(indexOfAccessory));
     runwayReady.add(winter.getwinterAccessories().get(indexOfAccessory));
     playerChoices.add(winter.getwinterAccessories().get(indexOfAccessory));
-    System.out.println(playerChoices);
-}
 
+}
 
 public void theRunway(){
     Image runwayBackground;
     runwayBackground = new Image(0,0);
     runwayBackground.setScale(0.75,0.75);
     runwayBackground.setImagePath("assets/stage.png");
-    canvas.add(runwayBackground);
+    // canvas.add(runwayBackground);
 
     podiumButton.setPosition(600,50);
     canvas.add(podiumButton);
+    scoreTally.setPosition(250, 350);
+    scoreTally.setFontSize(60);
+    canvas.add(scoreTally);
+    decision();
 
     podiumButton.onClick(
         () -> thePodium());
@@ -247,11 +318,17 @@ public void thePodium(){
         beachBackground.setPosition(-240, -150);
         canvas.add(beachBackground);
 
+
+
 }
 
     canvas.add(runwayReady);
     runwayReady.setScale(0.75);
     runwayReady.setPosition(75 ,0);
+
+    // scoreTally.setPosition(250, 350);
+    // scoreTally.setFontSize(60);
+    // canvas.add(scoreTally);
 
     Button quitButton = new Button("Quit?");
     quitButton.setPosition(400, 50);
