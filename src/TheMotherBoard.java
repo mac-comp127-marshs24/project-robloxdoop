@@ -18,9 +18,9 @@ public class TheMotherBoard {
     static List<Image> ChosenTheme;
 
     public TheMotherBoard(){
-    Themes.add(winter.getWinningOutfit());
+    // Themes.add(winter.getWinningOutfit());
     Themes.add(school.getWinningOutfit());
-    Themes.add(beach.getWinningOutfit());
+    // Themes.add(beach.getWinningOutfit());
     ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
     
     }
