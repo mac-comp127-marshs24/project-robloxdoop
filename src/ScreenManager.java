@@ -643,8 +643,6 @@ public void changeTops(boolean moveForward){
     }
 
 
-
-
     //SCHOOL TOPS
     if(TheMotherBoard.getTheme().contains(new Image("assets_Clothes/SchoolScarf.png"))){
         canvas.remove(school.getschoolTops().get(indexofTops));
@@ -704,7 +702,10 @@ public void changeTops(boolean moveForward){
             }
 }
 
+
 public void changeBottoms(boolean moveForward){
+    //WINTER BOTTOMS
+    if(TheMotherBoard.getTheme().contains(new Image("assets_Clothes/WinterBeigeScarf.png"))){
     canvas.remove(winter.getwinterBottoms().get(indexofBottoms));
     runwayReady.remove(winter.getwinterBottoms().get(indexofBottoms));
     playerChoices.remove(winter.getwinterBottoms().get(indexofBottoms));
@@ -732,10 +733,78 @@ public void changeBottoms(boolean moveForward){
     canvas.add(winter.getwinterBottoms().get(indexofBottoms));
     runwayReady.add(winter.getwinterBottoms().get(indexofBottoms));
     playerChoices.add(winter.getwinterBottoms().get(indexofBottoms));
+}
+
+
+//SCHOOL BOTTOMS
+if(TheMotherBoard.getTheme().contains(new Image("assets_Clothes/SchoolScarf.png"))){
+    canvas.remove(school.getschoolBottoms().get(indexofBottoms));
+    runwayReady.remove(school.getschoolBottoms().get(indexofBottoms));
+    playerChoices.remove(school.getschoolBottoms().get(indexofBottoms));
+
+    if(moveForward){
+        indexofBottoms ++;
+        System.out.println("HEYYEYEIHF");
+        System.out.println("THE THEMMMEEE" + winter.getWinningOutfit());
+        System.out.println("THE MOTHER BOATDERR THEME" + TheMotherBoard.getTheme());
+    }
+    else{
+    indexofBottoms --;
+    }
+
+    if(indexofBottoms  > school.getschoolBottoms().size() - 1){
+        indexofBottoms  = 0;
+    }
+    if(indexofBottoms  < 0){
+        indexofBottoms  = school.getschoolBottoms().size() - 1;
+    }
+
+    // winter.getwinterTops().get(0).setPosition(0,0);
+    school.getschoolBottoms().get(indexofBottoms).setCenter(bottomsBox.getCenter());
+    school.getschoolBottoms().get(indexofBottoms).setScale(0.3);
+    canvas.add(school.getschoolBottoms().get(indexofBottoms));
+    runwayReady.add(school.getschoolBottoms().get(indexofBottoms));
+    playerChoices.add(school.getschoolBottoms().get(indexofBottoms));
+}
+
+
+//BEACH BOTTOMS
+if(TheMotherBoard.getTheme().contains(new Image("assets_Clothes/TwoStackedPinkNecklace.png"))){
+    canvas.remove(beach.getBeachBottoms().get(indexofBottoms));
+    runwayReady.remove(beach.getBeachBottoms().get(indexofBottoms));
+    playerChoices.remove(beach.getBeachBottoms().get(indexofBottoms));
+
+    if(moveForward){
+        indexofBottoms ++;
+        System.out.println("HEYYEYEIHF");
+        System.out.println("THE THEMMMEEE" + winter.getWinningOutfit());
+        System.out.println("THE MOTHER BOATDERR THEME" + TheMotherBoard.getTheme());
+    }
+    else{
+    indexofBottoms --;
+    }
+
+    if(indexofBottoms  > beach.getBeachBottoms().size() - 1){
+        indexofBottoms  = 0;
+    }
+    if(indexofBottoms  < 0){
+        indexofBottoms  = beach.getBeachBottoms().size() - 1;
+    }
+
+    // winter.getwinterTops().get(0).setPosition(0,0);
+    beach.getBeachBottoms().get(indexofBottoms).setCenter(bottomsBox.getCenter());
+    beach.getBeachBottoms().get(indexofBottoms).setScale(0.3);
+    canvas.add(beach.getBeachBottoms().get(indexofBottoms));
+    runwayReady.add(beach.getBeachBottoms().get(indexofBottoms));
+    playerChoices.add(beach.getBeachBottoms().get(indexofBottoms));
+}
 
 }
 
 public void changeShoes(boolean moveForward){
+
+    //WINTER SHOES
+    if(TheMotherBoard.getTheme().contains(new Image("assets_Clothes/WinterBeigeScarf.png"))){
     canvas.remove(winter.getwinterShoes().get(indexofShoes));
     runwayReady.remove(winter.getwinterShoes().get(indexofShoes));
     playerChoices.remove(winter.getwinterShoes().get(indexofShoes));
@@ -759,6 +828,61 @@ public void changeShoes(boolean moveForward){
     canvas.add(winter.getwinterShoes().get(indexofShoes));
     runwayReady.add(winter.getwinterShoes().get(indexofShoes));
     playerChoices.add(winter.getwinterShoes().get(indexofShoes));
+}
+
+  //SCHOOL SHOES
+  if(TheMotherBoard.getTheme().contains(new Image("assets_Clothes/SchoolScarf.png"))){
+    canvas.remove(school.getschoolShoes().get(indexofShoes));
+    runwayReady.remove(school.getschoolShoes().get(indexofShoes));
+    playerChoices.remove(school.getschoolShoes().get(indexofShoes));
+
+    if(moveForward){
+        indexofShoes ++;
+    }
+    else{
+    indexofShoes --;
+    }
+    if(indexofShoes  > school.getschoolShoes().size() - 1){
+        indexofShoes  = 0;
+    }
+    if(indexofShoes  < 0){
+        indexofShoes  = school.getschoolShoes().size() - 1;
+    }
+
+    // winter.getwinterTops().get(0).setPosition(0,0);
+    school.getschoolShoes().get(indexofShoes).setCenter(shoesBox.getCenter());
+    school.getschoolShoes().get(indexofShoes).setScale(0.3);
+    canvas.add(school.getschoolShoes().get(indexofShoes));
+    runwayReady.add(school.getschoolShoes().get(indexofShoes));
+    playerChoices.add(school.getschoolShoes().get(indexofShoes));
+}
+
+  //BEACH SHOES
+  if(TheMotherBoard.getTheme().contains(new Image("assets_Clothes/TwoStackedPinkNecklace.png"))){
+    canvas.remove(beach.getBeachShoes().get(indexofShoes));
+    runwayReady.remove(beach.getBeachShoes().get(indexofShoes));
+    playerChoices.remove(beach.getBeachShoes().get(indexofShoes));
+
+    if(moveForward){
+        indexofShoes ++;
+    }
+    else{
+    indexofShoes --;
+    }
+    if(indexofShoes  > beach.getBeachShoes().size() - 1){
+        indexofShoes  = 0;
+    }
+    if(indexofShoes  < 0){
+        indexofShoes  = beach.getBeachShoes().size() - 1;
+    }
+
+    // winter.getwinterTops().get(0).setPosition(0,0);
+    beach.getBeachShoes().get(indexofShoes).setCenter(shoesBox.getCenter());
+    beach.getBeachShoes().get(indexofShoes).setScale(0.3);
+    canvas.add(beach.getBeachShoes().get(indexofShoes));
+    runwayReady.add(beach.getBeachShoes().get(indexofShoes));
+    playerChoices.add(beach.getBeachShoes().get(indexofShoes));
+}
 
 }
 
