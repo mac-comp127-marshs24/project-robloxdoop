@@ -25,6 +25,7 @@ public class Winter{
       winterNeck.add(new Image ("assets_Clothes/BlueScarf.png"));
 
       winterTops.add(new Image ("assets_Clothes/GreenTop.png"));
+      winterTops.add(new Image ("assets_Clothes/WhiteTop.png"));
       winterTops.add(new Image ("assets_Clothes/RedVelvetTop.png"));
       winterTops.add(new Image ("assets_Clothes/BlackShirt.png"));
 
@@ -33,6 +34,7 @@ public class Winter{
       winterBottoms.add(new Image ("assets_Clothes/GreenCargoPants.png"));
       winterBottoms.add(new Image ("assets_Clothes/WhiteSkinnyJeans.png"));
       winterBottoms.add(new Image("assets_Clothes/TealSkirtLong.png"));
+      winterBottoms.add(new Image ("assets_Clothes/LightBlueBowPants.png"));
 
    
       winterShoes.add(new Image ("assets_Clothes/YellowPearlHeels.png"));
