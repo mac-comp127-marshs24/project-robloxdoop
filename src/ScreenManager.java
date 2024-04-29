@@ -23,11 +23,12 @@ import edu.macalester.graphics.ui.Button;
 
 public class ScreenManager {
     private Button runwayButton = new Button("Enter the Runway!");
-    private Button closetButton = new Button("Ready?");
+    // private Button closetButton = new Button("Ready?");
     private Button podiumButton = new Button("Winner or Loser?");
     private Button closetButton2 = new Button("Let's get Dressed!");
     GraphicsGroup runwayReady = new GraphicsGroup();
     Image homeScreenPinkButton = new Image("assets/RightButton.png");
+    Image InstructScreenReadyButton = new Image("assets/RightButton.png"); //CHNAGE TO BUTTONS THAT IMAGE PATH WORKS
     Image closetBackground;
     Image characterBase;
 
@@ -44,7 +45,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-    theCloset();
+    theInstructionsScreen();
 }
 
 public void mainMenu(){
@@ -60,7 +61,7 @@ public void mainMenu(){
 
     canvas.onClick(
         event -> {event.getPosition();
-            if(canvas.getElementAt(event.getPosition()) == rightPinkButton){
+            if(canvas.getElementAt(event.getPosition()) == homeScreenPinkButton){
                 canvas.removeAll();
                 theInstructionsScreen();
             }
@@ -79,12 +80,13 @@ public void moveableText(GraphicsText Instructions, double dx, double dy){
                 Instructions1.moveBy(dx,dy);} 
             
             
-            
         }
     );
-    closetButton.setPosition(600,50);
-    canvas.add(closetButton);
+    InstructScreenReadyButton.setPosition(600,50);
+    canvas.add(InstructScreenReadyButton);
 }
+
+
 
 public void theInstructionsScreen(){
     Image instructionsScreen;
@@ -94,6 +96,9 @@ public void theInstructionsScreen(){
     moveableText(Instructions, dx, 0);
     Instructions.setFontSize(60);
 
+    InstructScreenReadyButton.setCenter(700, 700);
+    InstructScreenReadyButton.setScale(0.04);
+
     instructionsScreen = new Image(0,0);
     instructionsScreen.setScale(0.75,0.75);
     instructionsScreen.setImagePath("assets/mainMenu2.png");
@@ -101,20 +106,27 @@ public void theInstructionsScreen(){
     canvas.add(instructionsScreen);
     canvas.add(Instructions);
     canvas.add(Instructions1);
+    canvas.add(InstructScreenReadyButton);
 
-    closetButton.onClick(() -> {
-        System.out.println(TheMotherBoard.getTheme());
-        canvas.removeAll();
-        if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
-            winterTheme();
-        }if(TheMotherBoard.getTheme().equals(school.getWinningOutfit())){
-            schoolTheme();
-        }
-        if(TheMotherBoard.getTheme().equals(beach.getWinningOutfit())){
-           beachTheme();
-        }
+     canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == InstructScreenReadyButton){
+            System.out.println(TheMotherBoard.getTheme());
+            canvas.removeAll();
+            if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
+                winterTheme();
+            }if(TheMotherBoard.getTheme().equals(school.getWinningOutfit())){
+                schoolTheme();
+            }
+            if(TheMotherBoard.getTheme().equals(beach.getWinningOutfit())){
+            beachTheme();
+            }
         
-    });
+            }
+
+        }
+    );
+
 
 }
 
