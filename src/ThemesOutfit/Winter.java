@@ -76,7 +76,7 @@ public class Winter{
 
       public List<Image> getWinningOutfit(){
         //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
-        return winterShoes;
+        return winterNeck;
   
 }
 

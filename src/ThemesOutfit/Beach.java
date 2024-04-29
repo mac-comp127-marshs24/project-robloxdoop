@@ -69,6 +69,6 @@ public class Beach {
 
     
     public List<Image> getWinningOutfit() {
-        return beachShoes;
+        return beachNeck;
     }
 }

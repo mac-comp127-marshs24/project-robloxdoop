@@ -67,7 +67,7 @@ public class School{
       
       public List<Image> getWinningOutfit(){
         //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
-        return schoolShoes;
+        return schoolNeck;
       }
  
 }
