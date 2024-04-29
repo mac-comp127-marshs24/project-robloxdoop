@@ -69,6 +69,6 @@ public class Beach {
 
     
     public List<Image> getWinningOutfit() {
-        return List.of(new Image ("assets_Clothes/BlueScarf.png"), new Image ("assets_Clothes/BrownGloves.png"), new Image ("assets_Clothes/BlackGloves.png"));
+        return beachShoes;
     }
 }

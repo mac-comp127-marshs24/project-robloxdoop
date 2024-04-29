@@ -103,13 +103,14 @@ public void theInstructionsScreen(){
     canvas.add(Instructions1);
 
     closetButton.onClick(() -> {
+        System.out.println(TheMotherBoard.getTheme());
         canvas.removeAll();
         if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
             winterTheme();
-        }else if(TheMotherBoard.getTheme().equals(school.getWinningOutfit())){
+        }if(TheMotherBoard.getTheme().equals(school.getWinningOutfit())){
             schoolTheme();
         }
-        else{
+        if(TheMotherBoard.getTheme().equals(beach.getWinningOutfit())){
            beachTheme();
         }
         
