@@ -27,7 +27,7 @@ public class ScreenManager {
     private Button podiumButton = new Button("Winner or Loser?");
     private Button closetButton2 = new Button("Let's get Dressed!");
     GraphicsGroup runwayReady = new GraphicsGroup();
-    Image rightPinkButton = new Image("assets/RightButton.png");
+    Image homeScreenPinkButton = new Image("assets/RightButton.png");
     Image closetBackground;
     Image characterBase;
 
@@ -45,7 +45,6 @@ public class ScreenManager {
 
 public ScreenManager(){
     theCloset();
-    System.out.println("THE THEME!!!!" + TheMotherBoard.getTheme());
 }
 
 public void mainMenu(){
@@ -54,9 +53,9 @@ public void mainMenu(){
     homeScreen.setScale(0.75,0.75);
     homeScreen.setImagePath("assets/mainMenu.png");
     canvas.add(homeScreen);
-    rightPinkButton.setCenter(700, 700);
-    rightPinkButton.setScale(0.09);
-    canvas.add(rightPinkButton);
+    homeScreenPinkButton.setCenter(700, 700);
+    homeScreenPinkButton.setScale(0.09);
+    canvas.add(homeScreenPinkButton);
 
 
     canvas.onClick(
