@@ -46,12 +46,6 @@ public class Winter{
       winterShoes.add(new Image ("assets_Clothes/GreenStrapHeels.png"));
       winterShoes.add(new Image ("assets_Clothes/BlueHeels.png"));
       winterShoes.add(new Image ("assets_Clothes/BlackBowHeels.png"));
-
-
-
-
-
-
   
     }
 
