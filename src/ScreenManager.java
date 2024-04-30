@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,29 +22,38 @@ import edu.macalester.graphics.ui.Button;
 
 public class ScreenManager {
     private Button runwayButton = new Button("Enter the Runway!");
-    // private Button closetButton = new Button("Ready?");
     private Button podiumButton = new Button("Winner or Loser?");
     private Button closetButton2 = new Button("Let's get Dressed!");
     GraphicsGroup runwayReady = new GraphicsGroup();
-    Image homeScreenPinkButton = new Image("assets/RightButton.png");
-    Image InstructScreenReadyButton = new Image("assets/RightButton.png"); //CHNAGE TO BUTTONS THAT IMAGE PATH WORKS
+    Image homeScreenPinkButton = new Image("assets/StartButton.png");
+    Image InstructScreenReadyButton = new Image("assets/ReadyButton.png");
     Image closetBackground;
     Image characterBase;
+    String introductionText = "Hello and Welcome to Fashion Famous! \n" +
+    "In this game, you will be given a theme,\n" +
+    "to which you must create a spectacular \n" +
+    "outfit to present to the judges.";
+
+    String introductionText2 = "At the end, the judges' top pick will be, \n" +
+    "presented and you will be given a score \n" + 
+    "Based on how well you did! Good Luck!";
+
+    
 
 
     Winter winter = new Winter();
     School school = new School();
     Beach beach = new Beach();
-    GraphicsText Instructions = new GraphicsText("Hello Welcome to Fashion Famous!");
-    GraphicsText Instructions1 = new GraphicsText("In this Game you will be given, ");
-    int dx = 5;
+    GraphicsText Instructions = new GraphicsText(introductionText);
+    GraphicsText Instructions1 = new GraphicsText(introductionText2);
+    int dx = 3;
     CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
     TheMotherBoard motherBoard = new TheMotherBoard();
 
 
 
 public ScreenManager(){
-    theInstructionsScreen();
+    mainMenu();
 }
 
 public void mainMenu(){
@@ -76,26 +86,33 @@ public void moveableText(GraphicsText Instructions, double dx, double dy){
             Instructions.moveBy(dx,dy);}
             else if((Instructions1.getX() + Instructions1.getWidth() + 50 < canvas.getWidth())) {
                 Instructions1.moveBy(dx,dy);} 
-            
-            
         }
+
     );
-    InstructScreenReadyButton.setPosition(600,50);
+    InstructScreenReadyButton.setCenter(canvas.getWidth()/2, 700);
+    InstructScreenReadyButton.setScale(0.4);
     canvas.add(InstructScreenReadyButton);
-}
 
-
+    }
 
 public void theInstructionsScreen(){
     Image instructionsScreen;
-    Instructions.setPosition(0, 250);
-    Instructions1.setPosition(-100, 350);
+    Instructions.setPosition(0, 150);
+    Instructions1.setPosition(-100, 450);
     Instructions1.setFontSize(60);
-    moveableText(Instructions, dx, 0);
+    Instructions1.setFillColor(Color.WHITE);
+    Instructions1.setStroked(true);
+    Instructions1.setStrokeWidth(2);
+    Instructions1.setStrokeColor(Color.BLACK);
+
+    Instructions.setFillColor(Color.WHITE);
+    Instructions.setStroked(true);
+    Instructions.setStrokeWidth(2);
+    Instructions.setStrokeColor(Color.BLACK);
     Instructions.setFontSize(60);
 
-    InstructScreenReadyButton.setCenter(700, 700);
-    InstructScreenReadyButton.setScale(0.04);
+    // InstructScreenReadyButton.setCenter(canvas.getWidth()/2, 700);
+    // InstructScreenReadyButton.setScale(0.4);
 
     instructionsScreen = new Image(0,0);
     instructionsScreen.setScale(0.75,0.75);
@@ -104,12 +121,12 @@ public void theInstructionsScreen(){
     canvas.add(instructionsScreen);
     canvas.add(Instructions);
     canvas.add(Instructions1);
-    canvas.add(InstructScreenReadyButton);
+    moveableText(Instructions, dx, 0);
+    // canvas.add(InstructScreenReadyButton);
 
      canvas.onClick(
         event -> {event.getPosition();
             if(canvas.getElementAt(event.getPosition()) == InstructScreenReadyButton){
-            System.out.println(TheMotherBoard.getTheme());
             canvas.removeAll();
             if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
                 winterTheme();
@@ -129,8 +146,9 @@ public void theInstructionsScreen(){
 }
 
 public void winterTheme(){
-    Image winterTheme = new Image(0,0);
+    Image winterTheme = new Image(-240,-150);
     winterTheme.setImagePath("assets/winter2.png");
+    winterTheme.setScale(0.75);
     canvas.add(winterTheme);
     closetButton2.setPosition(600,50);
     canvas.add(closetButton2);
@@ -140,7 +158,7 @@ public void winterTheme(){
 }
 
 public void schoolTheme(){
-    Image schoolTheme = new Image(0,0);
+    Image schoolTheme = new Image(-240,-150);
     schoolTheme.setImagePath("assets/school2.png");
     canvas.add(schoolTheme);
     closetButton2.setPosition(600,50);
@@ -152,7 +170,7 @@ public void schoolTheme(){
 
 
 public void beachTheme(){
-    Image beachTheme = new Image(0,0);
+    Image beachTheme = new Image(-240,-150);
     beachTheme.setImagePath("assets/beach2.png");
     canvas.add(beachTheme);
     closetButton2.setPosition(600,50);
