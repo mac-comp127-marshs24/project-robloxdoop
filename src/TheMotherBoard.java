@@ -1,9 +1,29 @@
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.DataLine.Info;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+import static javax.sound.sampled.AudioSystem.getAudioInputStream;
+import static javax.sound.sampled.AudioFormat.Encoding.PCM_SIGNED;
+
+
+import javax.print.attribute.standard.Media;
+
 
 import ThemesOutfit.Beach;
 import ThemesOutfit.School;
@@ -55,29 +75,22 @@ public class TheMotherBoard {
         }
         
     } 
+
     
     public static void main(String[] args) {
+
+        new Thread(() -> {
+            AudioFilePlayer player = new AudioFilePlayer();
+            player.play("res/around_the_world-atc.wav");
+        }).start();
+
+        // Create and display the ScreenManager
         new ScreenManager();
-        try
-        { 
-            filePath = "testAudio.mp3"; 
-            SimpleAudioPlayer audioPlayer =  
-                            new SimpleAudioPlayer(); 
-              
-            audioPlayer.play(); 
-            Scanner sc = new Scanner(System.in); 
-              
-        }  
-          
-        catch (Exception ex)  
-        { 
-            System.out.println("Error with playing sound."); 
-            ex.printStackTrace(); 
-          
-          } 
-    }
-    
+            
+        }
+
 }
+       
 
 
 
