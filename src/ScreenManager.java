@@ -1,4 +1,5 @@
 import java.awt.Color;
+import java.awt.Paint;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -221,6 +222,7 @@ public void theCloset(){
 
     //MANAGES THE HATS
     hatsBox.setStrokeWidth(10);
+    // hatsBox.setStroked(false); USE ONCE ALL THE OBJECT ARE SET PROPERLY
     hatsBox.setCenter(685, 70);
     hatsLeftButton.setPosition(hatsBox.getX() - 100,hatsBox.getY());
     hatsRightButton.setPosition(hatsBox.getX() + hatsBox.getWidth(),hatsBox.getY());
