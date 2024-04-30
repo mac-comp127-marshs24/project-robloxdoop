@@ -1,6 +1,9 @@
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
 import ThemesOutfit.Beach;
 import ThemesOutfit.School;
@@ -16,6 +19,7 @@ public class TheMotherBoard {
     static School school = new School();
     static Beach beach = new Beach();
     static List<Image> ChosenTheme;
+    static String filePath;
 
     public TheMotherBoard(){
     Themes.add(winter.getWinningOutfit());
@@ -51,9 +55,26 @@ public class TheMotherBoard {
         }
         
     } 
-
+    
     public static void main(String[] args) {
-        new ScreenManager();  
+        new ScreenManager();
+        try
+        { 
+            filePath = "testAudio.mp3"; 
+            SimpleAudioPlayer audioPlayer =  
+                            new SimpleAudioPlayer(); 
+              
+            audioPlayer.play(); 
+            Scanner sc = new Scanner(System.in); 
+              
+        }  
+          
+        catch (Exception ex)  
+        { 
+            System.out.println("Error with playing sound."); 
+            ex.printStackTrace(); 
+          
+          } 
     }
     
 }
