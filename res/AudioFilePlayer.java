@@ -14,12 +14,6 @@ import static javax.sound.sampled.AudioFormat.Encoding.PCM_SIGNED;
 
 public class AudioFilePlayer {
  
-    // public static void main(String[] args) {
-    //     final AudioFilePlayer player = new AudioFilePlayer ();
-    //     player.play("res/around_the_world-atc.wav");
-    
-    // }
- 
     public void play(String filePath) {
         final File file = new File(filePath);
  
