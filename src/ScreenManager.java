@@ -53,7 +53,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-    mainMenu();
+    theCloset();
 }
 
 public void mainMenu(){
@@ -336,7 +336,7 @@ public void theCloset(){
 
 
     winter.getwinterBottoms().get(0).setCenter(bottomsBox.getCenter());
-    winter.getwinterBottoms().get(0).setScale(0.4);
+    winter.getwinterBottoms().get(0).setScale(0.7);
     canvas.add(winter.getwinterBottoms().get(0));
     runwayReady.add(winter.getwinterBottoms().get(0));
     playerChoices.add(winter.getwinterBottoms().get(0));
@@ -755,7 +755,7 @@ public void changeBottoms(boolean moveForward){
     }
 
     winter.getwinterBottoms().get(indexofBottoms).setCenter(bottomsBox.getCenter());
-    winter.getwinterBottoms().get(indexofBottoms).setScale(0.3);
+    winter.getwinterBottoms().get(indexofBottoms).setScale(0.7);
     canvas.add(winter.getwinterBottoms().get(indexofBottoms));
     runwayReady.add(winter.getwinterBottoms().get(indexofBottoms));
     playerChoices.add(winter.getwinterBottoms().get(indexofBottoms));
