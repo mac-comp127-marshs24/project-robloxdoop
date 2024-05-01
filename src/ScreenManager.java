@@ -188,6 +188,10 @@ public void beachTheme(){
  Rectangle bottomsBox = new Rectangle(0, 0, 150, 300);
  Rectangle shoesBox = new Rectangle(0, 0, 200, 70);
 
+ double hatScale = 0.2;
+ double neckScale = 0.3;
+ double topsScale = 0.35;
+
 
 public void theCloset(){
     //CLOSET BACKGROUND
@@ -222,8 +226,8 @@ public void theCloset(){
 
     //MANAGES THE HATS
     hatsBox.setStrokeWidth(10);
-    // hatsBox.setStroked(false); USE ONCE ALL THE OBJECT ARE SET PROPERLY
-    hatsBox.setCenter(685, 70);
+    hatsBox.setStroked(false); //USE ONCE ALL THE OBJECT ARE SET PROPERLY
+    hatsBox.setCenter(685, 90);
     hatsLeftButton.setPosition(hatsBox.getX() - 100,hatsBox.getY());
     hatsRightButton.setPosition(hatsBox.getX() + hatsBox.getWidth(),hatsBox.getY());
     canvas.add(hatsLeftButton);
@@ -242,9 +246,10 @@ public void theCloset(){
 
      //MANAGES THE NECK
     neckBox.setStrokeWidth(10);
-    neckBox.setCenter(685, 190);
-    neckLeftButton.setPosition(neckBox.getX() - 100,neckBox.getY());
-    neckRightButton.setPosition(neckBox.getX() + neckBox.getWidth(),neckBox.getY());
+    neckBox.setStroked(false);
+    neckBox.setCenter(685, 220);
+    neckLeftButton.setPosition(neckBox.getX() - 100,neckBox.getY()-100);
+    neckRightButton.setPosition(neckBox.getX() + neckBox.getWidth(),neckBox.getY()-100);
     canvas.add(neckLeftButton);
     canvas.add(neckRightButton);
     canvas.add(neckBox);
@@ -260,7 +265,8 @@ public void theCloset(){
 
      //MANAGES THE TOPS
     topsBox.setStrokeWidth(10);
-    topsBox.setCenter(675, 275);
+    topsBox.setCenter(675, 250);
+    topsBox.setStroked(false);
     topsLeftButton.setPosition(topsBox.getX()- 100, topsBox.getY());
     topsRightButton.setPosition(topsBox.getX() + topsBox.getWidth(),topsBox.getY());
     canvas.add(topsLeftButton);
@@ -279,6 +285,7 @@ public void theCloset(){
     //MANAGES THE BOTTOMS
     bottomsBox.setStrokeWidth(10);
     bottomsBox.setCenter(675, 490);
+    bottomsBox.setStroked(false);
     bottomsLeftButton.setPosition(bottomsBox.getX()- 100, bottomsBox.getY());
     bottomsRightButton.setPosition(bottomsBox.getX() + bottomsBox.getWidth(),bottomsBox.getY());
     canvas.add(bottomsLeftButton);
@@ -297,6 +304,7 @@ public void theCloset(){
      //MANAGES THE SHOES
     shoesBox.setStrokeWidth(10);
     shoesBox.setCenter(640, 720);
+    shoesBox.setStroked(false);
     shoesLeftButton.setPosition(shoesBox.getX()- 100, shoesBox.getY());
     shoesRightButton.setPosition(shoesBox.getX() + shoesBox.getWidth(),shoesBox.getY());
     canvas.add(shoesLeftButton);
@@ -318,20 +326,20 @@ public void theCloset(){
     if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
     // winter.getwinterHats().get(0).setPosition(0,0); FOR TESTINGGNGNGN
     winter.getwinterHats().get(0).setCenter(hatsBox.getCenter());
-    winter.getwinterHats().get(0).setScale(0.4);
+    winter.getwinterHats().get(0).setScale(hatScale);
     canvas.add(winter.getwinterHats().get(0));
     runwayReady.add(winter.getwinterHats().get(0));
     playerChoices.add(winter.getwinterHats().get(0));
 
     winter.getwinterNeck().get(0).setCenter(neckBox.getCenter());
-    winter.getwinterNeck().get(0).setScale(0.4);
+    winter.getwinterNeck().get(0).setScale(neckScale);
     canvas.add(winter.getwinterNeck().get(0));
     runwayReady.add(winter.getwinterNeck().get(0));
     playerChoices.add(winter.getwinterNeck().get(0));
 
 
     winter.getwinterTops().get(0).setCenter(topsBox.getCenter());
-    winter.getwinterTops().get(0).setScale(0.3);
+    winter.getwinterTops().get(0).setScale(topsScale);
     canvas.add(winter.getwinterTops().get(0));
     runwayReady.add(winter.getwinterTops().get(0));
     playerChoices.add(winter.getwinterTops().get(0));
@@ -492,7 +500,7 @@ public void changeHats(boolean moveForward){
 
     // winter.getwinterHats().get(0).setPosition(0,0); FOR TESTING
     winter.getwinterHats().get(indexofHats).setCenter(hatsBox.getCenter());
-    winter.getwinterHats().get(indexofHats).setScale(0.4);
+    winter.getwinterHats().get(indexofHats).setScale(hatScale);
     canvas.add(winter.getwinterHats().get(indexofHats));
     runwayReady.add(winter.getwinterHats().get(indexofHats));
     playerChoices.add(winter.getwinterHats().get(indexofHats));
@@ -579,7 +587,7 @@ public void changeNeck(boolean moveForward){
     }
 
     winter.getwinterNeck().get(indexofNeck).setCenter(neckBox.getCenter());
-    winter.getwinterNeck().get(indexofNeck).setScale(0.4);
+    winter.getwinterNeck().get(indexofNeck).setScale(neckScale);
     canvas.add(winter.getwinterNeck().get(indexofNeck));
     runwayReady.add(winter.getwinterNeck().get(indexofNeck));
     playerChoices.add(winter.getwinterNeck().get(indexofNeck));
@@ -669,7 +677,7 @@ public void changeTops(boolean moveForward){
         }
 
         winter.getwinterTops().get(indexofTops).setCenter(topsBox.getCenter());
-        winter.getwinterTops().get(indexofTops).setScale(0.3);
+        winter.getwinterTops().get(indexofTops).setScale(topsScale);
         canvas.add(winter.getwinterTops().get(indexofTops));
         runwayReady.add(winter.getwinterTops().get(indexofTops));
         playerChoices.add(winter.getwinterTops().get(indexofTops));
@@ -933,12 +941,20 @@ public void thePodium(){
     System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
     GraphicsText scoreTally = new GraphicsText(decision());
     
-    if(TheMotherBoard.getTheme().equals(winter.getWinningOutfit())){
+    if(TheMotherBoard.getTheme().contains(new Image("assets_Clothes/WinterBeigeScarf.png"))){
         Image winterBackground = new Image(0,0);
         winterBackground.setScale(.75);
         winterBackground.setImagePath("assets/winter2.png");
         winterBackground.setPosition(-240, -150);
         canvas.add(winterBackground);
+        int padding = 25;
+        //Displays the winning outfit
+        for(Image cloth: winter.getWinningOutfit()){
+            cloth.setCenter(characterBase.getX() + 500, 300+padding);
+            cloth.setScale(0.4);
+            canvas.add(cloth);
+            padding += 100;
+        }
     }else if(TheMotherBoard.getTheme().equals(school.getWinningOutfit())){
         Image schoolBackground = new Image(0,0);
         schoolBackground.setScale(.75);

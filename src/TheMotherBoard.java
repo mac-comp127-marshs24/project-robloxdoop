@@ -53,10 +53,10 @@ public class TheMotherBoard {
 
     public static void main(String[] args) {
 
-        new Thread(() -> {
-            AudioFilePlayer player = new AudioFilePlayer();
-            player.play("res/around_the_world-atc.wav");
-        }).start();
+        // new Thread(() -> {
+        //     AudioFilePlayer player = new AudioFilePlayer();
+        //     player.play("res/around_the_world-atc.wav");
+        // }).start();
 
         // Create and display the ScreenManager
         new ScreenManager();
