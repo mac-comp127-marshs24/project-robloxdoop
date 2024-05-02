@@ -46,7 +46,7 @@ public class ScreenManager {
     Beach beach = new Beach();
     GraphicsText Instructions = new GraphicsText(introductionText);
     GraphicsText Instructions1 = new GraphicsText(introductionText2);
-    int dx = 3;
+    int dx = 5;
     CanvasWindow canvas = new CanvasWindow("Project Runway",1920, 1080);
     TheMotherBoard motherBoard = new TheMotherBoard();
 
@@ -146,9 +146,18 @@ public void theInstructionsScreen(){
 
 public void winterTheme(){
     Image winterTheme = new Image(-240,-150);
+    GraphicsText winterText = new GraphicsText("\t  The Theme is Winter! \nCreate your best Winter Outfit!");
+    winterText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
+    winterText.setFontSize(60);
+    winterText.setFillColor(Color.BLACK);
+    winterText.setStroked(true);
+    winterText.setStrokeWidth(2);
+    winterText.setStrokeColor(Color.WHITE);
+
     winterTheme.setImagePath("assets/winter2.png");
     winterTheme.setScale(0.75);
     canvas.add(winterTheme);
+    canvas.add(winterText);
     closetButton2.setPosition(600,50);
     canvas.add(closetButton2);
     closetButton2.onClick(() -> {
@@ -159,7 +168,17 @@ public void winterTheme(){
 public void schoolTheme(){
     Image schoolTheme = new Image(-240,-150);
     schoolTheme.setImagePath("assets/school2.png");
+    GraphicsText schoolText = new GraphicsText("\t  The Theme is School! \nCreate your best School Outfit!");
+    schoolText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
+    schoolTheme.setScale(0.75);
+    schoolText.setFontSize(60);
+    schoolText.setFillColor(Color.BLACK);
+    schoolText.setStroked(true);
+    schoolText.setStrokeWidth(2);
+    schoolText.setStrokeColor(Color.WHITE);
+
     canvas.add(schoolTheme);
+    canvas.add(schoolText);
     closetButton2.setPosition(600,50);
     canvas.add(closetButton2);
     closetButton2.onClick(() -> {
@@ -171,7 +190,17 @@ public void schoolTheme(){
 public void beachTheme(){
     Image beachTheme = new Image(-240,-150);
     beachTheme.setImagePath("assets/beach2.png");
+    GraphicsText beachText = new GraphicsText("\t  The Theme is Beach! \nCreate your best Beach Outfit!");
+    beachText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
+    beachTheme.setScale(0.75);
+    beachText.setFontSize(60);
+    beachText.setFillColor(Color.BLACK);
+    beachText.setStroked(true);
+    beachText.setStrokeWidth(2);
+    beachText.setStrokeColor(Color.WHITE);
+
     canvas.add(beachTheme);
+    canvas.add(beachText);
     closetButton2.setPosition(600,50);
     canvas.add(closetButton2);
     closetButton2.onClick(() -> {
