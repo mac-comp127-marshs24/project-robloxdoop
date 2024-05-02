@@ -17,14 +17,15 @@ public class Winter{
     public Winter(){
       winterHats.add(new Image ("assets_Clothes/WinterWhiteBeanie.png"));
       winterHats.add(new Image ("assets_Clothes/BlackSideCapHat.png"));
-      winterHats.add(new Image ("assets_Clothes/BlackandWhiteCap.png"));
+      winterHats.add(new Image ("assets_Clothes/BlueCowboyHat.png"));
 
       winterNeck.add(new Image ("assets_Clothes/WinterBeigeScarf.png"));
       winterNeck.add(new Image ("assets_Clothes/WinterPurpleHoopScarf.png"));
       winterNeck.add(new Image ("assets_Clothes/WinterTealInfinityScarf.png"));
       winterNeck.add(new Image ("assets_Clothes/BlueScarf.png"));
+      winterNeck.add(new Image ("assets_Clothes/RedScarf.png"));
 
-      winterTops.add(new Image ("assets_Clothes/GreenTop.png"));
+      winterTops.add(new Image ("assets_Clothes/BrownSweater.png"));
       winterTops.add(new Image ("assets_Clothes/WhiteTop.png"));
       winterTops.add(new Image ("assets_Clothes/RedVelvetTop.png"));
       winterTops.add(new Image ("assets_Clothes/BlackShirt.png"));
@@ -37,12 +38,11 @@ public class Winter{
       winterBottoms.add(new Image ("assets_Clothes/LightBlueBowPants.png"));
 
    
-      winterShoes.add(new Image ("assets_Clothes/YellowPearlHeels.png"));
+      winterShoes.add(new Image ("assets_Clothes/BlackLongBoots.png"));
       winterShoes.add(new Image ("assets_Clothes/WhiteSneakers.png"));
-      winterShoes.add(new Image ("assets_Clothes/PurpleHeels.png"));
-      winterShoes.add(new Image ("assets_Clothes/PurpleHeels.png"));
-      winterShoes.add(new Image ("assets_Clothes/PinkPearlHeels.png"));
-      winterShoes.add(new Image ("assets_Clothes/NavyHeels.png"));
+      winterShoes.add(new Image ("assets_Clothes/GreenBoots.png"));
+      winterShoes.add(new Image ("assets_Clothes/GreenLongBoots.png"));
+      winterShoes.add(new Image ("assets_Clothes/RedLongOmbreBoots.png"));
       winterShoes.add(new Image ("assets_Clothes/GreenStrapHeels.png"));
       winterShoes.add(new Image ("assets_Clothes/BlueHeels.png"));
       winterShoes.add(new Image ("assets_Clothes/BlackBowHeels.png"));

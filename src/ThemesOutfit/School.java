@@ -15,16 +15,20 @@ public class School{
   
     public School(){
       schoolHats.add(new Image ("assets_Clothes/BlackSideCapHat.png"));
-      schoolHats.add(new Image ("assets_Clothes/BlackandWhiteHat.png"));
+      schoolHats.add(new Image ("assets_Clothes/BlueCowboyHat.png"));
+      schoolHats.add(new Image("assets_Clothes/BlueCap.png"));
 
       schoolNeck.add(new Image ("assets_Clothes/StripeScarf.png"));
       schoolNeck.add(new Image ("assets_Clothes/SilverNecklace.png"));
       schoolNeck.add(new Image ("assets_Clothes/SilverHeartNecklace.png"));
       schoolNeck.add(new Image("assets_Clothes/SchoolScarf.png"));
+      schoolNeck.add(new Image("assets_Clothes/ChainNecklace.png"));
+      schoolNeck.add(new Image ("assets_Clothes/GoldNecklace.png"));
 
       schoolTops.add(new Image ("assets_Clothes/PurpleTop.png"));
       schoolTops.add(new Image ("assets_Clothes/LavendarTop.png"));
       schoolTops.add(new Image ("assets_Clothes/BlackCrissCrossTop.png"));
+      schoolTops.add(new Image ("assets_Clothes/RedCrissCrossTop.png"));
       schoolTops.add(new Image ("assets_Clothes/BlackandWhiteCropTop.png"));
 
       schoolBottoms.add(new Image ("assets_Clothes/WhiteSkirt.png"));
@@ -33,9 +37,11 @@ public class School{
       schoolBottoms.add(new Image ("assets_Clothes/RedSkirts.png"));
       schoolBottoms.add(new Image ("assets_Clothes/RedCheetahSkirt.png"));
       schoolBottoms.add(new Image ("assets_Clothes/LightBlueBowPants.png"));
-      schoolBottoms.add(new Image ("assets_Clothes/BlackJeans.png"));
+      schoolBottoms.add(new Image ("assets_Clothes/BlackPants.png"));
       schoolBottoms.add(new Image ("assets_Clothes/WhiteSkinnyJeans.png"));
       schoolBottoms.add(new Image ("asset_Clothes/GreenCargoPants.png"));
+      schoolBottoms.add(new Image("assets_Clothes/DarkBlueJean"));
+
 
       schoolShoes.add(new Image ("assets_Clothes/YellowPearlHeels.png"));
       schoolShoes.add(new Image ("assets_Clothes/WhiteSneakers.png"));

@@ -14,6 +14,8 @@ public class Beach {
 
     public Beach(){
         beachHats.add(new Image ("assets_Clothes/PinkandBlackVizor.png"));
+        beachHats.add(new Image ("assets_Clothes/PinkHeadband.png"));
+        beachHats.add(new Image("asset_Clothes/BlackHeadband.png"));
   
         beachNeck.add(new Image ("assets_Clothes/TwoStackedPinkNecklace.png"));
         beachNeck.add(new Image ("assets_Clothes/StackedPurpleNecklace.png"));
@@ -26,6 +28,9 @@ public class Beach {
         beachTops.add(new Image ("assets_Clothes/MintTop.png"));
         beachTops.add(new Image ("assets_Clothes/HalterTop.png"));
         beachTops.add(new Image ("assets_Clothes/GreenFlowerTop.png"));
+        beachTops.add(new Image ("assets_Clothes/MintFlowerTop.png"));
+
+
 
         beachBottoms.add(new Image ("assets_Clothes/WhiteShorts.png"));
         beachBottoms.add(new Image ("assets_Clothes/RedFlaredShorts.png"));
