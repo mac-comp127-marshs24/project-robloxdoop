@@ -31,10 +31,10 @@ public class Winter{
       winterTops.add(new Image ("assets_Clothes/BlackShirt.png"));
 
       winterBottoms.add(new Image ("assets_Clothes/BlackJeans.png"));
-      winterBottoms.add(new Image ("assets_Clothes/KhakiPants.png"));
+      winterBottoms.add(new Image ("assets_Clothes/TestSkirt1.png"));
       winterBottoms.add(new Image ("assets_Clothes/GreenCargoPants.png"));
       winterBottoms.add(new Image ("assets_Clothes/WhiteSkinnyJeans.png"));
-      winterBottoms.add(new Image("assets_Clothes/TealSkirtLong.png"));
+      winterBottoms.add(new Image("assets_Clothes/TestPants1.png"));
       winterBottoms.add(new Image ("assets_Clothes/LightBlueBowPants.png"));
 
    
