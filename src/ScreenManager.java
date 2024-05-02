@@ -53,7 +53,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-    theCloset();
+    mainMenu();
 }
 
 public void mainMenu(){
@@ -92,7 +92,6 @@ public void moveableText(GraphicsText Instructions, double dx, double dy){
     InstructScreenReadyButton.setCenter(canvas.getWidth()/2, 700);
     InstructScreenReadyButton.setScale(0.4);
     canvas.add(InstructScreenReadyButton);
-
     }
 
 public void theInstructionsScreen(){
@@ -980,12 +979,10 @@ public void thePodium(){
     quitButton.setPosition(400, 50);
     canvas.add(quitButton);
 
-
     quitButton.onClick(
         () ->  canvas.closeWindow()
     );
 
 }
-
 
 }
