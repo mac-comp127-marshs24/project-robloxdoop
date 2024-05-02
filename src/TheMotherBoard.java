@@ -2,24 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import ThemesOutfit.Beach;
-import ThemesOutfit.School;
-import ThemesOutfit.Winter;
 import edu.macalester.graphics.Image;
 
 public class TheMotherBoard {
     static Random randNum = new Random();
-    static List<List<Image>> Themes = new ArrayList<>();
+    static List<Image> Themes = new ArrayList<>();
     static Winter winter = new Winter();
     static School school = new School();
     static Beach beach = new Beach();
-    static List<Image> ChosenTheme;
+    static Image ChosenTheme;
     static String filePath;
 
     public TheMotherBoard(){
-    Themes.add(winter.getWinningOutfit());
-    Themes.add(school.getWinningOutfit());
-    Themes.add(beach.getWinningOutfit());
+    Themes.add(Winter.getWinningOutfit());
+    Themes.add(School.getWinningOutfit());
+    Themes.add(Beach.getWinningOutfit());
     ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
     
     }
@@ -28,21 +25,21 @@ public class TheMotherBoard {
         ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
     }
 
-    public static List<Image> getTheme(){
+    public static Image getTheme(){
         return ChosenTheme;
     }
 
-    public static String ChosenThemeName(List<Image> ChosenTheme){
+    public static String ChosenThemeName(Image ChosenTheme){
 
         System.out.println("The chosen theme "+ ChosenTheme);
-        System.out.println("Winter " + winter.getWinningOutfit());
-        System.out.println("School " + school.getWinningOutfit());
-        System.out.println("Beach " + beach.getWinningOutfit());
+        System.out.println("Winter " + Winter.getWinningOutfit());
+        System.out.println("School " + School.getWinningOutfit());
+        System.out.println("Beach " + Beach.getWinningOutfit());
 
-        if (ChosenTheme.equals(winter.getWinningOutfit())){
+        if (ChosenTheme.equals(Winter.getWinningOutfit())){
             return "The Theme is Winter!";
         }
-        else if(ChosenTheme.equals(beach.getWinningOutfit())){
+        else if(ChosenTheme.equals(Beach.getWinningOutfit())){
             return "The Theme is Beach!";
         }
         else{

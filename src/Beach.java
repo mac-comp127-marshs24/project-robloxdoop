@@ -1,16 +1,21 @@
-package ThemesOutfit;
 
+
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
+import edu.macalester.graphics.ui.Button;
 
 public class Beach {
-    List<Image>  beachHats = new ArrayList<Image>();
-    List<Image> beachNeck = new ArrayList<Image>();
-    List<Image>  beachTops = new ArrayList<Image>();
-    List<Image> beachBottoms = new ArrayList<Image>();
-    List<Image> beachShoes = new ArrayList<Image>();
+    static List<Image>  beachHats = new ArrayList<Image>();
+    static List<Image> beachNeck = new ArrayList<Image>();
+    static List<Image>  beachTops = new ArrayList<Image>();
+    static List<Image> beachBottoms = new ArrayList<Image>();
+    static List<Image> beachShoes = new ArrayList<Image>();
+    private static Button closetButton2 = new Button("Let's get Dressed!");
 
     public Beach(){
         beachHats.add(new Image ("assets_Clothes/PinkandBlackVizor.png"));
@@ -52,28 +57,49 @@ public class Beach {
     }
 
 
-    public List<Image> getBeachHats(){
+    public static List<Image> getBeachHats(){
         return beachHats;
     }
 
-    public List<Image> getBeachNeck(){
+    public static List<Image> getBeachNeck(){
         return beachNeck;
     }
 
-    public List<Image> getBeachTops(){
+    public static List<Image> getBeachTops(){
         return beachTops;
     }
 
-    public List<Image> getBeachBottoms(){
+    public static List<Image> getBeachBottoms(){
         return beachBottoms;
     }
 
-    public List<Image> getBeachShoes(){
+    public static List<Image> getBeachShoes(){
         return beachShoes;
     }
 
     
-    public List<Image> getWinningOutfit() {
-        return beachNeck;
+    public static Image getWinningOutfit() {
+        return new Image ("assets_Clothes/StackedPurpleNecklace.png");
     }
+
+    public static void beachTheme(CanvasWindow canvas){
+    Image beachTheme = new Image(-240,-150);
+    beachTheme.setImagePath("assets/beach2.png");
+    GraphicsText beachText = new GraphicsText("\t  The Theme is Beach! \nCreate your best Beach Outfit!");
+    beachText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
+    beachTheme.setScale(0.75);
+    beachText.setFontSize(60);
+    beachText.setFillColor(Color.BLACK);
+    beachText.setStroked(true);
+    beachText.setStrokeWidth(2);
+    beachText.setStrokeColor(Color.WHITE);
+
+    canvas.add(beachTheme);
+    canvas.add(beachText);
+    closetButton2.setPosition(600,50);
+    canvas.add(closetButton2);
+    closetButton2.onClick(() -> {
+        canvas.removeAll();
+        ClosetManager.theCloset(canvas);});
+}
 }

@@ -1,17 +1,22 @@
-package ThemesOutfit;
 
+
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
+import edu.macalester.graphics.ui.Button;
 
 
 public class Winter{ 
-    List<Image>  winterHats = new ArrayList<Image>();
-    List<Image>  winterNeck = new ArrayList<Image>();
-    List<Image> winterTops = new ArrayList<Image>();
-    List<Image> winterBottoms = new ArrayList<Image>();
-    List<Image>  winterShoes = new ArrayList<Image>();
+    static List<Image>  winterHats = new ArrayList<Image>();
+    static List<Image>  winterNeck = new ArrayList<Image>();
+    static List<Image> winterTops = new ArrayList<Image>();
+    static List<Image> winterBottoms = new ArrayList<Image>();
+    static List<Image>  winterShoes = new ArrayList<Image>();
+    private static Button closetButton2 = new Button("Let's get Dressed!");
     
 
     public Winter(){
@@ -49,29 +54,50 @@ public class Winter{
   
     }
 
-      public List<Image> getwinterHats(){
+      public static List<Image> getwinterHats(){
         return winterHats;
       }
 
-      public List<Image> getwinterNeck(){
+      public static List<Image> getwinterNeck(){
         return winterNeck;
       }
 
-      public List<Image> getwinterTops(){
+      public static List<Image> getwinterTops(){
         return winterTops;
       }
 
-      public List<Image> getwinterBottoms(){
+      public static List<Image> getwinterBottoms(){
         return winterBottoms;
       }
-      public List<Image> getwinterShoes(){
+      public static List<Image> getwinterShoes(){
         return winterShoes;
       }
 
-      public List<Image> getWinningOutfit(){
+      public static Image getWinningOutfit(){
         //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
-        return winterNeck;
+        return new Image ("assets_Clothes/WinterBeigeScarf.png");
   
+}
+
+public static void winterTheme(CanvasWindow canvas){
+    Image winterTheme = new Image(-240,-150);
+    GraphicsText winterText = new GraphicsText("\t  The Theme is Winter! \nCreate your best Winter Outfit!");
+    winterText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
+    winterText.setFontSize(60);
+    winterText.setFillColor(Color.BLACK);
+    winterText.setStroked(true);
+    winterText.setStrokeWidth(2);
+    winterText.setStrokeColor(Color.WHITE);
+
+    winterTheme.setImagePath("assets/winter2.png");
+    winterTheme.setScale(0.75);
+    canvas.add(winterTheme);
+    canvas.add(winterText);
+    closetButton2.setPosition(600,50);
+    canvas.add(closetButton2);
+    closetButton2.onClick(() -> {
+        canvas.removeAll();
+        ClosetManager.theCloset(canvas);});
 }
 
 }
