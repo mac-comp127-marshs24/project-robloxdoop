@@ -81,13 +81,9 @@ public class Winter{
 
 public static void winterTheme(CanvasWindow canvas){
     Image winterTheme = new Image(-240,-150);
-    GraphicsText winterText = new GraphicsText("\t  The Theme is Winter! \nCreate your best Winter Outfit!");
-    winterText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
-    winterText.setFontSize(60);
-    winterText.setFillColor(Color.BLACK);
-    winterText.setStroked(true);
-    winterText.setStrokeWidth(2);
-    winterText.setStrokeColor(Color.WHITE);
+    Image winterText = new Image ("assets/98.png");
+    winterText.setCenter(canvas.getWidth()/2, canvas.getHeight()/2);
+    winterText.setScale(0.75);
 
     winterTheme.setImagePath("assets/winter2.png");
     winterTheme.setScale(0.75);

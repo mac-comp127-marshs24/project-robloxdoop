@@ -84,14 +84,10 @@ public class School{
     public static void schoolTheme(CanvasWindow canvas){
       Image schoolTheme = new Image(-240,-150);
       schoolTheme.setImagePath("assets/school2.png");
-      GraphicsText schoolText = new GraphicsText("\t  The Theme is School! \nCreate your best School Outfit!");
-      schoolText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
+      Image schoolText = new Image ("assets/99.png");
+      schoolText.setCenter(canvas.getWidth()/2, canvas.getHeight()/2);
       schoolTheme.setScale(0.75);
-      schoolText.setFontSize(60);
-      schoolText.setFillColor(Color.BLACK);
-      schoolText.setStroked(true);
-      schoolText.setStrokeWidth(2);
-      schoolText.setStrokeColor(Color.WHITE);
+      schoolText.setScale(0.65);
 
       canvas.add(schoolTheme);
       canvas.add(schoolText);

@@ -84,14 +84,10 @@ public class Beach {
     public static void beachTheme(CanvasWindow canvas){
     Image beachTheme = new Image(-240,-150);
     beachTheme.setImagePath("assets/beach2.png");
-    GraphicsText beachText = new GraphicsText("\t  The Theme is Beach! \nCreate your best Beach Outfit!");
-    beachText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
+    Image beachText = new Image ("assets/100.png");
+    beachText.setCenter(canvas.getWidth()/2, canvas.getHeight()/2);
+    beachText.setScale(0.65);
     beachTheme.setScale(0.75);
-    beachText.setFontSize(60);
-    beachText.setFillColor(Color.BLACK);
-    beachText.setStroked(true);
-    beachText.setStrokeWidth(2);
-    beachText.setStrokeColor(Color.WHITE);
 
     canvas.add(beachTheme);
     canvas.add(beachText);
