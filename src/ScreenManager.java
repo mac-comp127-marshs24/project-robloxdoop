@@ -914,6 +914,12 @@ public void changeShoes(boolean moveForward){
 }
 
 public void theRunway(){
+
+    new Thread(() -> {
+        AudioFilePlayer applause = new AudioFilePlayer();
+        applause.play("res/applause.wav");
+    }).start();
+
     Image runwayBackground;
     runwayBackground = new Image(0,0);
     runwayBackground.setScale(0.75,0.75);
@@ -935,11 +941,6 @@ public void theRunway(){
 
 
 public void thePodium(){
-
-    new Thread(() -> {
-        AudioFilePlayer applause = new AudioFilePlayer();
-        applause.play("res/applause.wav");
-    }).start();
 
     System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
     GraphicsText scoreTally = new GraphicsText(decision());
