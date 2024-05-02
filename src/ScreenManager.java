@@ -1,5 +1,4 @@
 import java.awt.Color;
-import java.awt.Paint;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -425,8 +424,6 @@ public void theCloset(){
         playerChoices.add(beach.getBeachShoes().get(0));
       
     }
-
-
 
 
 
