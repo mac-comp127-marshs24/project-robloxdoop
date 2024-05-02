@@ -119,7 +119,7 @@ public static void thePodium(){
         // }
         
 
-    }else if(TheMotherBoard.getTheme().equals(School.getWinningOutfit())){
+    }else if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/SchoolScarf.png"))){
         Image schoolBackground = new Image(0,0);
         schoolBackground.setScale(.75);
         schoolBackground .setImagePath("assets/school2.png");
@@ -132,7 +132,7 @@ public static void thePodium(){
         beachBackground.setScale(.75);
         beachBackground.setPosition(-240, -150);
         canvas.add(beachBackground);
-}
+    }
 
     canvas.add(ClosetManager.getRunwayReady());
     runwayReady.setScale(0.75);

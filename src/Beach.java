@@ -36,7 +36,6 @@ public class Beach {
         beachTops.add(new Image ("assets_Clothes/MintFlowerTop.png"));
 
 
-
         beachBottoms.add(new Image ("assets_Clothes/WhiteShorts.png"));
         beachBottoms.add(new Image ("assets_Clothes/RedFlaredShorts.png"));
         beachBottoms.add(new Image ("assets_Clothes/RedCrossSkirt.png"));
@@ -79,7 +78,7 @@ public class Beach {
 
     
     public static Image getWinningOutfit() {
-        return new Image ("assets_Clothes/StackedPurpleNecklace.png");
+        return new Image("assets_Clothes/TwoStackedPinkNecklace.png");
     }
 
     public static void beachTheme(CanvasWindow canvas){
