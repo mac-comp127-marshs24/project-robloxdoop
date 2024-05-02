@@ -53,12 +53,12 @@ public class InstructionsManager {
         event -> {event.getPosition();
             if(canvas.getElementAt(event.getPosition()) == buttonName){
             canvas.removeAll();
-            if(TheMotherBoard.getTheme().equals(Winter.getWinningOutfit())){
+            if(TheMotherBoard.getTheme().equals(Winter.getOutfitComparision())){
                 Winter.winterTheme(canvas);
-            }if(TheMotherBoard.getTheme().equals(School.getWinningOutfit())){
+            }if(TheMotherBoard.getTheme().equals(School.getOutfitComparision())){
                 School.schoolTheme(canvas);
             }
-            if(TheMotherBoard.getTheme().equals(Beach.getWinningOutfit())){
+            if(TheMotherBoard.getTheme().equals(Beach.getOutfitComparision())){
             Beach.beachTheme(canvas);
             }
         

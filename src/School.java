@@ -76,7 +76,7 @@ public class School{
         return schoolShoes;
       }
       
-      public static Image getWinningOutfit(){
+      public static Image getOutfitComparision(){
         //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
         return new Image("assets_Clothes/SchoolScarf.png");
       }

@@ -31,7 +31,7 @@ public class ClosetManager {
     static int indexofBottoms = 0;
     static int indexofShoes = 0;
 
-    private static Button runwayButton = new Button("Enter the Runway!");
+    private static Image runwayButton =  new Image("assets/RunwayButton.png");
 
     static List<GraphicsObject> playerChoices = new ArrayList<GraphicsObject>();
 
@@ -60,132 +60,198 @@ public class ClosetManager {
     canvas.add(characterBase);
     runwayReady.add(characterBase);
 
-    //FULL BODY BUTTONS
-    Button hatsLeftButton = new Button ("Left");
-    Button hatsRightButton = new Button ("Right");
 
-    Button neckLeftButton = new Button ("Left");
-    Button neckRightButton = new Button ("Right");
+    Image hatsRightButton = new Image("assets/RightButton2.png");
+    Image hatsLeftButton = new Image("assets/LeftButton2.png");
 
-    Button topsLeftButton = new Button("Left");
-    Button topsRightButton = new Button("Right");
+    Image neckRightButton = new Image("assets/RightButton2.png");
+    Image neckLeftButton = new Image("assets/LeftButton2.png");
 
-    Button bottomsLeftButton = new Button("Left");
-    Button bottomsRightButton = new Button("Right");
+    Image topsRightButton = new Image("assets/RightButton2.png");
+    Image topsLeftButton = new Image("assets/LeftButton2.png");
 
-    Button shoesLeftButton = new Button("Left");
-    Button shoesRightButton = new Button("Right");
+    Image bottomsRightButton = new Image("assets/RightButton2.png");
+    Image bottomsLeftButton = new Image("assets/LeftButton2.png");
+
+    Image shoesRightButton = new Image("assets/RightButton2.png");
+    Image shoesLeftButton = new Image("assets/LeftButton2.png");
+
+    double buttonScale = 0.15;
 
     //MANAGES THE HATS
     hatsBox.setStrokeWidth(10);
     hatsBox.setStroked(false); //USE ONCE ALL THE OBJECT ARE SET PROPERLY
     hatsBox.setCenter(685, 90);
-    hatsLeftButton.setPosition(hatsBox.getX() - 100,hatsBox.getY());
-    hatsRightButton.setPosition(hatsBox.getX() + hatsBox.getWidth(),hatsBox.getY());
+
+    hatsLeftButton.setCenter(hatsBox.getX() - hatsBox.getWidth(), hatsBox.getY() + hatsBox.getHeight()/2);
+    hatsRightButton.setCenter(hatsBox.getX() + 200, hatsBox.getY() + hatsBox.getHeight()/2);
+
+    hatsLeftButton.setScale(buttonScale);
+    hatsRightButton.setScale(buttonScale);
+
     canvas.add(hatsLeftButton);
     canvas.add(hatsRightButton);
     canvas.add(hatsBox);
-    hatsLeftButton.onClick(
-        () -> {
-       changeHats(false, canvas);
-       System.out.println("HATLLL");
-        });
 
-    hatsRightButton.onClick(
-            () -> {
-        changeHats(true, canvas); 
-        System.out.println("HATRRR");  
-            });
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == hatsLeftButton){
+                changeHats(false, canvas);
+            }
+
+            System.out.println("JDFKJSJFOJASODF");
+
+        }
+    );
+
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == hatsRightButton){
+                changeHats(true, canvas);
+            }
+
+        }
+    );
 
 
      //MANAGES THE NECK
     neckBox.setStrokeWidth(10);
     neckBox.setStroked(false);
     neckBox.setCenter(685, 220);
-    neckLeftButton.setPosition(neckBox.getX() - 100,neckBox.getY()-100);
-    neckRightButton.setPosition(neckBox.getX() + neckBox.getWidth(),neckBox.getY()-100);
+
+    neckLeftButton.setCenter(neckBox.getX() - neckBox.getWidth(), neckBox.getY() + neckBox.getHeight()/2);
+    neckRightButton.setCenter(neckBox.getX() + 200, neckBox.getY() + neckBox.getHeight()/2);
+
+    neckLeftButton.setScale(buttonScale);
+    neckRightButton.setScale(buttonScale);
+
     canvas.add(neckLeftButton);
     canvas.add(neckRightButton);
     canvas.add(neckBox);
-    neckLeftButton.onClick(
-        () -> {
-            changeNeck(false, canvas);
-            System.out.println("NECKLLL");
-        });
 
-    neckRightButton.onClick(
-            () -> {
-            changeNeck(true, canvas);   
-            System.out.println("NECKRRRR");
-            });
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == neckLeftButton){
+                changeNeck(false, canvas);
+            }
+
+        }
+    );
+
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == neckRightButton){
+                changeNeck(true, canvas);
+            }
+
+        }
+    );
 
      //MANAGES THE TOPS
     topsBox.setStrokeWidth(10);
     topsBox.setCenter(675, 250);
-    topsBox.setStroked(false);
-    topsLeftButton.setPosition(topsBox.getX()- 100, topsBox.getY());
-    topsRightButton.setPosition(topsBox.getX() + topsBox.getWidth(),topsBox.getY());
+    topsBox.setStroked(true);
+
+    topsLeftButton.setCenter(topsBox.getX() - topsBox.getWidth(), topsBox.getY() + topsBox.getHeight() + 50);
+    topsRightButton.setCenter(topsBox.getX() + 200, topsBox.getY() + topsBox.getHeight() + 50);
+
+    topsLeftButton.setScale(buttonScale);
+    topsRightButton.setScale(buttonScale);
+
     canvas.add(topsLeftButton);
     canvas.add(topsRightButton);
     canvas.add(topsBox);
-    topsLeftButton.onClick(
-        () -> {
-            changeTops(false, canvas);
-            System.out.println("TOPSLLL");
-        });
 
-    topsRightButton.onClick(
-            () -> {
-                changeTops(true, canvas);   
-                System.out.println("TOPSRRR");
-            });
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == topsLeftButton){
+                changeTops(false, canvas);
+            }
+
+        }
+    );
+
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == topsRightButton){
+                changeTops(true, canvas);
+            }
+
+        }
+    );
 
     //MANAGES THE BOTTOMS
     bottomsBox.setStrokeWidth(10);
     bottomsBox.setCenter(575+110, 540); //move up = subtraction, move left = subtract
     bottomsBox.setStroked(false);
-    bottomsLeftButton.setPosition(bottomsBox.getX()- 100, bottomsBox.getY());
-    bottomsRightButton.setPosition(bottomsBox.getX() + bottomsBox.getWidth(),bottomsBox.getY());
+
+    bottomsLeftButton.setCenter(bottomsBox.getX() - bottomsBox.getWidth(), bottomsBox.getY() + bottomsBox.getHeight()/2);
+    bottomsRightButton.setCenter(bottomsBox.getX() + 200, bottomsBox.getY() + bottomsBox.getHeight()/2);
+
+    bottomsLeftButton.setScale(buttonScale);
+    bottomsRightButton.setScale(buttonScale);
+
     canvas.add(bottomsLeftButton);
     canvas.add(bottomsRightButton);
     canvas.add(bottomsBox);
-    bottomsLeftButton.onClick(
-        () -> {
-            changeBottoms(false, canvas);
-            System.out.println("BOTTOMSRRR");
-        });
 
-    bottomsRightButton.onClick(
-            () -> {
-               changeBottoms(true, canvas);  
-               System.out.println("BOTTOMSLLL"); 
-               System.out.println(indexofNeck);
-               System.out.println(indexofBottoms);
-            });
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == bottomsLeftButton){
+                changeBottoms(false, canvas);
+            }
+
+        }
+    );
+
+        canvas.onClick(
+            event -> {event.getPosition();
+                if(canvas.getElementAt(event.getPosition()) == bottomsRightButton){
+                    changeBottoms(true, canvas);
+                }
+    
+            }
+        );
 
      //MANAGES THE SHOES
     shoesBox.setStrokeWidth(10);
     shoesBox.setCenter(640, 720);
     shoesBox.setStroked(false);
-    shoesLeftButton.setPosition(shoesBox.getX()- 100, shoesBox.getY());
-    shoesRightButton.setPosition(shoesBox.getX() + shoesBox.getWidth(),shoesBox.getY());
+
+
+    shoesLeftButton.setCenter(shoesBox.getX() - shoesBox.getWidth(), shoesBox.getY() + shoesBox.getHeight() - 50);
+    shoesRightButton.setCenter(shoesBox.getX() + 300, shoesBox.getY() + shoesBox.getHeight() - 50);
+
+    shoesLeftButton.setScale(buttonScale);
+    shoesRightButton.setScale(buttonScale);
+
+
     canvas.add(shoesLeftButton);
     canvas.add(shoesRightButton);
     canvas.add(shoesBox);
-    shoesLeftButton.onClick(
-        () -> {
-            changeShoes(false, canvas);
-        });
 
-    shoesRightButton.onClick(
-            () -> {
-               changeShoes(true, canvas);   
-            });
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == shoesRightButton){
+                        changeShoes(true, canvas);
+                    }
+        
+                }
+            );
+
+    canvas.onClick(
+       event -> {event.getPosition();
+        if(canvas.getElementAt(event.getPosition()) == shoesLeftButton){
+          changeShoes(false, canvas);
+              }
+                
+           }
+ );
 
     
 
     //MANAGES THE THEMES ADD THE CLOTHES ITEMS WITH THE SHOES
-    if(TheMotherBoard.getTheme().equals(Winter.getWinningOutfit())){
+    if(TheMotherBoard.getTheme().equals(Winter.getOutfitComparision())){
     Winter.getwinterHats().get(0).setCenter(hatsBox.getCenter());
     Winter.getwinterHats().get(0).setScale(hatScale);
     canvas.add(Winter.getwinterHats().get(0));
@@ -220,7 +286,7 @@ public class ClosetManager {
 
 
     
-    } else if(TheMotherBoard.getTheme().equals(School.getWinningOutfit())){
+    } else if(TheMotherBoard.getTheme().equals(School.getOutfitComparision())){
         School.getschoolHats().get(0).setCenter(hatsBox.getCenter());
         School.getschoolHats().get(0).setScale(0.4);
         canvas.add(School.getschoolHats().get(0));
@@ -290,16 +356,20 @@ public class ClosetManager {
     canvas.onClick(e -> {
         System.out.println(e.getPosition());
     });
-        
-    runwayButton.setPosition(65,65);
-    canvas.add(runwayButton);
 
-    runwayButton.onClick(
-        () -> ScreenManager.theRunway());
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == runwayButton){
+                canvas.removeAll();
+                ScreenManager.theRunway();
+            }
 
-    runwayButton.onClick(
-        () -> canvas.removeAll()
+        }
     );
+        
+    runwayButton.setCenter(165,65);
+    canvas.add(runwayButton);
+    runwayButton.setScale(0.25);
 }
     
 
@@ -607,7 +677,7 @@ if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/SchoolScarf.png"))
     if(moveForward){
         indexofBottoms ++;
         System.out.println("HEYYEYEIHF");
-        System.out.println("THE THEMMMEEE" + Winter.getWinningOutfit());
+        System.out.println("THE THEMMMEEE" + Winter.getOutfitComparision());
         System.out.println("THE MOTHER BOATDERR THEME" + TheMotherBoard.getTheme());
     }
     else{

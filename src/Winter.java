@@ -73,7 +73,7 @@ public class Winter{
         return winterShoes;
       }
 
-      public static Image getWinningOutfit(){
+      public static Image getOutfitComparision(){
         //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
         return new Image ("assets_Clothes/WinterBeigeScarf.png");
   
@@ -99,5 +99,7 @@ public static void winterTheme(CanvasWindow canvas){
         canvas.removeAll();
         ClosetManager.theCloset(canvas);});
 }
+
+
 
 }

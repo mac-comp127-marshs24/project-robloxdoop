@@ -13,8 +13,12 @@ import edu.macalester.graphics.ui.Button;
 public class ScreenManager {
     private static Button podiumButton = new Button("Winner or Loser?");
     static GraphicsGroup runwayReady = new GraphicsGroup();
+
     Image homeScreenPinkButton = new Image("assets/StartButton.png");
     Image InstructScreenReadyButton = new Image("assets/ReadyButton.png");
+
+    Image themeDressUpButton = new Image ("assets/DressupButton.png");
+    Image closetRunwayButton = new Image ("assets/RunwayButton.png");
     
     
     int dx = 5;
@@ -134,6 +138,7 @@ public static void thePodium(){
         canvas.add(beachBackground);
     }
 
+    ClosetManager.getRunwayReady().setScale(0.75);
     canvas.add(ClosetManager.getRunwayReady());
     runwayReady.setScale(0.75);
     runwayReady.setPosition(75 ,0);

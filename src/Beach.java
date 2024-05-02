@@ -77,7 +77,7 @@ public class Beach {
     }
 
     
-    public static Image getWinningOutfit() {
+    public static Image getOutfitComparision() {
         return new Image("assets_Clothes/TwoStackedPinkNecklace.png");
     }
 
