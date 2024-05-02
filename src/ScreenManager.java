@@ -218,6 +218,8 @@ public void beachTheme(){
  double hatScale = 0.2;
  double neckScale = 0.3;
  double topsScale = 0.35;
+ double bottomScale = .70;
+ double shoeScale = .4;
 
 
 public void theCloset(){
@@ -311,7 +313,7 @@ public void theCloset(){
 
     //MANAGES THE BOTTOMS
     bottomsBox.setStrokeWidth(10);
-    bottomsBox.setCenter(675, 490);
+    bottomsBox.setCenter(575+110, 540); //move up = subtraction, move left = subtract
     bottomsBox.setStroked(false);
     bottomsLeftButton.setPosition(bottomsBox.getX()- 100, bottomsBox.getY());
     bottomsRightButton.setPosition(bottomsBox.getX() + bottomsBox.getWidth(),bottomsBox.getY());
@@ -373,13 +375,13 @@ public void theCloset(){
 
 
     winter.getwinterBottoms().get(0).setCenter(bottomsBox.getCenter());
-    winter.getwinterBottoms().get(0).setScale(0.7);
+    winter.getwinterBottoms().get(0).setScale(bottomScale);
     canvas.add(winter.getwinterBottoms().get(0));
     runwayReady.add(winter.getwinterBottoms().get(0));
     playerChoices.add(winter.getwinterBottoms().get(0));
 
     winter.getwinterShoes().get(0).setCenter(shoesBox.getCenter());
-    winter.getwinterShoes().get(0).setScale(0.4);
+    winter.getwinterShoes().get(0).setScale(shoeScale - 100);
     canvas.add(winter.getwinterShoes().get(0));
     runwayReady.add(winter.getwinterShoes().get(0));
     playerChoices.add(winter.getwinterShoes().get(0));
@@ -790,7 +792,7 @@ public void changeBottoms(boolean moveForward){
     }
 
     winter.getwinterBottoms().get(indexofBottoms).setCenter(bottomsBox.getCenter());
-    winter.getwinterBottoms().get(indexofBottoms).setScale(0.7);
+    winter.getwinterBottoms().get(indexofBottoms).setScale(bottomScale);
     canvas.add(winter.getwinterBottoms().get(indexofBottoms));
     runwayReady.add(winter.getwinterBottoms().get(indexofBottoms));
     playerChoices.add(winter.getwinterBottoms().get(indexofBottoms));
@@ -940,6 +942,12 @@ public void changeShoes(boolean moveForward){
 }
 
 public void theRunway(){
+
+    new Thread(() -> {
+        AudioFilePlayer applause = new AudioFilePlayer();
+        applause.play("res/applause.wav");
+    }).start();
+
     Image runwayBackground;
     runwayBackground = new Image(0,0);
     runwayBackground.setScale(0.75,0.75);
@@ -961,7 +969,6 @@ public void theRunway(){
 
 
 public void thePodium(){
-
 
     System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
     GraphicsText scoreTally = new GraphicsText(decision());
