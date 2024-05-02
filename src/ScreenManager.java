@@ -53,7 +53,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-    theCloset();
+    mainMenu();
 }
 
 public void mainMenu(){
@@ -936,6 +936,10 @@ public void theRunway(){
 
 public void thePodium(){
 
+    new Thread(() -> {
+        AudioFilePlayer applause = new AudioFilePlayer();
+        applause.play("res/applause.wav");
+    }).start();
 
     System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
     GraphicsText scoreTally = new GraphicsText(decision());
