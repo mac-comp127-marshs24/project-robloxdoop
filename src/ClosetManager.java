@@ -9,8 +9,15 @@ import edu.macalester.graphics.Rectangle;
 public class ClosetManager {
     static Image closetBackground;
     static Image characterBase;
-    static GraphicsGroup runwayReady = new GraphicsGroup();
     static Image proTip = new Image("assets/ProTip.png");
+
+    static Image hatsSign = new Image("assets/topsSigns.png");
+    static Image neckSign = new Image("assets/neckSigns.png");
+    static Image topsSign = new Image("assets/topsSigns.png");
+    static Image bottomsSign = new Image("assets/bottomsSign.png");
+    static Image shoesSign = new Image("assets/shoesSign.png");
+
+    static GraphicsGroup runwayReady = new GraphicsGroup();
     static Rectangle hatsBox = new Rectangle(0, 0, 100, 70);
     static Rectangle neckBox = new Rectangle(0, 0, 100, 25);
     static Rectangle topsBox = new Rectangle(0, 0, 150, 100);
@@ -56,6 +63,27 @@ public class ClosetManager {
     proTip.setPosition(300,100);
     proTip.setScale(0.15);
 
+    //CATORGOTRIC LABEL SIGNS
+    canvas.add(hatsSign);
+    hatsSign.setPosition(1000,600);
+    hatsSign.setScale(0.15);
+
+    canvas.add(neckSign);
+    neckSign.setPosition(300,100);
+    neckSign.setScale(0.15);
+
+    canvas.add(topsBox);
+    topsBox.setPosition(300,100);
+    topsBox.setScale(0.15);
+
+    canvas.add(bottomsSign);
+    bottomsSign.setPosition(300,100);
+    bottomsSign.setScale(0.15);
+
+    canvas.add(shoesSign);
+    shoesSign.setPosition(300,100);
+    shoesSign.setScale(0.15);
+
     //THE MODEL BODY
     characterBase = new Image(0,0);
     characterBase.setScale(0.9,0.9);
@@ -87,7 +115,7 @@ public class ClosetManager {
     hatsBox.setStroked(false); //USE ONCE ALL THE OBJECT ARE SET PROPERLY
     hatsBox.setCenter(650, 105);
 
-    hatsLeftButton.setCenter(hatsBox.getX() - hatsBox.getWidth(), hatsBox.getY() + hatsBox.getHeight()/2);
+    hatsLeftButton.setCenter(1300,75);
     hatsRightButton.setCenter(hatsBox.getX() + 200, hatsBox.getY() + hatsBox.getHeight()/2);
 
     hatsLeftButton.setScale(buttonScale);
@@ -354,9 +382,12 @@ public class ClosetManager {
     }
 
 
-
     canvas.onClick(e -> {
         System.out.println(e.getPosition());
+    });
+
+    canvas.onClick(e -> {
+        System.out.println(canvas.getElementAt(e.getPosition()));
     });
 
     canvas.onClick(
