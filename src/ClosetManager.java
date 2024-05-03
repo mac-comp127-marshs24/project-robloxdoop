@@ -217,7 +217,7 @@ public class ClosetManager {
 
      //MANAGES THE SHOES
     shoesBox.setStrokeWidth(10);
-    shoesBox.setCenter(650, 660);
+    shoesBox.setCenter(635, 700);
     shoesBox.setStroked(false);
 
 
