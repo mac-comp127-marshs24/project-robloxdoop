@@ -18,11 +18,11 @@ public class ClosetManager {
     static Rectangle bottomsBox = new Rectangle(0, 0, 150, 300);
     static Rectangle shoesBox = new Rectangle(0, 0, 200, 70);
 
-    static double hatScale = 0.2;
+    static double hatScale = 0.8;
     static double neckScale = 0.3;
     static double topsScale = 0.35;
-    static double bottomScale = .70;
-    static double shoeScale = .4;
+    static double bottomScale = .60;
+    static double shoeScale = .05;
     static int score = 0;
 
     static int indexofHats = 0;
@@ -81,7 +81,7 @@ public class ClosetManager {
     //MANAGES THE HATS
     hatsBox.setStrokeWidth(10);
     hatsBox.setStroked(false); //USE ONCE ALL THE OBJECT ARE SET PROPERLY
-    hatsBox.setCenter(685, 90);
+    hatsBox.setCenter(673, 90);
 
     hatsLeftButton.setCenter(hatsBox.getX() - hatsBox.getWidth(), hatsBox.getY() + hatsBox.getHeight()/2);
     hatsRightButton.setCenter(hatsBox.getX() + 200, hatsBox.getY() + hatsBox.getHeight()/2);
@@ -182,7 +182,7 @@ public class ClosetManager {
 
     //MANAGES THE BOTTOMS
     bottomsBox.setStrokeWidth(10);
-    bottomsBox.setCenter(575+110, 540); //move up = subtraction, move left = subtract
+    bottomsBox.setCenter(670, 380); //move up = subtraction, move left = subtract
     bottomsBox.setStroked(false);
 
     bottomsLeftButton.setCenter(bottomsBox.getX() - bottomsBox.getWidth(), bottomsBox.getY() + bottomsBox.getHeight()/2);
@@ -215,7 +215,7 @@ public class ClosetManager {
 
      //MANAGES THE SHOES
     shoesBox.setStrokeWidth(10);
-    shoesBox.setCenter(640, 720);
+    shoesBox.setCenter(650, 660);
     shoesBox.setStroked(false);
 
 
@@ -279,7 +279,7 @@ public class ClosetManager {
     playerChoices.add(Winter.getwinterBottoms().get(0));
 
     Winter.getwinterShoes().get(0).setCenter(shoesBox.getCenter());
-    Winter.getwinterShoes().get(0).setScale(shoeScale - 100);
+    Winter.getwinterShoes().get(0).setScale(shoeScale); 
     canvas.add(Winter.getwinterShoes().get(0));
     runwayReady.add(Winter.getwinterShoes().get(0));
     playerChoices.add(Winter.getwinterShoes().get(0));
@@ -288,31 +288,31 @@ public class ClosetManager {
     
     } else if(TheMotherBoard.getTheme().equals(School.getOutfitComparision())){
         School.getschoolHats().get(0).setCenter(hatsBox.getCenter());
-        School.getschoolHats().get(0).setScale(0.4);
+        School.getschoolHats().get(0).setScale(hatScale);
         canvas.add(School.getschoolHats().get(0));
         runwayReady.add(School.getschoolHats().get(0));
         playerChoices.add(School.getschoolHats().get(0));
 
         School.getschoolNeck().get(0).setCenter(neckBox.getCenter());
-        School.getschoolNeck().get(0).setScale(0.4);
+        School.getschoolNeck().get(0).setScale(neckScale);
         canvas.add(School.getschoolNeck().get(0));
         runwayReady.add(School.getschoolNeck().get(0));
         playerChoices.add(School.getschoolNeck().get(0));
     
         School.getschoolTops().get(0).setCenter(topsBox.getCenter());
-        School.getschoolTops().get(0).setScale(0.4);
+        School.getschoolTops().get(0).setScale(topsScale);
         canvas.add(School.getschoolTops().get(0));
         runwayReady.add(School.getschoolTops().get(0));
         playerChoices.add(School.getschoolTops().get(0));
 
         School.getschoolBottoms().get(0).setCenter(bottomsBox.getCenter());
-        School.getschoolBottoms().get(0).setScale(0.4);
+        School.getschoolBottoms().get(0).setScale(bottomScale);
         canvas.add(School.getschoolBottoms().get(0));
         runwayReady.add(School.getschoolBottoms().get(0));
         playerChoices.add(School.getschoolBottoms().get(0));
     
         School.getschoolShoes().get(0).setCenter(shoesBox.getCenter());
-        School.getschoolShoes().get(0).setScale(0.4);
+        School.getschoolShoes().get(0).setScale(shoeScale);
         canvas.add(School.getschoolShoes().get(0));
         runwayReady.add(School.getschoolShoes().get(0));
         playerChoices.add(School.getschoolShoes().get(0));
@@ -320,31 +320,31 @@ public class ClosetManager {
     }
     else{
         Beach.getBeachHats().get(0).setCenter(hatsBox.getCenter());
-        Beach.getBeachHats().get(0).setScale(0.4);
+        Beach.getBeachHats().get(0).setScale(hatScale);
         canvas.add(Beach.getBeachHats().get(0));
         runwayReady.add(Beach.getBeachHats().get(0));
         playerChoices.add(Beach.getBeachHats().get(0));
     
         Beach.getBeachNeck().get(0).setCenter(neckBox.getCenter());
-        Beach.getBeachNeck().get(0).setScale(0.4);
+        Beach.getBeachNeck().get(0).setScale(neckScale);
         canvas.add(Beach.getBeachNeck().get(0));
         runwayReady.add(Beach.getBeachNeck().get(0));
         playerChoices.add(Beach.getBeachNeck().get(0));
     
         Beach.getBeachTops().get(0).setCenter(topsBox.getCenter());
-        Beach.getBeachTops().get(0).setScale(0.4);
+        Beach.getBeachTops().get(0).setScale(topsScale);
         canvas.add(Beach.getBeachTops().get(0));
         runwayReady.add(Beach.getBeachTops().get(0));
         playerChoices.add(Beach.getBeachTops().get(0));
 
         Beach.getBeachBottoms().get(0).setCenter(bottomsBox.getCenter());
-        Beach.getBeachBottoms().get(0).setScale(0.4);
+        Beach.getBeachBottoms().get(0).setScale(bottomScale);
         canvas.add(Beach.getBeachBottoms().get(0));
         runwayReady.add(Beach.getBeachBottoms().get(0));
         playerChoices.add(Beach.getBeachBottoms().get(0));
     
         Beach.getBeachShoes().get(0).setCenter(shoesBox.getCenter());
-        Beach.getBeachShoes().get(0).setScale(0.4);
+        Beach.getBeachShoes().get(0).setScale(shoeScale);
         canvas.add(Beach.getBeachShoes().get(0));
         runwayReady.add(Beach.getBeachShoes().get(0));
         playerChoices.add(Beach.getBeachShoes().get(0));

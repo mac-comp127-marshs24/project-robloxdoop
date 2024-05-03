@@ -18,7 +18,7 @@ public class Beach {
     private static Button closetButton2 = new Button("Let's get Dressed!");
 
     public Beach(){
-        beachHats.add(new Image ("assets_Clothes/PinkandBlackVizor.png"));
+        beachHats.add(new Image ("assets_Clothes/PinkVisor.png"));
         beachHats.add(new Image ("assets_Clothes/PinkHeadband.png"));
         beachHats.add(new Image("asset_Clothes/BlackHeadband.png"));
   
@@ -37,18 +37,17 @@ public class Beach {
 
 
         beachBottoms.add(new Image ("assets_Clothes/WhiteShorts.png"));
-        beachBottoms.add(new Image ("assets_Clothes/RedFlaredShorts.png"));
-        beachBottoms.add(new Image ("assets_Clothes/RedCrossSkirt.png"));
+        beachBottoms.add(new Image ("assets_Clothes/RedShorts.png"));
+        beachBottoms.add(new Image ("assets_Clothes/RedRuffleSkirt.png"));
         beachBottoms.add(new Image ("assets_Clothes/PurpleSkirt.png"));
-        beachBottoms.add(new Image ("assets_Clothes/PinkSparkleShorts.png"));
+        beachBottoms.add(new Image ("assets_Clothes/PinkShorts.png"));
         beachBottoms.add(new Image ("assets_Clothes/JeanShorts.png"));
         beachBottoms.add(new Image ("assets_Clothes/BlackShorts.png"));
 
-        beachShoes.add(new Image ("assets_Clothes/YellowPearlHeels.png"));
+        beachShoes.add(new Image ("assets_Clothes/YellowHeels.png"));
         beachShoes.add(new Image ("assets_Clothes/WhiteSneakers.png"));
         beachShoes.add(new Image ("assets_Clothes/PurpleHeels.png"));
-        beachShoes.add(new Image ("assets_Clothes/PurpleHeels.png"));
-        beachShoes.add(new Image ("assets_Clothes/PinkPearlHeels.png"));
+        beachShoes.add(new Image ("assets_Clothes/PinkHeels.png"));
         beachShoes.add(new Image ("assets_Clothes/NavyHeels.png"));
         beachShoes.add(new Image ("assets_Clothes/GreenStrapHeels.png"));
         beachShoes.add(new Image ("assets_Clothes/BlueHeels.png"));

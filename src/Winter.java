@@ -20,8 +20,8 @@ public class Winter{
     
 
     public Winter(){
-      winterHats.add(new Image ("assets_Clothes/WinterWhiteBeanie.png"));
-      winterHats.add(new Image ("assets_Clothes/BlackSideCapHat.png"));
+      winterHats.add(new Image ("assets_Clothes/WhiteBeanie.png"));
+      winterHats.add(new Image ("assets_Clothes/BlackSideCap.png"));
       winterHats.add(new Image ("assets_Clothes/BlueCowboyHat.png"));
 
       winterNeck.add(new Image ("assets_Clothes/WinterBeigeScarf.png"));
@@ -37,17 +37,16 @@ public class Winter{
 
       winterBottoms.add(new Image ("assets_Clothes/BlackJeans.png"));
       winterBottoms.add(new Image ("assets_Clothes/TestSkirt1.png"));
-      winterBottoms.add(new Image ("assets_Clothes/GreenCargoPants.png"));
+      winterBottoms.add(new Image ("assets_Clothes/CargoPants.png"));
       winterBottoms.add(new Image ("assets_Clothes/WhiteSkinnyJeans.png"));
       winterBottoms.add(new Image("assets_Clothes/TestPants1.png"));
-      winterBottoms.add(new Image ("assets_Clothes/LightBlueBowPants.png"));
+      winterBottoms.add(new Image ("assets_Clothes/BlueBowPants.png"));
 
    
       winterShoes.add(new Image ("assets_Clothes/BlackLongBoots.png"));
       winterShoes.add(new Image ("assets_Clothes/WhiteSneakers.png"));
       winterShoes.add(new Image ("assets_Clothes/GreenBoots.png"));
-      winterShoes.add(new Image ("assets_Clothes/GreenLongBoots.png"));
-      winterShoes.add(new Image ("assets_Clothes/RedLongOmbreBoots.png"));
+      winterShoes.add(new Image ("assets_Clothes/RedLongBoots.png"));
       winterShoes.add(new Image ("assets_Clothes/GreenStrapHeels.png"));
       winterShoes.add(new Image ("assets_Clothes/BlueHeels.png"));
       winterShoes.add(new Image ("assets_Clothes/BlackBowHeels.png"));

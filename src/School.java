@@ -20,7 +20,7 @@ public class School{
   private static Button closetButton2 = new Button("Let's get Dressed!");
   
     public School(){
-      schoolHats.add(new Image ("assets_Clothes/BlackSideCapHat.png"));
+      schoolHats.add(new Image ("assets_Clothes/BlackSideCap.png"));
       schoolHats.add(new Image ("assets_Clothes/BlueCowboyHat.png"));
       schoolHats.add(new Image("assets_Clothes/BlueCap.png"));
 
@@ -38,13 +38,13 @@ public class School{
 
       schoolBottoms.add(new Image ("assets_Clothes/WhiteSkirt.png"));
       schoolBottoms.add(new Image ("assets_Clothes/BlackSkirt.png"));
-      schoolBottoms.add(new Image ("assets_Clothes/BlackHighLowSkirt.png"));
-      schoolBottoms.add(new Image ("assets_Clothes/RedSkirts.png"));
+      schoolBottoms.add(new Image ("assets_Clothes/BlackSkirtBelt.png"));
+      schoolBottoms.add(new Image ("assets_Clothes/RedRuffleSkirts.png"));
       schoolBottoms.add(new Image ("assets_Clothes/RedCheetahSkirt.png"));
-      schoolBottoms.add(new Image ("assets_Clothes/LightBlueBowPants.png"));
+      schoolBottoms.add(new Image ("assets_Clothes/BlueBowPants.png"));
       schoolBottoms.add(new Image ("assets_Clothes/BlackPants.png"));
       schoolBottoms.add(new Image ("assets_Clothes/WhiteSkinnyJeans.png"));
-      schoolBottoms.add(new Image ("asset_Clothes/GreenCargoPants.png"));
+      schoolBottoms.add(new Image ("asset_Clothes/CargoPants.png"));
       schoolBottoms.add(new Image("assets_Clothes/DarkBlueJean"));
 
 
