@@ -69,9 +69,13 @@ public class Beach {
     }
 
     public static List<Image> getWinningOutfit(){
-        //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
-        return List.of(new Image ("assets_Clothes/WinterBeigeScarf.png"), new Image ("assets_Clothes/BlackLongBoots.png"));
-  
+        return List.of(
+        new Image("assets_Clothes/PinkVisor.png"), 
+        new Image("assets_Clothes/ChainNecklace.png"),
+        new Image ("assets_Clothes/PinkTubeTop.png"),
+        new Image ("assets_Clothes/WhiteShorts.png"),
+        new Image ("assets_Clothes/GoldHeels.png")
+      );
     }
     
 

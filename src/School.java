@@ -69,8 +69,12 @@ public class School{
 
       public static List<Image> getWinningOutfit(){
         //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
-        return List.of(new Image ("assets_Clothes/WinterBeigeScarf.png"), new Image ("assets_Clothes/BlackLongBoots.png"));
-  
+        return List.of(new Image ("assets_Clothes/BlackCap.png"), 
+        new Image ("assets_Clothes/TealScarf.png"),
+        new Image ("assets_Clothes/MintFlowerTop.png"),
+        new Image ("assets_Clothes/BlackSkirt.png"),
+        new Image ("assets_Clothes/GreenBoots.png")
+      );
     }
 
     public static void schoolTheme(CanvasWindow canvas){

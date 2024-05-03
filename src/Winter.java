@@ -69,7 +69,14 @@ public class Winter{
 
     public static List<Image> getWinningOutfit(){
       //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
-      return List.of(new Image ("assets_Clothes/WinterBeigeScarf.png"), new Image ("assets_Clothes/BlackLongBoots.png"));
+      return List.of(
+        new Image ("assets_Clothes/WhiteBeanie.png"), 
+        new Image ("assets_Clothes/BlueScarf.png"),
+        new Image ("assets_Clothes/RedVelvetTop.png"),
+        new Image("asset_Clothes/BlackJeans"),
+        new Image ("assets_Clothes/BlackHeels.png")
+      );
+
 
   }
 
