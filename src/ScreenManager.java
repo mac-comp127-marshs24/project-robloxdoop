@@ -25,7 +25,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-    mainMenu();
+    ClosetManager.theCloset(canvas);
 }
 
 public void mainMenu(){
