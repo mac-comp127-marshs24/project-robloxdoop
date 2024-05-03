@@ -361,7 +361,8 @@ public class ClosetManager {
             if(canvas.getElementAt(event.getPosition()) == runwayButton){
                 canvas.removeAll();
                 ScreenManager.theRunway();
-                
+                canvas.add(runwayReady)
+
             }
 
         }
