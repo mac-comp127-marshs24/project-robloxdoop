@@ -16,7 +16,8 @@ public class Winter{
     static List<Image> winterTops = new ArrayList<Image>();
     static List<Image> winterBottoms = new ArrayList<Image>();
     static List<Image>  winterShoes = new ArrayList<Image>();
-    private static Button closetButton2 = new Button("Let's get Dressed!");
+    static Image getDressedButton = new Image("assets/DressupButton.png");
+   
     
 
     public Winter(){
@@ -89,11 +90,20 @@ public static void winterTheme(CanvasWindow canvas){
     winterTheme.setScale(0.75);
     canvas.add(winterTheme);
     canvas.add(winterText);
-    closetButton2.setPosition(600,50);
-    canvas.add(closetButton2);
-    closetButton2.onClick(() -> {
-        canvas.removeAll();
-        ClosetManager.theCloset(canvas);});
+
+    getDressedButton.setPosition(-830,-500);
+    getDressedButton.setScale(0.15);
+    canvas.add(getDressedButton);
+
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == getDressedButton){
+                canvas.removeAll();
+                ClosetManager.theCloset(canvas);
+            }
+
+        }
+    );
 }
 
 

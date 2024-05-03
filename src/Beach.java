@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.ui.Button;
@@ -16,6 +17,7 @@ public class Beach {
     static List<Image> beachBottoms = new ArrayList<Image>();
     static List<Image> beachShoes = new ArrayList<Image>();
     private static Button closetButton2 = new Button("Let's get Dressed!");
+    private static Image getDressedButton = new Image("assets/DressupButton.png");
 
     public Beach(){
         beachHats.add(new Image ("assets_Clothes/PinkandBlackVizor.png"));
@@ -91,10 +93,20 @@ public class Beach {
 
     canvas.add(beachTheme);
     canvas.add(beachText);
-    closetButton2.setPosition(600,50);
-    canvas.add(closetButton2);
-    closetButton2.onClick(() -> {
-        canvas.removeAll();
-        ClosetManager.theCloset(canvas);});
+
+    getDressedButton.setPosition(-830,-500);
+    getDressedButton.setScale(0.15);
+    canvas.add(getDressedButton);
+
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == getDressedButton){
+                canvas.removeAll();
+                ClosetManager.theCloset(canvas);
+            }
+
+        }
+    );
 }
+
 }
