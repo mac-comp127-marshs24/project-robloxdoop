@@ -10,6 +10,7 @@ public class ClosetManager {
     static Image closetBackground;
     static Image characterBase;
     static GraphicsGroup runwayReady = new GraphicsGroup();
+    static Image proTip = new Image("assets/ProTip.png");
     static Rectangle hatsBox = new Rectangle(0, 0, 100, 70);
     static Rectangle neckBox = new Rectangle(0, 0, 100, 25);
     static Rectangle topsBox = new Rectangle(0, 0, 150, 100);
@@ -49,6 +50,11 @@ public class ClosetManager {
     closetBackground.setScale(0.75,0.75);
     closetBackground.setImagePath("assets/closet.png");
     canvas.add(closetBackground);
+
+    //PRO TIP WORDS
+    canvas.add(proTip);
+    proTip.setPosition(300,100);
+    proTip.setScale(0.15);
 
     //THE MODEL BODY
     characterBase = new Image(0,0);
