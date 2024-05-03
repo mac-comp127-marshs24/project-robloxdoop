@@ -115,8 +115,8 @@ public class ClosetManager {
     hatsBox.setStroked(false); //USE ONCE ALL THE OBJECT ARE SET PROPERLY
     hatsBox.setCenter(650, 105);
 
-    hatsLeftButton.setCenter(1300,75);
-    hatsRightButton.setCenter(hatsBox.getX() + 200, hatsBox.getY() + hatsBox.getHeight()/2);
+    hatsLeftButton.setCenter(1275,90);
+    hatsRightButton.setCenter(1375,85);
 
     hatsLeftButton.setScale(buttonScale);
     hatsRightButton.setScale(buttonScale);
@@ -149,8 +149,8 @@ public class ClosetManager {
     neckBox.setStroked(false);
     neckBox.setCenter(680, 230);
 
-    neckLeftButton.setCenter(neckBox.getX() - neckBox.getWidth(), neckBox.getY() + neckBox.getHeight()/2);
-    neckRightButton.setCenter(neckBox.getX() + 200, neckBox.getY() + neckBox.getHeight()/2);
+    neckLeftButton.setCenter(1275,190);
+    neckRightButton.setCenter(1375,185);
 
     neckLeftButton.setScale(buttonScale);
     neckRightButton.setScale(buttonScale);
@@ -182,8 +182,8 @@ public class ClosetManager {
     topsBox.setCenter(670, 280);
     topsBox.setStroked(false);
 
-    topsLeftButton.setCenter(topsBox.getX() - topsBox.getWidth(), topsBox.getY() + topsBox.getHeight() + 50);
-    topsRightButton.setCenter(topsBox.getX() + 200, topsBox.getY() + topsBox.getHeight() + 50);
+    topsLeftButton.setCenter(1275,290);
+    topsRightButton.setCenter(1375,285);
 
     topsLeftButton.setScale(buttonScale);
     topsRightButton.setScale(buttonScale);
@@ -215,8 +215,8 @@ public class ClosetManager {
     bottomsBox.setCenter(710, 515); //move up = subtraction, move left = subtract
     bottomsBox.setStroked(false);
 
-    bottomsLeftButton.setCenter(bottomsBox.getX() - bottomsBox.getWidth(), bottomsBox.getY() + bottomsBox.getHeight()/2);
-    bottomsRightButton.setCenter(bottomsBox.getX() + 200, bottomsBox.getY() + bottomsBox.getHeight()/2);
+    bottomsLeftButton.setCenter(1275,390);
+    bottomsRightButton.setCenter(1375,385);
 
     bottomsLeftButton.setScale(buttonScale);
     bottomsRightButton.setScale(buttonScale);
@@ -249,8 +249,8 @@ public class ClosetManager {
     shoesBox.setStroked(false);
 
 
-    shoesLeftButton.setCenter(shoesBox.getX() - shoesBox.getWidth(), shoesBox.getY() + shoesBox.getHeight() - 50);
-    shoesRightButton.setCenter(shoesBox.getX() + 300, shoesBox.getY() + shoesBox.getHeight() - 50);
+    shoesLeftButton.setCenter(1275,490);
+    shoesRightButton.setCenter(1375,485);
 
     shoesLeftButton.setScale(buttonScale);
     shoesRightButton.setScale(buttonScale);
