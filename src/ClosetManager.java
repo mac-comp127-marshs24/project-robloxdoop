@@ -21,7 +21,7 @@ public class ClosetManager {
     static double neckScale = 0.3;
     static double topsScale = 0.35;
     static double bottomScale = .50;
-    static double shoeScale = .05;
+    static double shoeScale = .30;
     static int score = 0;
 
     static int indexofHats = 0;
@@ -217,7 +217,7 @@ public class ClosetManager {
 
      //MANAGES THE SHOES
     shoesBox.setStrokeWidth(10);
-    shoesBox.setCenter(650, 660);
+    shoesBox.setCenter(635, 700);
     shoesBox.setStroked(false);
 
 
