@@ -19,9 +19,9 @@ public class ClosetManager {
 
     static double hatScale = 0.8;
     static double neckScale = 0.3;
-    static double topsScale = 0.35;
-    static double bottomScale = .50;
-    static double shoeScale = .30;
+    static double topsScale = 0.25;
+    static double bottomScale = .55;
+    static double shoeScale = .15;
     static int score = 0;
 
     static int indexofHats = 0;
@@ -151,7 +151,7 @@ public class ClosetManager {
 
      //MANAGES THE TOPS
     topsBox.setStrokeWidth(10);
-    topsBox.setCenter(675, 250);
+    topsBox.setCenter(670, 280);
     topsBox.setStroked(false);
 
     topsLeftButton.setCenter(topsBox.getX() - topsBox.getWidth(), topsBox.getY() + topsBox.getHeight() + 50);
@@ -184,7 +184,7 @@ public class ClosetManager {
 
     //MANAGES THE BOTTOMS
     bottomsBox.setStrokeWidth(10);
-    bottomsBox.setCenter(670, 380); //move up = subtraction, move left = subtract
+    bottomsBox.setCenter(710, 515); //move up = subtraction, move left = subtract
     bottomsBox.setStroked(false);
 
     bottomsLeftButton.setCenter(bottomsBox.getX() - bottomsBox.getWidth(), bottomsBox.getY() + bottomsBox.getHeight()/2);
@@ -217,7 +217,7 @@ public class ClosetManager {
 
      //MANAGES THE SHOES
     shoesBox.setStrokeWidth(10);
-    shoesBox.setCenter(635, 700);
+    shoesBox.setCenter(650, 690);
     shoesBox.setStroked(false);
 
 

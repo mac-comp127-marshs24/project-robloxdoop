@@ -28,21 +28,13 @@ public class Beach {
         beachNeck.add(new Image ("assets_Clothes/PinkNecklace.png"));
   
         beachTops.add(new Image ("assets_Clothes/PinkTubeTop.png"));
-        beachTops.add(new Image ("assets_Clothes/OneShoulderPinkTop.png"));
-        beachTops.add(new Image ("assets_Clothes/MustardTop.png"));
-        beachTops.add(new Image ("assets_Clothes/MintTop.png"));
-        beachTops.add(new Image ("assets_Clothes/HalterTop.png"));
-        beachTops.add(new Image ("assets_Clothes/GreenFlowerTop.png"));
         beachTops.add(new Image ("assets_Clothes/MintFlowerTop.png"));
+        beachTops.add(new Image ("assets_Clothes/RedVelvetTop.png"));
 
 
         beachBottoms.add(new Image ("assets_Clothes/WhiteShorts.png"));
-        beachBottoms.add(new Image ("assets_Clothes/RedShorts.png"));
-        beachBottoms.add(new Image ("assets_Clothes/RedRuffleSkirt.png"));
-        beachBottoms.add(new Image ("assets_Clothes/PurpleSkirt.png"));
-        beachBottoms.add(new Image ("assets_Clothes/PinkShorts.png"));
-        beachBottoms.add(new Image ("assets_Clothes/JeanShorts.png"));
-        beachBottoms.add(new Image ("assets_Clothes/BlackShorts.png"));
+        beachBottoms.add(new Image ("assets_Clothes/BlackSkirt.png"));
+        beachBottoms.add(new Image("asset_Clothes/BlackJeans"));
 
         beachShoes.add(new Image ("assets_Clothes/GoldHeels.png"));
         beachShoes.add(new Image ("assets_Clothes/GreenBoots.png"));
