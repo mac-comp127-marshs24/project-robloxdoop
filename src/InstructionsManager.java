@@ -17,8 +17,8 @@ public class InstructionsManager {
     "outfit to present to the judges.";
 
     static String introductionText2 = "At the end, the judges' top pick will be, \n" +
-    "presented and you will be given a score \n" + 
-    "Based on how well you did! Good Luck!";
+    "presented. See how well you do! \n" + 
+    "Good Luck!";
 
     static GraphicsText Instructions = new GraphicsText(introductionText);
     static GraphicsText Instructions1 = new GraphicsText(introductionText2);

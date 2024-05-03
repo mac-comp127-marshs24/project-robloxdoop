@@ -1,5 +1,10 @@
+import java.awt.Color;
+
+import javax.swing.ImageIcon;
+
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.Image;
+import edu.macalester.graphics.Rectangle;
 
 
 /*
@@ -17,15 +22,16 @@ public class ScreenManager {
 
 
     private static Image quitButton = new Image ("assets/QuitButton.png");
+    private static Image winningOutfitText = new Image("assets/theWinningSign.png");
  
     private static CanvasWindow canvas = new CanvasWindow("Fashion Famous",1920, 1080);
-    TheMotherBoard motherBoard = new TheMotherBoard();
+    private static TheMotherBoard motherBoard = new TheMotherBoard();
     static int padding = 25;
 
 
 
 public ScreenManager(){
-    ClosetManager.theCloset(canvas);
+    mainMenu();
 }
 
 public void mainMenu(){
@@ -83,6 +89,8 @@ public static void theRunway(){
 
 
 public static void thePodium(){
+    Rectangle topPickBox = new Rectangle(1050, 100,350,600);
+
     
     if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/WinterBeigeScarf.png"))){
         Image winterBackground = new Image(0,0);
@@ -90,11 +98,14 @@ public static void thePodium(){
         winterBackground.setImagePath("assets/winter2.png");
         winterBackground.setPosition(-240, -150);
         canvas.add(winterBackground);
+        topPickBox.setFillColor(Color.PINK);
+        topPickBox.setFilled(true);
+        canvas.add(topPickBox);
         // Displays the winning outfit
         for(Image cloth: Winter.getWinningOutfit()){
             canvas.add(cloth);
-            cloth.setCenter(300,300+padding);
-            cloth.setScale(0.5);
+            cloth.setCenter(1200,100+padding);
+            cloth.setScale(0.15);
             padding += 100;
         }
         
@@ -105,11 +116,14 @@ public static void thePodium(){
         schoolBackground .setImagePath("assets/school2.png");
         schoolBackground.setPosition(-240, -150);
         canvas.add(schoolBackground);
+        topPickBox.setFillColor(Color.PINK);
+        topPickBox.setFilled(true);
+        canvas.add(topPickBox);
 
         for(Image cloth: School.getWinningOutfit()){
             canvas.add(cloth);
-            cloth.setCenter(300,300+padding);
-            cloth.setScale(0.5);
+            cloth.setCenter(1200,100+padding);
+            cloth.setScale(0.15);
             padding += 100;
         }
     }
@@ -119,11 +133,14 @@ public static void thePodium(){
         beachBackground.setScale(.75);
         beachBackground.setPosition(-240, -150);
         canvas.add(beachBackground);
+        topPickBox.setFillColor(Color.PINK);
+        topPickBox.setFilled(true);
+        canvas.add(topPickBox);
 
         for(Image cloth: Beach.getWinningOutfit()){
             canvas.add(cloth);
-            cloth.setCenter(300,300+padding);
-            cloth.setScale(0.5);
+            cloth.setCenter(1200,100+padding);
+            cloth.setScale(0.15);
             padding += 100;
         }
     }
@@ -136,6 +153,11 @@ public static void thePodium(){
     quitButton.setPosition(-830,-475);
     quitButton.setScale(0.25);
     canvas.add(quitButton);
+
+    winningOutfitText.setPosition(1200,100);
+    winningOutfitText.setScale(0.25);
+    canvas.add(winningOutfitText);
+    
 
     canvas.onClick(
         event -> {event.getPosition();
