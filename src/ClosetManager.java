@@ -17,8 +17,8 @@ public class ClosetManager {
     static Rectangle bottomsBox = new Rectangle(0, 0, 150, 300);
     static Rectangle shoesBox = new Rectangle(0, 0, 200, 70);
 
-    static double hatScale = 0.8;
-    static double neckScale = 0.3;
+    static double hatScale = 0.3;
+    static double neckScale = 0.27;
     static double topsScale = 0.25;
     static double bottomScale = .55;
     static double shoeScale = .15;
@@ -85,7 +85,7 @@ public class ClosetManager {
     //MANAGES THE HATS
     hatsBox.setStrokeWidth(10);
     hatsBox.setStroked(false); //USE ONCE ALL THE OBJECT ARE SET PROPERLY
-    hatsBox.setCenter(673, 90);
+    hatsBox.setCenter(650, 105);
 
     hatsLeftButton.setCenter(hatsBox.getX() - hatsBox.getWidth(), hatsBox.getY() + hatsBox.getHeight()/2);
     hatsRightButton.setCenter(hatsBox.getX() + 200, hatsBox.getY() + hatsBox.getHeight()/2);
@@ -119,7 +119,7 @@ public class ClosetManager {
      //MANAGES THE NECK
     neckBox.setStrokeWidth(10);
     neckBox.setStroked(false);
-    neckBox.setCenter(685, 220);
+    neckBox.setCenter(680, 230);
 
     neckLeftButton.setCenter(neckBox.getX() - neckBox.getWidth(), neckBox.getY() + neckBox.getHeight()/2);
     neckRightButton.setCenter(neckBox.getX() + 200, neckBox.getY() + neckBox.getHeight()/2);

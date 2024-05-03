@@ -21,16 +21,14 @@ public class School{
   static private Image getDressedButton = new Image("assets/DressupButton.png");
   
     public School(){
-      schoolHats.add(new Image ("assets_Clothes/BlackSideCap.png"));
-      schoolHats.add(new Image ("assets_Clothes/BlueCowboyHat.png"));
-      schoolHats.add(new Image("assets_Clothes/BlueCap.png"));
+      schoolHats.add(new Image ("assets_Clothes/BlackCap.png"));
+      schoolHats.add(new Image ("assets_Clothes/WhiteBeanie.png"));
+      schoolHats.add(new Image("assets_Clothes/PinkVisor.png"));
 
-      schoolNeck.add(new Image ("assets_Clothes/StripeScarf.png"));
-      schoolNeck.add(new Image ("assets_Clothes/SilverNecklace.png"));
-      schoolNeck.add(new Image ("assets_Clothes/SilverHeartNecklace.png"));
+      schoolNeck.add(new Image ("assets_Clothes/TealScarf.png"));
+      schoolNeck.add(new Image ("assets_Clothes/BlueScarf.png"));
       schoolNeck.add(new Image("assets_Clothes/ChainNecklace.png"));
-      schoolNeck.add(new Image ("assets_Clothes/GoldNecklace.png"));
-
+    
       schoolTops.add(new Image ("assets_Clothes/PinkTubeTop.png"));
       schoolTops.add(new Image ("assets_Clothes/MintFlowerTop.png"));
       schoolTops.add(new Image ("assets_Clothes/RedVelvetTop.png"));

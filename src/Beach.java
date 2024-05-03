@@ -18,14 +18,13 @@ public class Beach {
     private static Image getDressedButton = new Image("assets/DressupButton.png");
 
     public Beach(){
-        beachHats.add(new Image ("assets_Clothes/PinkVisor.png"));
-        beachHats.add(new Image ("assets_Clothes/PinkHeadband.png"));
-        beachHats.add(new Image("asset_Clothes/BlackHeadband.png"));
-  
-        beachNeck.add(new Image ("assets_Clothes/TwoStackedPinkNecklace.png"));
-        beachNeck.add(new Image ("assets_Clothes/StackedPurpleNecklace.png"));
-        beachNeck.add(new Image ("assets_Clothes/PurpleHeartNecklace.png"));
-        beachNeck.add(new Image ("assets_Clothes/PinkNecklace.png"));
+        beachHats.add(new Image ("assets_Clothes/BlackCap.png"));
+        beachHats.add(new Image ("assets_Clothes/WhiteBeanie.png"));
+        beachHats.add(new Image("assets_Clothes/PinkVisor.png"));
+
+        beachNeck.add(new Image ("assets_Clothes/TealScarf.png"));
+        beachNeck.add(new Image ("assets_Clothes/BlueScarf.png"));
+        beachNeck.add(new Image("assets_Clothes/ChainNecklace.png"));
   
         beachTops.add(new Image ("assets_Clothes/PinkTubeTop.png"));
         beachTops.add(new Image ("assets_Clothes/MintFlowerTop.png"));

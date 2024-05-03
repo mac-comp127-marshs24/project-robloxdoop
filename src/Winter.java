@@ -20,15 +20,13 @@ public class Winter{
     
 
     public Winter(){
+      winterHats.add(new Image ("assets_Clothes/BlackCap.png"));
       winterHats.add(new Image ("assets_Clothes/WhiteBeanie.png"));
-      winterHats.add(new Image ("assets_Clothes/BlackSideCap.png"));
-      winterHats.add(new Image ("assets_Clothes/BlueCowboyHat.png"));
-
-      winterNeck.add(new Image ("assets_Clothes/WinterBeigeScarf.png"));
-      winterNeck.add(new Image ("assets_Clothes/WinterPurpleHoopScarf.png"));
-      winterNeck.add(new Image ("assets_Clothes/WinterTealInfinityScarf.png"));
+      winterHats.add(new Image("assets_Clothes/PinkVisor.png"));
+  
+      winterNeck.add(new Image ("assets_Clothes/TealScarf.png"));
       winterNeck.add(new Image ("assets_Clothes/BlueScarf.png"));
-      winterNeck.add(new Image ("assets_Clothes/RedScarf.png"));
+      winterNeck.add(new Image("assets_Clothes/ChainNecklace.png"));
 
       winterTops.add(new Image ("assets_Clothes/PinkTubeTop.png"));
       winterTops.add(new Image ("assets_Clothes/MintFlowerTop.png"));
