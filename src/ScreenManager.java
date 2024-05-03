@@ -1,6 +1,4 @@
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsObject;
-import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
 
 
@@ -27,7 +25,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-    ClosetManager.theCloset(canvas);
+    mainMenu();
 }
 
 public void mainMenu(){
@@ -50,33 +48,6 @@ public void mainMenu(){
         }
     );
 
-}
-
-
-private static int score = 0;
-
-public static String decision(){
-    System.out.println("THE PLAYER OUTFIT" + ClosetManager.getPlayerChoices());
-            System.out.println("THE WINTER WINNER" + Winter.getWinningOutfit());
-    for (Image item: ClosetManager.getPlayerChoices()){
-        if(Winter.getWinningOutfit().contains(item)){
-            System.out.println("THE PLAYER OUTFIT" + ClosetManager.getPlayerChoices());
-            System.out.println("THE WINTER WINNER" + Winter.getWinningOutfit());
-            score += 20;
-        }
-        if(School.getWinningOutfit().contains(item)){
-            System.out.println("THE PLAYER OUTFIT" + ClosetManager.getPlayerChoices());
-            System.out.println("THE SCHOOL WINNER" + School.getWinningOutfit());
-            score += 20;
-        }
-        if(Beach.getWinningOutfit().contains(item)){
-            System.out.println("THE PLAYER OUTFIT" + ClosetManager.getPlayerChoices());
-            System.out.println("THE BEACH WINNER" + Beach.getWinningOutfit());
-            score += 20;
-        }
-    }
-    return "Your Score: " + score + "\n out of 100";
-   
 }
 
 
@@ -112,8 +83,6 @@ public static void theRunway(){
 
 
 public static void thePodium(){
-
-    GraphicsText scoreTally = new GraphicsText(decision());
     
     if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/WinterBeigeScarf.png"))){
         Image winterBackground = new Image(0,0);
@@ -163,11 +132,6 @@ public static void thePodium(){
     canvas.add(ClosetManager.getRunwayReady());
     ClosetManager.getRunwayReady().setScale(0.75);
     ClosetManager.getRunwayReady().setPosition(75 ,0);
-
-    decision();
-    scoreTally.setPosition(250, 350);
-    scoreTally.setFontSize(60);
-    canvas.add(scoreTally);
 
     quitButton.setPosition(-830,-475);
     quitButton.setScale(0.25);

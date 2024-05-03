@@ -15,8 +15,8 @@ public class TheMotherBoard {
 
     public TheMotherBoard(){
     Themes.add(Winter.getOutfitComparision());
-    // Themes.add(School.getOutfitComparision());
-    // Themes.add(Beach.getOutfitComparision());
+    Themes.add(School.getOutfitComparision());
+    Themes.add(Beach.getOutfitComparision());
     ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
     
     }
