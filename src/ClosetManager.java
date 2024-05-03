@@ -3,6 +3,7 @@ import java.util.List;
 
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
 
@@ -11,11 +12,11 @@ public class ClosetManager {
     static Image characterBase;
     static Image proTip = new Image("assets/ProTip.png");
 
-    static Image hatsSign = new Image("assets/topsSigns.png");
-    static Image neckSign = new Image("assets/neckSigns.png");
-    static Image topsSign = new Image("assets/topsSigns.png");
-    static Image bottomsSign = new Image("assets/bottomsSign.png");
-    static Image shoesSign = new Image("assets/shoesSign.png");
+    static GraphicsText hatsSign = new GraphicsText("Hats");
+    static GraphicsText neckSign = new GraphicsText("Necks");
+    static GraphicsText topsSign = new GraphicsText("Tops");
+    static GraphicsText bottomsSign = new GraphicsText("Bottoms");
+    static GraphicsText shoesSign = new GraphicsText("Shoes");
 
     static GraphicsGroup runwayReady = new GraphicsGroup();
     static Rectangle hatsBox = new Rectangle(0, 0, 100, 70);
@@ -65,24 +66,24 @@ public class ClosetManager {
 
     //CATORGOTRIC LABEL SIGNS
     canvas.add(hatsSign);
-    hatsSign.setPosition(1000,600);
-    hatsSign.setScale(0.15);
+    hatsSign.setPosition(1310,100);
+    hatsSign.setScale(1);
 
     canvas.add(neckSign);
-    neckSign.setPosition(300,100);
-    neckSign.setScale(0.15);
+    neckSign.setPosition(1305,200);
+    neckSign.setScale(1);
 
-    canvas.add(topsBox);
-    topsBox.setPosition(300,100);
-    topsBox.setScale(0.15);
+    canvas.add(topsSign);
+    topsSign.setPosition(1305,300);
+    topsSign.setScale(1);
 
     canvas.add(bottomsSign);
-    bottomsSign.setPosition(300,100);
-    bottomsSign.setScale(0.15);
+    bottomsSign.setPosition(1300,400);
+    bottomsSign.setScale(1);
 
     canvas.add(shoesSign);
-    shoesSign.setPosition(300,100);
-    shoesSign.setScale(0.15);
+    shoesSign.setPosition(1300,500);
+    shoesSign.setScale(1);
 
     //THE MODEL BODY
     characterBase = new Image(0,0);
@@ -380,15 +381,6 @@ public class ClosetManager {
         playerChoices.add(Beach.getBeachShoes().get(0));
       
     }
-
-
-    canvas.onClick(e -> {
-        System.out.println(e.getPosition());
-    });
-
-    canvas.onClick(e -> {
-        System.out.println(canvas.getElementAt(e.getPosition()));
-    });
 
     canvas.onClick(
         event -> {event.getPosition();

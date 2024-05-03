@@ -1,8 +1,7 @@
 import java.awt.Color;
-
-import javax.swing.ImageIcon;
-
 import edu.macalester.graphics.CanvasWindow;
+import edu.macalester.graphics.FontStyle;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
 
@@ -11,7 +10,6 @@ import edu.macalester.graphics.Rectangle;
  * Manages all the screens the game goes through, Homescreen, Instructions, Closet,
  * Runway, and Podium
  */
-
 
 public class ScreenManager {
     private static Image podiumButton = new Image("assets/102.png");
@@ -22,10 +20,10 @@ public class ScreenManager {
 
 
     private static Image quitButton = new Image ("assets/QuitButton.png");
-    private static Image winningOutfitText = new Image("assets/theWinningSign.png");
+    private static GraphicsText winningOutfitText = new GraphicsText("The Judges' Pick!");
  
     private static CanvasWindow canvas = new CanvasWindow("Fashion Famous",1920, 1080);
-    private static TheMotherBoard motherBoard = new TheMotherBoard();
+    private static TheMotherBoard motherBoard = new TheMotherBoard(); //Not used but the program will not run without it
     static int padding = 25;
 
 
@@ -154,8 +152,9 @@ public static void thePodium(){
     quitButton.setScale(0.25);
     canvas.add(quitButton);
 
-    winningOutfitText.setPosition(1200,100);
-    winningOutfitText.setScale(0.25);
+    winningOutfitText.setCenter(1200,650);
+    winningOutfitText.setFontStyle(FontStyle.BOLD);
+    winningOutfitText.setScale(2);
     canvas.add(winningOutfitText);
     
 
