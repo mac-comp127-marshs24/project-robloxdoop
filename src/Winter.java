@@ -1,5 +1,3 @@
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,13 +43,9 @@ public class Winter{
       winterBottoms.add(new Image ("assets_Clothes/BlueBowPants.png"));
 
    
-      winterShoes.add(new Image ("assets_Clothes/BlackLongBoots.png"));
-      winterShoes.add(new Image ("assets_Clothes/WhiteSneakers.png"));
+      winterShoes.add(new Image ("assets_Clothes/GoldHeels.png"));
       winterShoes.add(new Image ("assets_Clothes/GreenBoots.png"));
-      winterShoes.add(new Image ("assets_Clothes/RedLongBoots.png"));
-      winterShoes.add(new Image ("assets_Clothes/GreenStrapHeels.png"));
-      winterShoes.add(new Image ("assets_Clothes/BlueHeels.png"));
-      winterShoes.add(new Image ("assets_Clothes/BlackBowHeels.png"));
+      winterShoes.add(new Image ("assets_Clothes/BlackHeels.png"));
   
     }
 

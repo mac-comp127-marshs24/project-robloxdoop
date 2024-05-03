@@ -44,14 +44,9 @@ public class Beach {
         beachBottoms.add(new Image ("assets_Clothes/JeanShorts.png"));
         beachBottoms.add(new Image ("assets_Clothes/BlackShorts.png"));
 
-        beachShoes.add(new Image ("assets_Clothes/YellowHeels.png"));
-        beachShoes.add(new Image ("assets_Clothes/WhiteSneakers.png"));
-        beachShoes.add(new Image ("assets_Clothes/PurpleHeels.png"));
-        beachShoes.add(new Image ("assets_Clothes/PinkHeels.png"));
-        beachShoes.add(new Image ("assets_Clothes/NavyHeels.png"));
-        beachShoes.add(new Image ("assets_Clothes/GreenStrapHeels.png"));
-        beachShoes.add(new Image ("assets_Clothes/BlueHeels.png"));
-        beachShoes.add(new Image ("assets_Clothes/BlackBowHeels.png"));
+        beachShoes.add(new Image ("assets_Clothes/GoldHeels.png"));
+        beachShoes.add(new Image ("assets_Clothes/GreenBoots.png"));
+        beachShoes.add(new Image ("assets_Clothes/BlackHeels.png"));
     }
 
 

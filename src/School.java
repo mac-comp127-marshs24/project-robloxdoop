@@ -49,15 +49,9 @@ public class School{
       schoolBottoms.add(new Image("assets_Clothes/DarkBlueJean"));
 
 
-      schoolShoes.add(new Image ("assets_Clothes/YellowPearlHeels.png"));
-      schoolShoes.add(new Image ("assets_Clothes/WhiteSneakers.png"));
-      schoolShoes.add(new Image ("assets_Clothes/PurpleHeels.png"));
-      schoolShoes.add(new Image ("assets_Clothes/PurpleHeels.png"));
-      schoolShoes.add(new Image ("assets_Clothes/PinkPearlHeels.png"));
-      schoolShoes.add(new Image ("assets_Clothes/NavyHeels.png"));
-      schoolShoes.add(new Image ("assets_Clothes/GreenStrapHeels.png"));
-      schoolShoes.add(new Image ("assets_Clothes/BlueHeels.png"));
-      schoolShoes.add(new Image ("assets_Clothes/BlackBowHeels.png"));
+      schoolShoes.add(new Image ("assets_Clothes/GoldHeels.png"));
+      schoolShoes.add(new Image ("assets_Clothes/GreenBoots.png"));
+      schoolShoes.add(new Image ("assets_Clothes/BlackHeels.png"));
 
     }
 
