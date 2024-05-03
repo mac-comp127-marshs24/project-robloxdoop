@@ -1,13 +1,11 @@
 
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
-import edu.macalester.graphics.ui.Button;
+
 
 
 
@@ -17,7 +15,8 @@ public class School{
   static List<Image> schoolTops = new ArrayList<Image>();
   static List<Image> schoolBottoms = new ArrayList<Image>();
   static List<Image>  schoolShoes = new ArrayList<Image>();
-  private static Button closetButton2 = new Button("Let's get Dressed!");
+ 
+  static private Image getDressedButton = new Image("assets/DressupButton.png");
   
     public School(){
       schoolHats.add(new Image ("assets_Clothes/BlackSideCap.png"));
@@ -84,22 +83,26 @@ public class School{
     public static void schoolTheme(CanvasWindow canvas){
       Image schoolTheme = new Image(-240,-150);
       schoolTheme.setImagePath("assets/school2.png");
-      GraphicsText schoolText = new GraphicsText("\t  The Theme is School! \nCreate your best School Outfit!");
-      schoolText.setPosition(canvas.getWidth()/2 - 400, canvas.getHeight()/2);
+      Image schoolText = new Image ("assets/99.png");
+      schoolText.setCenter(canvas.getWidth()/2, canvas.getHeight()/2);
       schoolTheme.setScale(0.75);
-      schoolText.setFontSize(60);
-      schoolText.setFillColor(Color.BLACK);
-      schoolText.setStroked(true);
-      schoolText.setStrokeWidth(2);
-      schoolText.setStrokeColor(Color.WHITE);
+      schoolText.setScale(0.65);
 
       canvas.add(schoolTheme);
       canvas.add(schoolText);
-      closetButton2.setPosition(600,50);
-      canvas.add(closetButton2);
-      closetButton2.onClick(() -> {
-          canvas.removeAll();
-          ClosetManager.theCloset(canvas);});
-  }
+
+      getDressedButton.setPosition(-830,-500);
+      getDressedButton.setScale(0.15);
+    canvas.add(getDressedButton);
+
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == getDressedButton){
+                canvas.removeAll();
+                ClosetManager.theCloset(canvas);
+            }
+
+        }
+    );
  
-}
+    }}

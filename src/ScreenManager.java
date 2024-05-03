@@ -11,7 +11,7 @@ import edu.macalester.graphics.ui.Button;
 
 
 public class ScreenManager {
-    private static Button podiumButton = new Button("Winner or Loser?");
+    private static Image podiumButton = new Image("assets/102.png");
     static GraphicsGroup runwayReady = new GraphicsGroup();
 
     Image homeScreenPinkButton = new Image("assets/StartButton.png");
@@ -19,6 +19,8 @@ public class ScreenManager {
 
     Image themeDressUpButton = new Image ("assets/DressupButton.png");
     Image closetRunwayButton = new Image ("assets/RunwayButton.png");
+
+    static Image quitButton = new Image ("assets/QuitButton.png");
     
     
     int dx = 5;
@@ -28,7 +30,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-    ClosetManager.theCloset(canvas);
+    mainMenu();
 }
 
 public void mainMenu(){
@@ -90,16 +92,20 @@ public static void theRunway(){
     runwayBackground.setImagePath("assets/stage.png");
     canvas.add(runwayBackground);
 
-    podiumButton.setPosition(600,50);
+    podiumButton.setPosition(-830,-475);
+    podiumButton.setScale(0.25);
     canvas.add(podiumButton);
 
-    podiumButton.onClick(
-        () -> thePodium());
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == podiumButton){
+                canvas.removeAll();
+                thePodium();
+                canvas.add(ClosetManager.getRunwayReady());
+            }
 
-    podiumButton.onClick(
-        () -> canvas.removeAll()
+        }
     );
-    canvas.add(ClosetManager.getRunwayReady());
 }
 
 
@@ -148,12 +154,17 @@ public static void thePodium(){
     // scoreTally.setFontSize(60);
     // canvas.add(scoreTally);
 
-    Button quitButton = new Button("Quit?");
-    quitButton.setPosition(400, 50);
+    quitButton.setPosition(-830,-475);
+    quitButton.setScale(0.25);
     canvas.add(quitButton);
 
-    quitButton.onClick(
-        () ->  canvas.closeWindow()
+    canvas.onClick(
+        event -> {event.getPosition();
+            if(canvas.getElementAt(event.getPosition()) == quitButton){
+                canvas.closeWindow();
+            }
+
+        }
     );
 
 }

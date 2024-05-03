@@ -6,7 +6,6 @@ import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
-import edu.macalester.graphics.ui.Button;
 
 public class ClosetManager {
     static Image closetBackground;
@@ -150,7 +149,7 @@ public class ClosetManager {
      //MANAGES THE TOPS
     topsBox.setStrokeWidth(10);
     topsBox.setCenter(675, 250);
-    topsBox.setStroked(true);
+    topsBox.setStroked(false);
 
     topsLeftButton.setCenter(topsBox.getX() - topsBox.getWidth(), topsBox.getY() + topsBox.getHeight() + 50);
     topsRightButton.setCenter(topsBox.getX() + 200, topsBox.getY() + topsBox.getHeight() + 50);
@@ -362,6 +361,8 @@ public class ClosetManager {
             if(canvas.getElementAt(event.getPosition()) == runwayButton){
                 canvas.removeAll();
                 ScreenManager.theRunway();
+                canvas.add(runwayReady);
+
             }
 
         }
