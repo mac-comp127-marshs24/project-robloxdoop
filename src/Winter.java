@@ -75,10 +75,15 @@ public class Winter{
       }
 
       public static Image getOutfitComparision(){
-        //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
         return new Image ("assets_Clothes/WinterBeigeScarf.png");
   
-}
+    }
+
+    public static List<Image> getWinningOutfit(){
+      //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
+      return List.of(new Image ("assets_Clothes/WinterBeigeScarf.png"), new Image ("assets_Clothes/BlackLongBoots.png"));
+
+  }
 
 public static void winterTheme(CanvasWindow canvas){
     Image winterTheme = new Image(-240,-150);

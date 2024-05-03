@@ -63,7 +63,6 @@ public class InstructionsManager {
         }
     );
 
-
 }
 
 public static GraphicsText formatString(GraphicsText stringName){

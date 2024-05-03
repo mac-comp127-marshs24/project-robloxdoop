@@ -81,6 +81,12 @@ public class Beach {
     public static Image getOutfitComparision() {
         return new Image("assets_Clothes/TwoStackedPinkNecklace.png");
     }
+
+    public static List<Image> getWinningOutfit(){
+        //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
+        return List.of(new Image ("assets_Clothes/WinterBeigeScarf.png"), new Image ("assets_Clothes/BlackLongBoots.png"));
+  
+    }
     
 
     public static void beachTheme(CanvasWindow canvas){

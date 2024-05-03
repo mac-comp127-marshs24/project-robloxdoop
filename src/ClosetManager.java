@@ -3,7 +3,6 @@ import java.util.List;
 
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsGroup;
-import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
 
@@ -32,13 +31,13 @@ public class ClosetManager {
 
     private static Image runwayButton =  new Image("assets/RunwayButton.png");
 
-    static List<GraphicsObject> playerChoices = new ArrayList<GraphicsObject>();
+    static List<Image> playerChoices = new ArrayList<Image>();
 
     public static GraphicsGroup getRunwayReady(){
         return runwayReady;
     }
 
-    public static List<GraphicsObject> getPlayerChoices(){
+    public static List<Image> getPlayerChoices(){
         return playerChoices;
     }
 
@@ -249,17 +248,17 @@ public class ClosetManager {
 
     //MANAGES THE THEMES ADD THE CLOTHES ITEMS WITH THE SHOES
     if(TheMotherBoard.getTheme().equals(Winter.getOutfitComparision())){
+    playerChoices.add(Winter.getwinterHats().get(0));
     Winter.getwinterHats().get(0).setCenter(hatsBox.getCenter());
     Winter.getwinterHats().get(0).setScale(hatScale);
     canvas.add(Winter.getwinterHats().get(0));
     runwayReady.add(Winter.getwinterHats().get(0));
-    playerChoices.add(Winter.getwinterHats().get(0));
 
+    playerChoices.add(Winter.getwinterNeck().get(0));
     Winter.getwinterNeck().get(0).setCenter(neckBox.getCenter());
     Winter.getwinterNeck().get(0).setScale(neckScale);
     canvas.add(Winter.getwinterNeck().get(0));
     runwayReady.add(Winter.getwinterNeck().get(0));
-    playerChoices.add(Winter.getwinterNeck().get(0));
 
 
     Winter.getwinterTops().get(0).setCenter(topsBox.getCenter());
@@ -483,11 +482,11 @@ public static void changeNeck(boolean moveForward, CanvasWindow canvas){
         indexofNeck  = Winter.getwinterNeck().size() - 1;
     }
 
+    playerChoices.add(Winter.getwinterNeck().get(indexofNeck));
     Winter.getwinterNeck().get(indexofNeck).setCenter(neckBox.getCenter());
     Winter.getwinterNeck().get(indexofNeck).setScale(neckScale);
     canvas.add(Winter.getwinterNeck().get(indexofNeck));
     ClosetManager.getRunwayReady().add(Winter.getwinterNeck().get(indexofNeck));
-    playerChoices.add(Winter.getwinterNeck().get(indexofNeck));
 
 
 }

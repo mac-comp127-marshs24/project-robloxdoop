@@ -84,6 +84,12 @@ public class School{
         return new Image("assets_Clothes/SchoolScarf.png");
       }
 
+      public static List<Image> getWinningOutfit(){
+        //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
+        return List.of(new Image ("assets_Clothes/WinterBeigeScarf.png"), new Image ("assets_Clothes/BlackLongBoots.png"));
+  
+    }
+
     public static void schoolTheme(CanvasWindow canvas){
       Image schoolTheme = new Image(-240,-150);
       schoolTheme.setImagePath("assets/school2.png");
