@@ -29,7 +29,7 @@ public class ScreenManager {
 
 
 public ScreenManager(){
-    mainMenu();
+    ClosetManager.theCloset(canvas);
 }
 
 public void mainMenu(){
@@ -54,7 +54,7 @@ public void mainMenu(){
 
 }
 
-
+static double de = 0.75;
 public static void theRunway(){
 
     new Thread(() -> {
@@ -67,6 +67,16 @@ public static void theRunway(){
     runwayBackground.setScale(0.75,0.75);
     runwayBackground.setImagePath("assets/stage.png");
     canvas.add(runwayBackground);
+   
+
+    canvas.animate( 
+        () -> {
+            if(ClosetManager.getRunwayReady().getScaleX() < 1.1){
+                ClosetManager.getRunwayReady().setScale(de);
+                de += 0.001;
+            }
+        }
+    );
 
     podiumButton.setPosition(-830,-475);
     podiumButton.setScale(0.25);
