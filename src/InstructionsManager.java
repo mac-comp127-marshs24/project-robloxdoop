@@ -5,6 +5,10 @@ import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
 
+/*
+ * Manages the Instructions screen
+ */
+
 public class InstructionsManager {
 
     static String introductionText = "Hello and Welcome to Fashion Famous! \n" +
@@ -18,28 +22,20 @@ public class InstructionsManager {
 
     static GraphicsText Instructions = new GraphicsText(introductionText);
     static GraphicsText Instructions1 = new GraphicsText(introductionText2);
+    static Image instructionsScreen;
+    static Image InstructScreenReadyButton = new Image("assets/ReadyButton.png");
 
-    public static GraphicsText formatString(GraphicsText stringName){
-    stringName.setFontSize(60);
-    stringName.setFillColor(Color.WHITE);
-    stringName.setStroked(true);
-    stringName.setStrokeWidth(2);
-    stringName.setStrokeColor(Color.BLACK);
-
-    return stringName;
-    }
-
-    
+    TheMotherBoard motherBoard = new TheMotherBoard();
 
     public static void theInstructionsScreen(CanvasWindow canvas, GraphicsObject buttonName){
-    Image instructionsScreen;
+
     formatString(Instructions).setPosition(0,150);
     formatString(Instructions1).setPosition(-100,450);
 
     instructionsScreen = new Image(0,0);
     instructionsScreen.setScale(0.75,0.75);
     instructionsScreen.setImagePath("assets/mainMenu2.png");
-    Image InstructScreenReadyButton = new Image("assets/ReadyButton.png");
+
 
     canvas.add(instructionsScreen);
     canvas.add(Instructions);
@@ -70,6 +66,19 @@ public class InstructionsManager {
 
 }
 
+public static GraphicsText formatString(GraphicsText stringName){
+    stringName.setFontSize(60);
+    stringName.setFillColor(Color.WHITE);
+    stringName.setStroked(true);
+    stringName.setStrokeWidth(2);
+    stringName.setStrokeColor(Color.BLACK);
+
+    return stringName;
+    }
+
+/*
+ * Moves the text
+ */
 public static void moveableText(CanvasWindow canvas,GraphicsText Instructions, double dx, double dy, Image buttonName){
     canvas.animate( 
         () -> {

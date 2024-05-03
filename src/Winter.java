@@ -1,15 +1,16 @@
 
 
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsText;
+
 import edu.macalester.graphics.Image;
-import edu.macalester.graphics.ui.Button;
 
 
+/*
+ * Manages the winter outfits + winter theme
+ */
 public class Winter{ 
     static List<Image>  winterHats = new ArrayList<Image>();
     static List<Image>  winterNeck = new ArrayList<Image>();

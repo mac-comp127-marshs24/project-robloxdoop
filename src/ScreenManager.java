@@ -1,7 +1,5 @@
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsGroup;
 import edu.macalester.graphics.Image;
-import edu.macalester.graphics.ui.Button;
 
 
 /*
@@ -12,19 +10,15 @@ import edu.macalester.graphics.ui.Button;
 
 public class ScreenManager {
     private static Image podiumButton = new Image("assets/102.png");
-    static GraphicsGroup runwayReady = new GraphicsGroup();
 
-    Image homeScreenPinkButton = new Image("assets/StartButton.png");
-    Image InstructScreenReadyButton = new Image("assets/ReadyButton.png");
 
-    Image themeDressUpButton = new Image ("assets/DressupButton.png");
-    Image closetRunwayButton = new Image ("assets/RunwayButton.png");
+    private static Image homeScreenPinkButton = new Image("assets/StartButton.png");
+    private static Image InstructScreenReadyButton = new Image("assets/ReadyButton.png");
 
-    static Image quitButton = new Image ("assets/QuitButton.png");
-    
-    
-    int dx = 5;
-    static CanvasWindow canvas = new CanvasWindow("Fashion Famous",1920, 1080);
+
+    private static Image quitButton = new Image ("assets/QuitButton.png");
+ 
+    private static CanvasWindow canvas = new CanvasWindow("Fashion Famous",1920, 1080);
     TheMotherBoard motherBoard = new TheMotherBoard();
 
 
@@ -146,8 +140,8 @@ public static void thePodium(){
 
     ClosetManager.getRunwayReady().setScale(0.75);
     canvas.add(ClosetManager.getRunwayReady());
-    runwayReady.setScale(0.75);
-    runwayReady.setPosition(75 ,0);
+    ClosetManager.getRunwayReady().setScale(0.75);
+    ClosetManager.getRunwayReady().setPosition(75 ,0);
 
     // decision();
     // scoreTally.setPosition(250, 350);

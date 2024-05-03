@@ -8,7 +8,9 @@ import edu.macalester.graphics.Image;
 
 
 
-
+/*
+ * Manages the school outfits + the school backdrop
+ */
 public class School{
   static List<Image>  schoolHats = new ArrayList<Image>();
   static List<Image>  schoolNeck = new ArrayList<Image>();
@@ -75,14 +77,17 @@ public class School{
         return schoolShoes;
       }
       
+      /*
+       * How we decide what the theme will be
+       */
       public static Image getOutfitComparision(){
-        //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
         return new Image("assets_Clothes/SchoolScarf.png");
       }
 
     public static void schoolTheme(CanvasWindow canvas){
       Image schoolTheme = new Image(-240,-150);
       schoolTheme.setImagePath("assets/school2.png");
+
       Image schoolText = new Image ("assets/99.png");
       schoolText.setCenter(canvas.getWidth()/2, canvas.getHeight()/2);
       schoolTheme.setScale(0.75);
@@ -93,7 +98,7 @@ public class School{
 
       getDressedButton.setPosition(-830,-500);
       getDressedButton.setScale(0.15);
-    canvas.add(getDressedButton);
+      canvas.add(getDressedButton);
 
     canvas.onClick(
         event -> {event.getPosition();
