@@ -3,7 +3,6 @@ import java.util.List;
 
 import edu.macalester.graphics.CanvasWindow;
 import edu.macalester.graphics.GraphicsGroup;
-import edu.macalester.graphics.GraphicsObject;
 import edu.macalester.graphics.Image;
 import edu.macalester.graphics.Rectangle;
 
@@ -32,13 +31,13 @@ public class ClosetManager {
 
     private static Image runwayButton =  new Image("assets/RunwayButton.png");
 
-    static List<GraphicsObject> playerChoices = new ArrayList<GraphicsObject>();
+    static List<Image> playerChoices = new ArrayList<Image>();
 
     public static GraphicsGroup getRunwayReady(){
         return runwayReady;
     }
 
-    public static List<GraphicsObject> getPlayerChoices(){
+    public static List<Image> getPlayerChoices(){
         return playerChoices;
     }
 
@@ -97,8 +96,6 @@ public class ClosetManager {
             if(canvas.getElementAt(event.getPosition()) == hatsLeftButton){
                 changeHats(false, canvas);
             }
-
-            System.out.println("JDFKJSJFOJASODF");
 
         }
     );
@@ -251,17 +248,17 @@ public class ClosetManager {
 
     //MANAGES THE THEMES ADD THE CLOTHES ITEMS WITH THE SHOES
     if(TheMotherBoard.getTheme().equals(Winter.getOutfitComparision())){
+    playerChoices.add(Winter.getwinterHats().get(0));
     Winter.getwinterHats().get(0).setCenter(hatsBox.getCenter());
     Winter.getwinterHats().get(0).setScale(hatScale);
     canvas.add(Winter.getwinterHats().get(0));
     runwayReady.add(Winter.getwinterHats().get(0));
-    playerChoices.add(Winter.getwinterHats().get(0));
 
+    playerChoices.add(Winter.getwinterNeck().get(0));
     Winter.getwinterNeck().get(0).setCenter(neckBox.getCenter());
     Winter.getwinterNeck().get(0).setScale(neckScale);
     canvas.add(Winter.getwinterNeck().get(0));
     runwayReady.add(Winter.getwinterNeck().get(0));
-    playerChoices.add(Winter.getwinterNeck().get(0));
 
 
     Winter.getwinterTops().get(0).setCenter(topsBox.getCenter());
@@ -466,7 +463,6 @@ public static void changeNeck(boolean moveForward, CanvasWindow canvas){
 
     //Winter NECKS
     if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/WinterBeigeScarf.png"))){
-        System.out.println("IM HERERRRR");
     canvas.remove(Winter.getwinterNeck().get(indexofNeck));
     ClosetManager.getRunwayReady().remove(Winter.getwinterNeck().get(indexofNeck));
     playerChoices.remove(Winter.getwinterNeck().get(indexofNeck));
@@ -486,11 +482,11 @@ public static void changeNeck(boolean moveForward, CanvasWindow canvas){
         indexofNeck  = Winter.getwinterNeck().size() - 1;
     }
 
+    playerChoices.add(Winter.getwinterNeck().get(indexofNeck));
     Winter.getwinterNeck().get(indexofNeck).setCenter(neckBox.getCenter());
     Winter.getwinterNeck().get(indexofNeck).setScale(neckScale);
     canvas.add(Winter.getwinterNeck().get(indexofNeck));
     ClosetManager.getRunwayReady().add(Winter.getwinterNeck().get(indexofNeck));
-    playerChoices.add(Winter.getwinterNeck().get(indexofNeck));
 
 
 }
@@ -562,7 +558,6 @@ public static void changeTops(boolean moveForward, CanvasWindow canvas){
         playerChoices.remove(Winter.getwinterTops().get(indexofTops));
 
         if(moveForward){
-        System.out.println("HEYYEYEIHF");
         indexofTops ++;
         }
         else{
@@ -677,9 +672,6 @@ if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/SchoolScarf.png"))
 
     if(moveForward){
         indexofBottoms ++;
-        System.out.println("HEYYEYEIHF");
-        System.out.println("THE THEMMMEEE" + Winter.getOutfitComparision());
-        System.out.println("THE MOTHER BOATDERR THEME" + TheMotherBoard.getTheme());
     }
     else{
     indexofBottoms --;

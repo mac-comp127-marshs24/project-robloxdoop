@@ -14,9 +14,9 @@ public class TheMotherBoard {
     static String filePath;
 
     public TheMotherBoard(){
-    // Themes.add(Winter.getOutfitComparision());
+    Themes.add(Winter.getOutfitComparision());
     // Themes.add(School.getOutfitComparision());
-    Themes.add(Beach.getOutfitComparision());
+    // Themes.add(Beach.getOutfitComparision());
     ChosenTheme = Themes.get(randNum.nextInt(Themes.size()));
     
     }
@@ -30,11 +30,6 @@ public class TheMotherBoard {
     }
 
     public static String ChosenThemeName(Image ChosenTheme){
-
-        System.out.println("The chosen theme "+ ChosenTheme);
-        System.out.println("Winter " + Winter.getOutfitComparision());
-        System.out.println("School " + School.getOutfitComparision());
-        System.out.println("Beach " + Beach.getOutfitComparision());
 
         if (ChosenTheme.equals(Winter.getOutfitComparision())){
             return "The Theme is Winter!";

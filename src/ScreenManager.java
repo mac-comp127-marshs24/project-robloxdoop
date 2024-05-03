@@ -1,7 +1,7 @@
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsGroup;
+import edu.macalester.graphics.GraphicsObject;
+import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
-import edu.macalester.graphics.ui.Button;
 
 
 /*
@@ -12,25 +12,22 @@ import edu.macalester.graphics.ui.Button;
 
 public class ScreenManager {
     private static Image podiumButton = new Image("assets/102.png");
-    static GraphicsGroup runwayReady = new GraphicsGroup();
 
-    Image homeScreenPinkButton = new Image("assets/StartButton.png");
-    Image InstructScreenReadyButton = new Image("assets/ReadyButton.png");
 
-    Image themeDressUpButton = new Image ("assets/DressupButton.png");
-    Image closetRunwayButton = new Image ("assets/RunwayButton.png");
+    private static Image homeScreenPinkButton = new Image("assets/StartButton.png");
+    private static Image InstructScreenReadyButton = new Image("assets/ReadyButton.png");
 
-    static Image quitButton = new Image ("assets/QuitButton.png");
-    
-    
-    int dx = 5;
-    static CanvasWindow canvas = new CanvasWindow("Fashion Famous",1920, 1080);
+
+    private static Image quitButton = new Image ("assets/QuitButton.png");
+ 
+    private static CanvasWindow canvas = new CanvasWindow("Fashion Famous",1920, 1080);
     TheMotherBoard motherBoard = new TheMotherBoard();
+    static int padding = 25;
 
 
 
 public ScreenManager(){
-    mainMenu();
+    ClosetManager.theCloset(canvas);
 }
 
 public void mainMenu(){
@@ -56,27 +53,31 @@ public void mainMenu(){
 }
 
 
-// public static String decision(){
-//     for (GraphicsObject item: ClosetManager.getPlayerChoices()){
-//         if(Winter.getWinningOutfit().contains(item)){
-//             System.out.println("THE PLAYER OUTFIT" + playerChoices);
-//             System.out.println("THE WINTER WINNER" + winter.getWinningOutfit());
-//             score += 20;
-//         }
-//         if(school.getWinningOutfit().contains(item)){
-//             System.out.println("THE PLAYER OUTFIT" + playerChoices);
-//             System.out.println("THE SCHOOL WINNER" + beach.getWinningOutfit());
-//             score += 20;
-//         }
-//         if(beach.getWinningOutfit().contains(item)){
-//             System.out.println("THE PLAYER OUTFIT" + playerChoices);
-//             System.out.println("THE BEACH WINNER" + beach.getWinningOutfit());
-//             score += 20;
-//         }
-//     }
-//     return "Your Score: " + score + "\n out of 100";
+private static int score = 0;
+
+public static String decision(){
+    System.out.println("THE PLAYER OUTFIT" + ClosetManager.getPlayerChoices());
+            System.out.println("THE WINTER WINNER" + Winter.getWinningOutfit());
+    for (Image item: ClosetManager.getPlayerChoices()){
+        if(Winter.getWinningOutfit().contains(item)){
+            System.out.println("THE PLAYER OUTFIT" + ClosetManager.getPlayerChoices());
+            System.out.println("THE WINTER WINNER" + Winter.getWinningOutfit());
+            score += 20;
+        }
+        if(School.getWinningOutfit().contains(item)){
+            System.out.println("THE PLAYER OUTFIT" + ClosetManager.getPlayerChoices());
+            System.out.println("THE SCHOOL WINNER" + School.getWinningOutfit());
+            score += 20;
+        }
+        if(Beach.getWinningOutfit().contains(item)){
+            System.out.println("THE PLAYER OUTFIT" + ClosetManager.getPlayerChoices());
+            System.out.println("THE BEACH WINNER" + Beach.getWinningOutfit());
+            score += 20;
+        }
+    }
+    return "Your Score: " + score + "\n out of 100";
    
-// }
+}
 
 
 public static void theRunway(){
@@ -112,8 +113,7 @@ public static void theRunway(){
 
 public static void thePodium(){
 
-    System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
-    // GraphicsText scoreTally = new GraphicsText(decision());
+    GraphicsText scoreTally = new GraphicsText(decision());
     
     if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/WinterBeigeScarf.png"))){
         Image winterBackground = new Image(0,0);
@@ -121,12 +121,13 @@ public static void thePodium(){
         winterBackground.setImagePath("assets/winter2.png");
         winterBackground.setPosition(-240, -150);
         canvas.add(winterBackground);
-        // int padding = 25;
-        //Displays the winning outfit
-        // GraphicsGroup winningClothes = new GraphicsGroup();
-        // for(Image cloth: winter.getWinningOutfit()){
-        //     winningClothes.add(cloth);
-        // }
+        // Displays the winning outfit
+        for(Image cloth: Winter.getWinningOutfit()){
+            canvas.add(cloth);
+            cloth.setCenter(300,300+padding);
+            cloth.setScale(0.5);
+            padding += 100;
+        }
         
 
     }else if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/SchoolScarf.png"))){
@@ -135,6 +136,13 @@ public static void thePodium(){
         schoolBackground .setImagePath("assets/school2.png");
         schoolBackground.setPosition(-240, -150);
         canvas.add(schoolBackground);
+
+        for(Image cloth: School.getWinningOutfit()){
+            canvas.add(cloth);
+            cloth.setCenter(300,300+padding);
+            cloth.setScale(0.5);
+            padding += 100;
+        }
     }
     else{
         Image beachBackground = new Image(0,0);
@@ -142,17 +150,24 @@ public static void thePodium(){
         beachBackground.setScale(.75);
         beachBackground.setPosition(-240, -150);
         canvas.add(beachBackground);
+
+        for(Image cloth: Beach.getWinningOutfit()){
+            canvas.add(cloth);
+            cloth.setCenter(300,300+padding);
+            cloth.setScale(0.5);
+            padding += 100;
+        }
     }
 
     ClosetManager.getRunwayReady().setScale(0.75);
     canvas.add(ClosetManager.getRunwayReady());
-    runwayReady.setScale(0.75);
-    runwayReady.setPosition(75 ,0);
+    ClosetManager.getRunwayReady().setScale(0.75);
+    ClosetManager.getRunwayReady().setPosition(75 ,0);
 
-    // decision();
-    // scoreTally.setPosition(250, 350);
-    // scoreTally.setFontSize(60);
-    // canvas.add(scoreTally);
+    decision();
+    scoreTally.setPosition(250, 350);
+    scoreTally.setFontSize(60);
+    canvas.add(scoreTally);
 
     quitButton.setPosition(-830,-475);
     quitButton.setScale(0.25);

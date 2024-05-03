@@ -1,14 +1,13 @@
 
-
-import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
 
 import edu.macalester.graphics.CanvasWindow;
-import edu.macalester.graphics.GraphicsObject;
-import edu.macalester.graphics.GraphicsText;
 import edu.macalester.graphics.Image;
-import edu.macalester.graphics.ui.Button;
+
+/*
+ * Manages the Beach Theme, with beach clothes and beach backdrop
+ */
 
 public class Beach {
     static List<Image>  beachHats = new ArrayList<Image>();
@@ -16,7 +15,6 @@ public class Beach {
     static List<Image>  beachTops = new ArrayList<Image>();
     static List<Image> beachBottoms = new ArrayList<Image>();
     static List<Image> beachShoes = new ArrayList<Image>();
-    private static Button closetButton2 = new Button("Let's get Dressed!");
     private static Image getDressedButton = new Image("assets/DressupButton.png");
 
     public Beach(){
@@ -77,14 +75,24 @@ public class Beach {
         return beachShoes;
     }
 
-    
+    /*
+     * How the game decides what the theme is
+     */
     public static Image getOutfitComparision() {
         return new Image("assets_Clothes/TwoStackedPinkNecklace.png");
     }
 
+    public static List<Image> getWinningOutfit(){
+        //WHAT WE DECIDED THE WINNING OUTFIT WILL BE
+        return List.of(new Image ("assets_Clothes/WinterBeigeScarf.png"), new Image ("assets_Clothes/BlackLongBoots.png"));
+  
+    }
+    
+
     public static void beachTheme(CanvasWindow canvas){
     Image beachTheme = new Image(-240,-150);
     beachTheme.setImagePath("assets/beach2.png");
+
     Image beachText = new Image ("assets/100.png");
     beachText.setCenter(canvas.getWidth()/2, canvas.getHeight()/2);
     beachText.setScale(0.65);
