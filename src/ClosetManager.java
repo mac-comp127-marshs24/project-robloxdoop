@@ -20,7 +20,7 @@ public class ClosetManager {
     static double hatScale = 0.8;
     static double neckScale = 0.3;
     static double topsScale = 0.35;
-    static double bottomScale = .60;
+    static double bottomScale = .50;
     static double shoeScale = .05;
     static int score = 0;
 
