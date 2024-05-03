@@ -31,11 +31,6 @@ public class TheMotherBoard {
 
     public static String ChosenThemeName(Image ChosenTheme){
 
-        System.out.println("The chosen theme "+ ChosenTheme);
-        System.out.println("Winter " + Winter.getOutfitComparision());
-        System.out.println("School " + School.getOutfitComparision());
-        System.out.println("Beach " + Beach.getOutfitComparision());
-
         if (ChosenTheme.equals(Winter.getOutfitComparision())){
             return "The Theme is Winter!";
         }

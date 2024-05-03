@@ -106,7 +106,6 @@ public static void theRunway(){
 
 public static void thePodium(){
 
-    System.out.println("ScreenManger thinkings " + TheMotherBoard.getTheme());
     // GraphicsText scoreTally = new GraphicsText(decision());
     
     if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/WinterBeigeScarf.png"))){

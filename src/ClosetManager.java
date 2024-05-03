@@ -98,8 +98,6 @@ public class ClosetManager {
                 changeHats(false, canvas);
             }
 
-            System.out.println("JDFKJSJFOJASODF");
-
         }
     );
 
@@ -466,7 +464,6 @@ public static void changeNeck(boolean moveForward, CanvasWindow canvas){
 
     //Winter NECKS
     if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/WinterBeigeScarf.png"))){
-        System.out.println("IM HERERRRR");
     canvas.remove(Winter.getwinterNeck().get(indexofNeck));
     ClosetManager.getRunwayReady().remove(Winter.getwinterNeck().get(indexofNeck));
     playerChoices.remove(Winter.getwinterNeck().get(indexofNeck));
@@ -562,7 +559,6 @@ public static void changeTops(boolean moveForward, CanvasWindow canvas){
         playerChoices.remove(Winter.getwinterTops().get(indexofTops));
 
         if(moveForward){
-        System.out.println("HEYYEYEIHF");
         indexofTops ++;
         }
         else{
@@ -677,9 +673,6 @@ if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/SchoolScarf.png"))
 
     if(moveForward){
         indexofBottoms ++;
-        System.out.println("HEYYEYEIHF");
-        System.out.println("THE THEMMMEEE" + Winter.getOutfitComparision());
-        System.out.println("THE MOTHER BOATDERR THEME" + TheMotherBoard.getTheme());
     }
     else{
     indexofBottoms --;
