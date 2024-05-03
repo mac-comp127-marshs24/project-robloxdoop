@@ -73,7 +73,7 @@ public class Winter{
         new Image ("assets_Clothes/WhiteBeanie.png"), 
         new Image ("assets_Clothes/BlueScarf.png"),
         new Image ("assets_Clothes/RedVelvetTop.png"),
-        new Image("asset_Clothes/BlackJeans"),
+        new Image("assets_Clothes/BlackJeans.png"),
         new Image ("assets_Clothes/BlackHeels.png")
       );
 
