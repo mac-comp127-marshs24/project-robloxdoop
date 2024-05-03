@@ -426,7 +426,7 @@ public static void changeHats(boolean moveForward, CanvasWindow canvas){
     }
 
     School.getschoolHats().get(indexofHats).setCenter(hatsBox.getCenter());
-    School.getschoolHats().get(indexofHats).setScale(0.4);
+    School.getschoolHats().get(indexofHats).setScale(hatScale);
     canvas.add(School.getschoolHats().get(indexofHats));
     runwayReady.add(School.getschoolHats().get(indexofHats));
     playerChoices.add(School.getschoolHats().get(indexofHats));
@@ -454,7 +454,7 @@ public static void changeHats(boolean moveForward, CanvasWindow canvas){
     }
 
     Beach.getBeachHats().get(indexofHats).setCenter(hatsBox.getCenter());
-    Beach.getBeachHats().get(indexofHats).setScale(0.4);
+    Beach.getBeachHats().get(indexofHats).setScale(hatScale);
     canvas.add(Beach.getBeachHats().get(indexofHats));
     runwayReady.add(Beach.getBeachHats().get(indexofHats));
     playerChoices.add(Beach.getBeachHats().get(indexofHats));
@@ -517,7 +517,7 @@ public static void changeNeck(boolean moveForward, CanvasWindow canvas){
     }
 
     School.getschoolNeck().get(indexofNeck).setCenter(neckBox.getCenter());
-    School.getschoolNeck().get(indexofNeck).setScale(0.4);
+    School.getschoolNeck().get(indexofNeck).setScale(neckScale);
     canvas.add(School.getschoolNeck().get(indexofNeck));
     runwayReady.add(School.getschoolNeck().get(indexofNeck));
     playerChoices.add(School.getschoolNeck().get(indexofNeck));
@@ -545,7 +545,7 @@ if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/TwoStackedPinkNeck
     }
 
     Beach.getBeachNeck().get(indexofNeck).setCenter(neckBox.getCenter());
-    Beach.getBeachNeck().get(indexofNeck).setScale(0.4);
+    Beach.getBeachNeck().get(indexofNeck).setScale(neckScale);
     canvas.add(Beach.getBeachNeck().get(indexofNeck));
     runwayReady.add(Beach.getBeachNeck().get(indexofNeck));
     playerChoices.add(Beach.getBeachNeck().get(indexofNeck));
@@ -605,7 +605,7 @@ public static void changeTops(boolean moveForward, CanvasWindow canvas){
         }
     
         School.getschoolTops().get(indexofTops).setCenter(topsBox.getCenter());
-        School.getschoolTops().get(indexofTops).setScale(0.3);
+        School.getschoolTops().get(indexofTops).setScale(topsScale);
         canvas.add(School.getschoolTops().get(indexofTops));
         runwayReady.add(School.getschoolTops().get(indexofTops));
         playerChoices.add(School.getschoolTops().get(indexofTops));
@@ -632,7 +632,7 @@ public static void changeTops(boolean moveForward, CanvasWindow canvas){
             }
  
             Beach.getBeachTops().get(indexofTops).setCenter(topsBox.getCenter());
-            Beach.getBeachTops().get(indexofTops).setScale(0.3);
+            Beach.getBeachTops().get(indexofTops).setScale(topsScale);
             canvas.add(Beach.getBeachTops().get(indexofTops));
             runwayReady.add(Beach.getBeachTops().get(indexofTops));
             playerChoices.add(Beach.getBeachTops().get(indexofTops));
@@ -693,7 +693,7 @@ if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/SchoolScarf.png"))
     }
 
     School.getschoolBottoms().get(indexofBottoms).setCenter(bottomsBox.getCenter());
-    School.getschoolBottoms().get(indexofBottoms).setScale(0.3);
+    School.getschoolBottoms().get(indexofBottoms).setScale(bottomScale);
     canvas.add(School.getschoolBottoms().get(indexofBottoms));
     runwayReady.add(School.getschoolBottoms().get(indexofBottoms));
     playerChoices.add(School.getschoolBottoms().get(indexofBottoms));
@@ -721,7 +721,7 @@ if(TheMotherBoard.getTheme().equals(new Image("assets_Clothes/TwoStackedPinkNeck
     }
 
     Beach.getBeachBottoms().get(indexofBottoms).setCenter(bottomsBox.getCenter());
-    Beach.getBeachBottoms().get(indexofBottoms).setScale(0.3);
+    Beach.getBeachBottoms().get(indexofBottoms).setScale(bottomScale);
     canvas.add(Beach.getBeachBottoms().get(indexofBottoms));
     runwayReady.add(Beach.getBeachBottoms().get(indexofBottoms));
     playerChoices.add(Beach.getBeachBottoms().get(indexofBottoms));
@@ -751,7 +751,7 @@ public static void changeShoes(boolean moveForward, CanvasWindow canvas){
     }
 
     Winter.getwinterShoes().get(indexofShoes).setCenter(shoesBox.getCenter());
-    Winter.getwinterShoes().get(indexofShoes).setScale(0.3);
+    Winter.getwinterShoes().get(indexofShoes).setScale(shoeScale);
     canvas.add(Winter.getwinterShoes().get(indexofShoes));
     runwayReady.add(Winter.getwinterShoes().get(indexofShoes));
     playerChoices.add(Winter.getwinterShoes().get(indexofShoes));
@@ -777,7 +777,7 @@ public static void changeShoes(boolean moveForward, CanvasWindow canvas){
     }
 
     School.getschoolShoes().get(indexofShoes).setCenter(shoesBox.getCenter());
-    School.getschoolShoes().get(indexofShoes).setScale(0.3);
+    School.getschoolShoes().get(indexofShoes).setScale(shoeScale);
     canvas.add(School.getschoolShoes().get(indexofShoes));
     runwayReady.add(School.getschoolShoes().get(indexofShoes));
     playerChoices.add(School.getschoolShoes().get(indexofShoes));
@@ -803,7 +803,7 @@ public static void changeShoes(boolean moveForward, CanvasWindow canvas){
     }
 
     Beach.getBeachShoes().get(indexofShoes).setCenter(shoesBox.getCenter());
-    Beach.getBeachShoes().get(indexofShoes).setScale(0.3);
+    Beach.getBeachShoes().get(indexofShoes).setScale(shoeScale);
     canvas.add(Beach.getBeachShoes().get(indexofShoes));
     runwayReady.add(Beach.getBeachShoes().get(indexofShoes));
     playerChoices.add(Beach.getBeachShoes().get(indexofShoes));
