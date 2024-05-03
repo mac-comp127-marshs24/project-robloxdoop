@@ -33,7 +33,7 @@ public class Beach {
 
         beachBottoms.add(new Image ("assets_Clothes/WhiteShorts.png"));
         beachBottoms.add(new Image ("assets_Clothes/BlackSkirt.png"));
-        beachBottoms.add(new Image("asset_Clothes/BlackJeans"));
+        beachBottoms.add(new Image("assets_Clothes/BlackJeans.png"));
 
         beachShoes.add(new Image ("assets_Clothes/GoldHeels.png"));
         beachShoes.add(new Image ("assets_Clothes/GreenBoots.png"));

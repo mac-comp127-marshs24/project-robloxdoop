@@ -35,8 +35,7 @@ public class School{
 
       schoolBottoms.add(new Image ("assets_Clothes/WhiteShorts.png"));
       schoolBottoms.add(new Image ("assets_Clothes/BlackSkirt.png"));
-      schoolBottoms.add(new Image("asset_Clothes/BlackJeans"));
-
+      schoolBottoms.add(new Image("assets_Clothes/BlackJeans.png"));
 
       schoolShoes.add(new Image ("assets_Clothes/GoldHeels.png"));
       schoolShoes.add(new Image ("assets_Clothes/GreenBoots.png"));

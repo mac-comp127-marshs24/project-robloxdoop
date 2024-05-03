@@ -34,7 +34,7 @@ public class Winter{
 
       winterBottoms.add(new Image ("assets_Clothes/WhiteShorts.png"));
       winterBottoms.add(new Image ("assets_Clothes/BlackSkirt.png"));
-      winterBottoms.add(new Image("asset_Clothes/BlackJeans"));
+      winterBottoms.add(new Image("assets_Clothes/BlackJeans.png"));
 
    
       winterShoes.add(new Image ("assets_Clothes/GoldHeels.png"));
